@@ -85,6 +85,12 @@
             android:windowSoftInputMode="stateHidden" />
 
         <activity android:name=".NetworkConnectivity.NoInternetConnection"/>
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_sNL7UTCVCOAZtW"
+            />
+
     </application>
 
 </manifest>
