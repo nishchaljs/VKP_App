@@ -17,7 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/green"
+            android:background="@color/color_2"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:titleTextAppearance="@style/RobotoBoldTextAppearance">
 
@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/app_bar"
-        android:background="#307825"
+        android:background="#000080"
         app:tabGravity="center"
         app:tabMinWidth="40dp"
         app:tabPaddingEnd="0dp"

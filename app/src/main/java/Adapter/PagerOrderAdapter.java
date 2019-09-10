@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import Fragment.My_Past_Order;
+import Fragment.My_Pending_Order;
 
 
 public class PagerOrderAdapter extends FragmentStatePagerAdapter {
@@ -19,6 +20,9 @@ public class PagerOrderAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
 
         switch (position) {
+            case 0:
+                My_Pending_Order tab1 = new My_Pending_Order();
+                return tab1;
 
             case 1:
                 My_Past_Order tab2 = new My_Past_Order();

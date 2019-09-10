@@ -11,7 +11,7 @@
         android:id="@+id/tab_cat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/green"
+        android:background="@color/color_2"
         app:tabMode="scrollable"
         app:tabSelectedTextColor="@color/white"
         app:tabTextAppearance="@style/MineCustomTabText"

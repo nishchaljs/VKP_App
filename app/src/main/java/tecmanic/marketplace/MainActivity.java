@@ -1,5 +1,6 @@
 package tecmanic.marketplace;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -12,6 +13,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final String TAG = MainActivity.class.getSimpleName();
     private BroadcastReceiver mRegistrationBroadcastReceiver;
     private TextView totalBudgetCount, totalBudgetCount2, totalBudgetCount3, tv_name, powerd_text;
-    private ImageView iv_profile;
+    private ImageView iv_profile,iv_Call, iv_Whatspp;
     private DatabaseHandler dbcart;
     private Session_management sessionManagement;
     private Menu nav_menu;
@@ -159,14 +161,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             applyFontToMenuItem(mi);
         }
 
-
+        View headerView = navigationView.getHeaderView(0);
+        navigationView.getBackground().setColorFilter(0x80000000, PorterDuff.Mode.MULTIPLY);
+        navigationView.setNavigationItemSelectedListener(this);
+        nav_menu = navigationView.getMenu();
         View header = ((NavigationView) findViewById(R.id.nav_view)).getHeaderView(0);
+
 
         iv_profile = (ImageView) header.findViewById(R.id.iv_header_img);
         tv_name = (TextView) header.findViewById(R.id.tv_header_name);
         My_Order = (LinearLayout) header.findViewById(R.id.my_orders);
-        My_Reward = (LinearLayout) header.findViewById(R.id.my_reward);
-        My_Walllet = (LinearLayout) header.findViewById(R.id.my_wallet);
+        iv_Call = (ImageView) header.findViewById(R.id.iv_call);
+        iv_Whatspp = (ImageView) header.findViewById(R.id.iv_whatsapp);
+        //My_Reward = (LinearLayout) header.findViewById(R.id.my_reward);
+        //My_Walllet = (LinearLayout) header.findViewById(R.id.my_wallet);
        // My_Cart = (LinearLayout) header.findViewById(R.id.my_cart);
 
         My_Order.setOnClickListener(new View.OnClickListener()
@@ -180,7 +188,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        iv_Call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:" + "917829723033"));
+                if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    return;
+                }
+                startActivity(callIntent);
 
+            }
+        });
         iv_profile.setOnClickListener(new View.OnClickListener()
 
         {
@@ -196,6 +215,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     startActivity(i);
                     overridePendingTransition(0, 0);
                 }
+            }
+        });
+
+        iv_Whatspp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String smsNumber = "917829723033";
+                Uri uri = Uri.parse("smsto:" + smsNumber);
+                Intent i = new Intent(Intent.ACTION_SENDTO, uri);
+                i.putExtra("Test", "Nishchal J");
+                i.setPackage("com.whatsapp");
+                startActivity(i);
+
             }
         });
 
@@ -364,32 +396,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
          if (id == R.id.nav_my_profile) {
-            fm = new Edit_profile_fragment();
-        } else if (id == R.id.nav_support) {
-            String smsNumber = "919990155993";
-            Uri uri = Uri.parse("smsto:" + smsNumber);
-            Intent i = new Intent(Intent.ACTION_SENDTO, uri);
-            i.putExtra("Test", "Neeraj");
-            i.setPackage("com.whatsapp");
-            startActivity(i);
-        }
+            fm = new Edit_profile_fragment();}
+//          else if (id == R.id.nav_support) {
+//            String smsNumber = "919990155993";
+//            Uri uri = Uri.parse("smsto:" + smsNumber);
+//            Intent i = new Intent(Intent.ACTION_SENDTO, uri);
+//            i.putExtra("Test", "Neeraj");
+//            i.setPackage("com.whatsapp");
+//            startActivity(i);
+//        }
 
          else if (id == R.id.nav_policy) {
             fm = new Terms_and_Condition_fragment();
             args.putString("url", BaseURL.GET_TERMS_URL);
             args.putString("title", getResources().getString(R.string.nav_terms));
             fm.setArguments(args);
-        } else if (id == R.id.nav_review) {
-            reviewOnApp();
-        }  else if (id == R.id.nav_share) {
-            shareApp();
-        } else if (id == R.id.nav_logout) {
+        }
+//         else if (id == R.id.nav_review) {
+//            reviewOnApp();
+//        }  else if (id == R.id.nav_share) {
+//            shareApp();
+//        }
+            else if (id == R.id.nav_logout) {
             sessionManagement.logoutSession();
             finish();
 
         } else if (id == R.id.nav_powerd) {
             // stripUnderlines(textView);
-            String url = "https://gogrocer.app";
+            String url = "www.codingclub.com";
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
             startActivity(i);
@@ -429,28 +463,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         textView.setText(s);
     }
 
-    public void shareApp() {
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "Hi friends i am using ." + " http://play.google.com/store/apps/details?id=" + getPackageName() + " APP");
-        sendIntent.setType("text/plain");
-        startActivity(sendIntent);
-    }
-
-
-    public void reviewOnApp() {
-        Uri uri = Uri.parse("market://details?id=" + getPackageName());
-        Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
-        goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
-                Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
-                Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-        try {
-            startActivity(goToMarket);
-        } catch (ActivityNotFoundException e) {
-            startActivity(new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
-        }
-    }
+//    public void shareApp() {
+//        Intent sendIntent = new Intent();
+//        sendIntent.setAction(Intent.ACTION_SEND);
+//        sendIntent.putExtra(Intent.EXTRA_TEXT, "Hi friends i am using ." + " http://play.google.com/store/apps/details?id=" + getPackageName() + " APP");
+//        sendIntent.setType("text/plain");
+//        startActivity(sendIntent);
+//    }
+//
+//
+//    public void reviewOnApp() {
+//        Uri uri = Uri.parse("market://details?id=" + getPackageName());
+//        Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+//        goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
+//                Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
+//                Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+//        try {
+//            startActivity(goToMarket);
+//        } catch (ActivityNotFoundException e) {
+//            startActivity(new Intent(Intent.ACTION_VIEW,
+//                    Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
+//        }
+//    }
 
     // Method to manually check connection status
     private void checkConnection() {

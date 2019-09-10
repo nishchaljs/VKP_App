@@ -74,10 +74,12 @@ import Model.Category_model;
 
 import Model.Home_Icon_model;
 import Model.Top_Selling_model;
+import in.juspay.godel.PaymentActivity;
 import tecmanic.marketplace.AppController;
 import tecmanic.marketplace.CustomSlider;
 import tecmanic.marketplace.MainActivity;
 import tecmanic.marketplace.R;
+import tecmanic.marketplace.payment_gateway;
 import util.ConnectivityReceiver;
 import util.CustomVolleyJsonRequest;
 import util.RecyclerTouchListener;
@@ -157,8 +159,15 @@ public class Home_fragment extends Fragment {
 
         }
 
-
-
+       //payment gateway
+        Button numbers = (Button) view.findViewById(R.id.payment_gateway);
+        numbers.setOnClickListener(new View.OnClickListener() {
+                                       @Override
+                                       public void onClick(View v) {
+                                           Intent intent = new Intent(getActivity(), payment_gateway.class);
+                                           startActivity(intent);
+                                       }
+                                   });
         //Top Selling Poster
         Top_Selling_Poster = (ImageView) view.findViewById(R.id.top_selling_imageview);
 
@@ -212,50 +221,50 @@ public class Home_fragment extends Fragment {
 
 
         //Call And Whatsapp
-        iv_Call = (ImageView) view.findViewById(R.id.iv_call);
-        iv_Whatspp = (ImageView) view.findViewById(R.id.iv_whatsapp);
-        iv_reviews = (ImageView) view.findViewById(R.id.reviews);
-        iv_share_via = (ImageView) view.findViewById(R.id.share_via);
+//        iv_Call = (ImageView) view.findViewById(R.id.iv_call);
+//        iv_Whatspp = (ImageView) view.findViewById(R.id.iv_whatsapp);
+//        iv_reviews = (ImageView) view.findViewById(R.id.reviews);
+//        iv_share_via = (ImageView) view.findViewById(R.id.share_via);
 
-        iv_Call.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:" + "919990155993"));
-                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    return;
-                }
-                getActivity().startActivity(callIntent);
-
-            }
-        });
-        iv_Whatspp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String smsNumber = "919990155993";
-                Uri uri = Uri.parse("smsto:" + smsNumber);
-                Intent i = new Intent(Intent.ACTION_SENDTO, uri);
-                i.putExtra("Test", "Neeraj");
-                i.setPackage("com.whatsapp");
-                startActivity(i);
-
-            }
-        });
-        iv_reviews.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                reviewOnApp();
-            }
-        });
-        iv_share_via.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                shareApp();
-
-            }
-        });
-
-
+//        iv_Call.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent callIntent = new Intent(Intent.ACTION_CALL);
+//                callIntent.setData(Uri.parse("tel:" + "917829723033"));
+//                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+//                    return;
+//                }
+//                getActivity().startActivity(callIntent);
+//
+//            }
+//        });
+//        iv_Whatspp.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String smsNumber = "917829723033";
+//                Uri uri = Uri.parse("smsto:" + smsNumber);
+//                Intent i = new Intent(Intent.ACTION_SENDTO, uri);
+//                i.putExtra("Test", "Nishchal J");
+//                i.setPackage("com.whatsapp");
+//                startActivity(i);
+//
+//            }
+//        });
+//        iv_reviews.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                reviewOnApp();
+//            }
+//        });
+//        iv_share_via.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                shareApp();
+//
+//            }
+//        });
+//
+//
         //REcyclerview Top Selling
         rv_top_selling.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), rv_top_selling, new RecyclerTouchListener.OnItemClickListener() {
             @Override
@@ -462,66 +471,6 @@ public class Home_fragment extends Fragment {
 
     }
 
-
-//    private void make_deal_od_the_day() {
-//        String tag_json_obj = "json_category_req";
-//        isSubcat = false;
-//        Map<String, String> params = new HashMap<String, String>();
-//        params.put("parent", "");
-//        isSubcat = true;
-//       /* if (parent_id != null && parent_id != "") {
-//        }*/
-//
-//        CustomVolleyJsonRequest jsonObjReq = new CustomVolleyJsonRequest(Request.Method.GET,
-//                BaseURL.GET_DEAL_OF_DAY_PRODUCTS, params, new Response.Listener<JSONObject>() {
-//
-//            @Override
-//            public void onResponse(JSONObject response) {
-//                Log.d(TAG, response.toString());
-//
-//                try {
-//                    if (response != null && response.length() > 0) {
-//                        Boolean status = response.getBoolean("responce");
-//                        Gson gson = new Gson();
-//                        if (status) {
-//                            Type listType = new TypeToken<List<Deal_Of_Day_model>>() {
-//                            }.getType();
-//                            deal_of_day_models = gson.fromJson(response.getString("Deal_of_the_day"), listType);
-//                            deal_ofDay_adapter = new Deal_OfDay_Adapter(deal_of_day_models, getActivity());
-//                            rv_deal_of_day.setAdapter(deal_ofDay_adapter);
-//                            deal_ofDay_adapter.notifyDataSetChanged();
-//                            if (getActivity() != null) {
-//                                if (deal_of_day_models.isEmpty()) {
-//                                    //  Toast.makeText(getActivity(), "No Deal For Day", Toast.LENGTH_SHORT).show();
-//                                    rv_deal_of_day.setVisibility(View.GONE);
-//                                    Deal_Frame_layout.setVisibility(View.GONE);
-//                                    Deal_Frame_layout1.setVisibility(View.GONE);
-//                                    Deal_Linear_layout.setVisibility(View.GONE);
-//                                }
-//                            }
-//                        } else {
-//                            Toast.makeText(getActivity(), "No Response", Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }, new Response.ErrorListener() {
-//
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                VolleyLog.d(TAG, "Error: " + error.getMessage());
-//                if (error instanceof TimeoutError || error instanceof NoConnectionError) {
-//                    Toast.makeText(getActivity(), getResources().getString(R.string.connection_time_out), Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-//
-//        // Adding request to request queue
-//        AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
-//
-//    }
 
     private void make_top_selling() {
         String tag_json_obj = "json_category_req";

@@ -163,7 +163,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:background="@color/green"
+                android:background="@color/color_2"
                 android:orientation="horizontal"
                 tools:ignore="InefficientWeight">
 
@@ -173,14 +173,14 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight=".4"
-                    android:background="@color/green"
+                    android:background="@color/color_2"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="8dp">
 
                     <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/order" />
 
 
@@ -204,15 +204,16 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight=".4"
-                    android:background="@color/green"
+                    android:background="@color/color_2"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="8dp">
 
                     <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:layout_width="28dp"
+                        android:id="@+id/iv_whatsapp"
                         android:layout_height="28dp"
-                        android:src="@drawable/gift" />
+                        android:src="@drawable/mywhatsapp" />
 
 
                     <Fonts.LatoBLack
@@ -221,7 +222,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
-                        android:text="Rewards"
+                        android:text="Whatsapp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textColor="#eae3e3"
                         android:textSize="@dimen/text_size_X_small" />
@@ -236,16 +237,16 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/space_4"
                     android:layout_weight=".4"
-                    android:background="@color/green"
+                    android:background="@color/color_2"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="8dp">
 
-                    <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/ic_account_balance_wallet_black_24dp" />
-
+                    <ImageView
+                        android:id="@+id/iv_call"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/call_answer" />
 
                     <Fonts.LatoBLack
                         android:layout_width="match_parent"
@@ -253,24 +254,17 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="4dp"
                         android:gravity="center"
-                        android:text="Wallet"
+                        android:text="Call"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textColor="#eae3e3"
                         android:textSize="@dimen/text_size_X_small" />
 
 
                 </LinearLayout>
-
-
-
-
-
-
-
-
-
-
             </LinearLayout>
+
+
+
         </LinearLayout>
 
 
