@@ -60,6 +60,9 @@ dependencies {
     implementation files('libs/PGSDK_v1.0.jar')
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation 'com.android.support:cardview-v7:26.1.0'
+
+    // for razorpay sdk
+    implementation 'com.razorpay:checkout:1.5.12'
 }
 // ADD THIS AT THE BOTTOM
 apply plugin: 'com.google.gms.google-services'

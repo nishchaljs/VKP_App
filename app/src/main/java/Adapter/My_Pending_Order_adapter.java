@@ -50,7 +50,7 @@ public class My_Pending_Order_adapter extends RecyclerView.Adapter<My_Pending_Or
             tv_orderno = (TextView) view.findViewById(R.id.tv_order_no);
             tv_status = (TextView) view.findViewById(R.id.tv_order_status);
             relativetextstatus = (TextView) view.findViewById(R.id.status);
-            tv_tracking_date = (TextView) view.findViewById(R.id.tracking_date);
+//            tv_tracking_date = (TextView) view.findViewById(R.id.tracking_date);
             tv_date = (TextView) view.findViewById(R.id.tv_order_date);
             tv_time = (TextView) view.findViewById(R.id.tv_order_time);
             tv_price = (TextView) view.findViewById(R.id.tv_order_price);

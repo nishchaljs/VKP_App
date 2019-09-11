@@ -1,5 +1,7 @@
 package Fragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,34 +28,41 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ArrayList;
 
 import Adapter.My_Past_Order_adapter;
 import Config.BaseURL;
 import Model.My_Past_order_model;
 import tecmanic.marketplace.AppController;
 import tecmanic.marketplace.MainActivity;
+import tecmanic.marketplace.MyOrderDetail;
 import tecmanic.marketplace.R;
 import util.ConnectivityReceiver;
 import util.CustomVolleyJsonArrayRequest;
 import util.RecyclerTouchListener;
 import util.Session_management;
 
-public class My_Past_Order extends Fragment {
 
-    //  private static String TAG = Fragment.My_Past_Order.class.getSimpleName();
+public class This_year_order extends Fragment {
+
+    //  private static String TAG = My_Past_Order.class.getSimpleName();
 
     private RecyclerView rv_myorder;
 
-    private List<My_Past_order_model> my_order_modelList = new ArrayList<>();
+    //remove final for parsing
+     ArrayList<My_Past_order_model> my_order_modelList = new ArrayList<My_Past_order_model>();
+
     TabHost tHost;
 
-    public My_Past_Order() {
+    public This_year_order() {
         // Required empty public constructor
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -63,8 +72,12 @@ public class My_Past_Order extends Fragment {
         View view = inflater.inflate(R.layout.fragment_my_past_order, container, false);
 
         // ((My_Order_activity) getActivity()).setTitle(getResources().getString(R.string.my_order));
-
-
+// temp adjustment
+        rv_myorder=(RecyclerView) view.findViewById(R.id.rv_myorder);
+        List<My_Past_order_model>item=new ArrayList<>();
+        item.add(new My_Past_order_model("uid","23-09-2000","6.30","Good","Yes","2500","paytm"));
+        My_Past_Order_adapter itemadapter=new My_Past_Order_adapter(getActivity(),item,getParentFragment());
+        rv_myorder.setAdapter(itemadapter);
         // handle the touch event if true
         view.setFocusableInTouchMode(true);
         view.requestFocus();
@@ -104,26 +117,26 @@ public class My_Past_Order extends Fragment {
         // recyclerview item click listener
         rv_myorder.addOnItemTouchListener(new
 
-                  RecyclerTouchListener(getActivity(), rv_myorder, new RecyclerTouchListener.OnItemClickListener()
+                RecyclerTouchListener(getActivity(), rv_myorder, new RecyclerTouchListener.OnItemClickListener()
 
-         {
-              @Override
-              public void onItemClick(View view, int position) {
+        {
+            @Override
+            public void onItemClick(View view, int position) {
 //                String sale_id = my_order_modelList.get(position).getSale_id();
 //                String date = my_order_modelList.get(position).getOn_date();
 //                String time = my_order_modelList.get(position).getDelivery_time_from() + "-" + my_order_modelList.get(position).getDelivery_time_to();
 //                String total = my_order_modelList.get(position).getTotal_amount();
 //                String status = my_order_modelList.get(position).getStatus();
 //                String deli_charge = my_order_modelList.get(position).getDelivery_charge();
-//                Intent intent=new Intent(getContext(), MyOrderDetail.class);
+//                 Intent intent=new Intent(getContext(), MyOrderDetail.class);
 //                intent.putExtra("sale_id", sale_id);
 //                intent.putExtra("date", date);
 //                intent.putExtra("time", time);
 //                intent.putExtra("total", total);
 //                intent.putExtra("status", status);
 //                intent.putExtra("deli_charge", deli_charge);
-//                startActivity(intent);
-//
+ //                startActivity(intent);
+
             }
 
             @Override
@@ -158,7 +171,7 @@ public class My_Past_Order extends Fragment {
                 rv_myorder.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
                 if (my_order_modelList.isEmpty()) {
-                   // Toast.makeText(getActivity(), getResources().getString(R.string.no_rcord_found), Toast.LENGTH_SHORT).show();
+                    // Toast.makeText(getActivity(), getResources().getString(R.string.no_rcord_found), Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
@@ -172,7 +185,8 @@ public class My_Past_Order extends Fragment {
         AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
 
 
-    }
+     }
 
 
 }
+

@@ -28,7 +28,7 @@ public class My_Order_activity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Products");
+        getSupportActionBar().setTitle("Past Orders");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,8 +43,9 @@ public class My_Order_activity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
 
-        tabLayout.addTab(tabLayout.newTab().setText("Pending"));
-        tabLayout.addTab(tabLayout.newTab().setText("Past Order"));
+        tabLayout.addTab(tabLayout.newTab().setText("This Week"));
+        tabLayout.addTab(tabLayout.newTab().setText("This Month"));
+        tabLayout.addTab(tabLayout.newTab().setText("This Year"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);

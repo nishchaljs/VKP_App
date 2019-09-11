@@ -27,7 +27,7 @@ public class My_Past_Order_adapter extends RecyclerView.Adapter<My_Past_Order_ad
     public My_Past_Order_adapter(Context context, List<My_Past_order_model> modemodelList, final Fragment currentFragment) {
 
         this.context = context;
-        this.modelList = modelList;
+        this.modelList = modemodelList;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.currentFragment = currentFragment;
     }
@@ -46,15 +46,16 @@ public class My_Past_Order_adapter extends RecyclerView.Adapter<My_Past_Order_ad
 
         public MyViewHolder(View view) {
             super(view);
-//            tv_orderno = (TextView) view.findViewById(R.id.tv_order_no);
-//            tv_status = (TextView) view.findViewById(R.id.tv_order_status);
-//            relativetextstatus = (TextView) view.findViewById(R.id.status);
-//            tv_tracking_date = (TextView) view.findViewById(R.id.tracking_date);
-//            tv_date = (TextView) view.findViewById(R.id.tv_order_date);
-//            tv_time = (TextView) view.findViewById(R.id.tv_order_time);
-//            tv_price = (TextView) view.findViewById(R.id.tv_order_price);
-//            tv_item = (TextView) view.findViewById(R.id.tv_order_item);
-//            cardView = view.findViewById(R.id.card_view);
+            tv_methid1=(TextView)view.findViewById(R.id.payment_type);
+            tv_orderno = (TextView) view.findViewById(R.id.tv_order_no);
+            tv_status = (TextView) view.findViewById(R.id.tv_order_status);
+            relativetextstatus = (TextView) view.findViewById(R.id.status);
+            //tv_tracking_date = (TextView) view.findViewById(R.id.tracking_date);
+            tv_date = (TextView) view.findViewById(R.id.tv_order_date);
+            tv_time = (TextView) view.findViewById(R.id.tv_order_time);
+            tv_price = (TextView) view.findViewById(R.id.tv_order_price);
+            tv_item = (TextView) view.findViewById(R.id.tv_order_item);
+            cardView = view.findViewById(R.id.card_view);
 //
 //
 ////            //Payment Method
@@ -84,9 +85,7 @@ public class My_Past_Order_adapter extends RecyclerView.Adapter<My_Past_Order_ad
         }
     }
 
-    public My_Past_Order_adapter(List<My_Past_order_model> modelList) {
-        this.modelList = modelList;
-    }
+
 
     @Override
     public My_Past_Order_adapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -99,63 +98,63 @@ public class My_Past_Order_adapter extends RecyclerView.Adapter<My_Past_Order_ad
     public void onBindViewHolder(MyViewHolder holder, int position) {
         My_Past_order_model mList = modelList.get(position);
 
-        holder.tv_orderno.setText(mList.getSale_id());
-
-        if (mList.getStatus().equals("0")) {
-            holder.tv_status.setText(context.getResources().getString(R.string.pending));
-            holder.relativetextstatus.setText(context.getResources().getString(R.string.pending));
-            holder.relative_background.setBackgroundColor(context.getResources().getColor(R.color.yelow));
-        } else if (mList.getStatus().equals("1")) {
-            holder.view1.setBackgroundColor(context.getResources().getColor(R.color.green));
-            holder.view2.setBackgroundColor(context.getResources().getColor(R.color.green));
-            holder.relative_background.setBackgroundColor(context.getResources().getColor(R.color.orange));
-            holder.Confirm.setImageResource(R.color.green);
-            holder.tv_status.setText(context.getResources().getString(R.string.confirm));
-            holder.relativetextstatus.setText(context.getResources().getString(R.string.confirm));
-            holder.tv_status.setTextColor(context.getResources().getColor(R.color.green));
-        } else if (mList.getStatus().equals("2")) {
-            holder.view1.setBackgroundColor(context.getResources().getColor(R.color.green));
-            holder.relative_background.setBackgroundColor(context.getResources().getColor(R.color.purple));
-            holder.view2.setBackgroundColor(context.getResources().getColor(R.color.green));
-            holder.view3.setBackgroundColor(context.getResources().getColor(R.color.green));
-            holder.view4.setBackgroundColor(context.getResources().getColor(R.color.green));
-            holder.view5.setBackgroundColor(context.getResources().getColor(R.color.green));
-            holder.view6.setBackgroundColor(context.getResources().getColor(R.color.green));
-            holder.Confirm.setImageResource(R.color.green);
-            holder.Out_For_Deliverde.setImageResource(R.color.green);
-            holder.tv_status.setText(context.getResources().getString(R.string.outfordeliverd));
-            holder.relativetextstatus.setText(context.getResources().getString(R.string.outfordeliverd));
-            holder.tv_status.setTextColor(context.getResources().getColor(R.color.green));
-        }else if (mList.getStatus().equals("4")) {
-            holder.view1.setBackgroundColor(context.getResources().getColor(R.color.green));
-            holder.relative_background.setBackgroundColor(context.getResources().getColor(R.color.green));
-            holder.view2.setBackgroundColor(context.getResources().getColor(R.color.green));
-            holder.view3.setBackgroundColor(context.getResources().getColor(R.color.green));
-            holder.view4.setBackgroundColor(context.getResources().getColor(R.color.green));
-            holder.view5.setBackgroundColor(context.getResources().getColor(R.color.green));
-            holder.view6.setBackgroundColor(context.getResources().getColor(R.color.green));
-            holder.Confirm.setImageResource(R.color.green);
-            holder.Out_For_Deliverde.setImageResource(R.color.green);
-            holder.Delivered.setImageResource(R.color.green);
-            holder.tv_status.setText(context.getResources().getString(R.string.delivered));
-            holder.relativetextstatus.setText(context.getResources().getString(R.string.delivered));
-            holder.tv_status.setTextColor(context.getResources().getColor(R.color.green));
-        }
+        //holder.tv_orderno.setText(mList.getSale_id());
+//
+//        if (mList.getStatus().equals("0")) {
+//            holder.tv_status.setText(context.getResources().getString(R.string.pending));
+//            holder.relativetextstatus.setText(context.getResources().getString(R.string.pending));
+//            holder.relative_background.setBackgroundColor(context.getResources().getColor(R.color.yelow));
+//        } else if (mList.getStatus().equals("1")) {
+//            holder.view1.setBackgroundColor(context.getResources().getColor(R.color.green));
+//            holder.view2.setBackgroundColor(context.getResources().getColor(R.color.green));
+//            holder.relative_background.setBackgroundColor(context.getResources().getColor(R.color.orange));
+//            holder.Confirm.setImageResource(R.color.green);
+//            holder.tv_status.setText(context.getResources().getString(R.string.confirm));
+//            holder.relativetextstatus.setText(context.getResources().getString(R.string.confirm));
+//            holder.tv_status.setTextColor(context.getResources().getColor(R.color.green));
+//        } else if (mList.getStatus().equals("2")) {
+//            holder.view1.setBackgroundColor(context.getResources().getColor(R.color.green));
+//            holder.relative_background.setBackgroundColor(context.getResources().getColor(R.color.purple));
+//            holder.view2.setBackgroundColor(context.getResources().getColor(R.color.green));
+//            holder.view3.setBackgroundColor(context.getResources().getColor(R.color.green));
+//            holder.view4.setBackgroundColor(context.getResources().getColor(R.color.green));
+//            holder.view5.setBackgroundColor(context.getResources().getColor(R.color.green));
+//            holder.view6.setBackgroundColor(context.getResources().getColor(R.color.green));
+//            holder.Confirm.setImageResource(R.color.green);
+//            holder.Out_For_Deliverde.setImageResource(R.color.green);
+//            holder.tv_status.setText(context.getResources().getString(R.string.outfordeliverd));
+//            holder.relativetextstatus.setText(context.getResources().getString(R.string.outfordeliverd));
+//            holder.tv_status.setTextColor(context.getResources().getColor(R.color.green));
+//        }else if (mList.getStatus().equals("4")) {
+//            holder.view1.setBackgroundColor(context.getResources().getColor(R.color.green));
+//            holder.relative_background.setBackgroundColor(context.getResources().getColor(R.color.green));
+//            holder.view2.setBackgroundColor(context.getResources().getColor(R.color.green));
+//            holder.view3.setBackgroundColor(context.getResources().getColor(R.color.green));
+//            holder.view4.setBackgroundColor(context.getResources().getColor(R.color.green));
+//            holder.view5.setBackgroundColor(context.getResources().getColor(R.color.green));
+//            holder.view6.setBackgroundColor(context.getResources().getColor(R.color.green));
+//            holder.Confirm.setImageResource(R.color.green);
+//            holder.Out_For_Deliverde.setImageResource(R.color.green);
+//            holder.Delivered.setImageResource(R.color.green);
+//            holder.tv_status.setText(context.getResources().getString(R.string.delivered));
+//            holder.relativetextstatus.setText(context.getResources().getString(R.string.delivered));
+//            holder.tv_status.setTextColor(context.getResources().getColor(R.color.green));
+//        }
 
         holder.tv_methid1.setText(mList.getPayment_method());
         holder.tv_date.setText(mList.getOn_date());
-        holder.tv_tracking_date.setText(mList.getOn_date());
-        holder.tv_time.setText(mList.getDelivery_time_from() + "-" + mList.getDelivery_time_to());
+       // holder.tv_tracking_date.setText(mList.getOn_date());
+//        holder.tv_time.setText(mList.getDelivery_time_from() + "-" + mList.getDelivery_time_to());
         holder.tv_price.setText(context.getResources().getString(R.string.currency) + mList.getTotal_amount());
-        holder.tv_item.setText(context.getResources().getString(R.string.tv_cart_item) + mList.getTotal_items());
-        holder.tv_pending_time.setText(mList.getDelivery_time_from() + "-" + mList.getDelivery_time_to());
-        holder.tv_pending_date.setText(mList.getOn_date());
-        holder.tv_confirm_time.setText(mList.getDelivery_time_from() + "-" + mList.getDelivery_time_to());
-        holder.tv_confirm_date.setText(mList.getOn_date());
-        holder.tv_delevered_time.setText(mList.getDelivery_time_from() + "-" + mList.getDelivery_time_to());
-        holder.tv_delevered_date.setText(mList.getOn_date());
-        holder.tv_cancel_time.setText(mList.getDelivery_time_from() + "-" + mList.getDelivery_time_to());
-        holder.tv_cancel_date.setText(mList.getOn_date());
+//        holder.tv_item.setText(context.getResources().getString(R.string.tv_cart_item) + mList.getTotal_items());
+//        holder.tv_pending_time.setText(mList.getDelivery_time_from() + "-" + mList.getDelivery_time_to());
+//        holder.tv_pending_date.setText(mList.getOn_date());
+//        holder.tv_confirm_time.setText(mList.getDelivery_time_from() + "-" + mList.getDelivery_time_to());
+//        holder.tv_confirm_date.setText(mList.getOn_date());
+//        holder.tv_delevered_time.setText(mList.getDelivery_time_from() + "-" + mList.getDelivery_time_to());
+//        holder.tv_delevered_date.setText(mList.getOn_date());
+//        holder.tv_cancel_time.setText(mList.getDelivery_time_from() + "-" + mList.getDelivery_time_to());
+//        holder.tv_cancel_date.setText(mList.getOn_date());
     }
 
 

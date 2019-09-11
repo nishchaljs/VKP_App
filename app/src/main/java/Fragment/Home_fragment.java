@@ -68,11 +68,15 @@ import java.util.Map;
 //import Adapter.Deal_OfDay_Adapter;
 import Adapter.Home_adapter;
 import Adapter.Home_Icon_Adapter;
+import Adapter.My_Past_Order_adapter;
+import Adapter.Product_adapter;
 import Adapter.Top_Selling_Adapter;
 import Config.BaseURL;
 import Model.Category_model;
 
 import Model.Home_Icon_model;
+import Model.My_Past_order_model;
+import Model.Product_model;
 import Model.Top_Selling_model;
 import in.juspay.godel.PaymentActivity;
 import tecmanic.marketplace.AppController;
@@ -194,12 +198,17 @@ public class Home_fragment extends Fragment {
 
         //Top Selling Products
         rv_top_selling = (RecyclerView) view.findViewById(R.id.top_selling_recycler);
-        GridLayoutManager gridLayoutManager2 = new GridLayoutManager(getActivity(), 2);
-        rv_top_selling.setLayoutManager(gridLayoutManager2);
-        rv_top_selling.setItemAnimator(new DefaultItemAnimator());
-        rv_top_selling.setNestedScrollingEnabled(false);
-        rv_top_selling.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(1), true));
-
+        rv_top_selling.setLayoutManager(new LinearLayoutManager(getActivity()));
+  //      GridLayoutManager gridLayoutManager2 = new GridLayoutManager(getActivity(), 2);
+//        rv_top_selling.setLayoutManager(gridLayoutManager2);
+//        rv_top_selling.setItemAnimator(new DefaultItemAnimator());
+//        rv_top_selling.setNestedScrollingEnabled(false);
+//        rv_top_selling.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(1), true));
+       //temp
+        List<Product_model>item=new ArrayList<>();
+        item.add(new Product_model("ABCDXYZ","23-09-2000","6.30"," ","2000"));
+        Product_adapter itemadapter=new Product_adapter(item,getActivity());
+        rv_top_selling.setAdapter(itemadapter);
 
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity()) {
@@ -269,7 +278,7 @@ public class Home_fragment extends Fragment {
         rv_top_selling.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), rv_top_selling, new RecyclerTouchListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                getid = top_selling_models.get(position).getProduct_id();
+              //  getid = top_selling_models.get(position).getProduct_id();
                 Bundle args = new Bundle();
                 Fragment fm = new Product_fragment();
                 args.putString("cat_top_selling", "2");

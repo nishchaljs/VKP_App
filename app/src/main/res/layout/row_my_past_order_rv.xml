@@ -196,11 +196,11 @@
 
 
                     <Fonts.LatoBLack
-                        android:id="@+id/tracking_date"
+                        android:id="@+id/payment_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/space_8"
-                        android:text="Date"
+                        android:text="payment_type"
                         android:textColor="#000"
                         android:textSize="@dimen/text_size_small" />
 
@@ -251,6 +251,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:gravity="center"
+
                         android:layout_marginTop="@dimen/space_18"
                         android:text="Order Details"
                         android:textColor="@color/gray"

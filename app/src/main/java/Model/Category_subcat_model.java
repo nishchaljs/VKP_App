@@ -1,9 +1,5 @@
 package Model;
 
-/**
- * Created by Rajesh Dabhi on 22/6/2017.
- */
-
 public class Category_subcat_model {
 
     String id;
