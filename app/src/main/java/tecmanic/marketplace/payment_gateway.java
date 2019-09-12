@@ -25,7 +25,11 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 startPayment();
+
+            startPayment();
+
             }
         });
 
@@ -86,4 +90,8 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
             Log.e(TAG, "Exception in onPaymentError", e);
         }
     }
+
 }
+
+
+

@@ -13,6 +13,13 @@
        android:text="John Doe"
        android:textSize="20dp"
 
+
+       />
+
+
+
+
+
        />
 
    <EditText
@@ -23,6 +30,7 @@
        android:textSize="20dp"
 
        />
+
 
    <EditText
        android:id="@+id/contact"
@@ -41,6 +49,11 @@
 
        />
 
+
+
+
+
+>>>>>>> 00a004e7a63dca6d10647c6d3df7534eabae7792
    <Button
        android:id="@+id/pay_button"
        android:layout_width="wrap_content"

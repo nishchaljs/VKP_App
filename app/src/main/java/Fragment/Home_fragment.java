@@ -111,7 +111,7 @@ public class Home_fragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) { Button btnScanBarcode;
         final View view = inflater.inflate(R.layout.fragment_home, container, false);
         setHasOptionsMenu(true);
         ((MainActivity) getActivity()).setTitle(getResources().getString(R.string.app_name));
@@ -142,12 +142,13 @@ public class Home_fragment extends Fragment {
 
         }
        //qr_scanner
-        Button b = (Button)view.findViewById(R.id.btnScanBarcode);
-        b.setOnClickListener(new View.OnClickListener() {
+        btnScanBarcode = (Button)view.findViewById(R.id.btnScanBarcode);
+        btnScanBarcode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(v.getId()==R.id.btnScanBarcode){
                 Intent intent = new Intent(getActivity(), ScannedBarcodeActivity.class);
-                startActivity(intent);
+                startActivity(intent);}
             }
         });;
        //payment gateway
