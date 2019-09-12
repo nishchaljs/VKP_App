@@ -80,6 +80,7 @@
             android:value="http://neerajbisht.com/grocery_test/access_token.php" />
 
         <activity android:name=".ThanksOrder" />
+        <activity android:name=".ScannedBarcodeActivity" />
 
         <activity
             android:name="com.paytm.pgsdk.PaytmPGActivity"
