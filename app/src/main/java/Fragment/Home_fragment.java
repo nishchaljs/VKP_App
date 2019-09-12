@@ -1,23 +1,13 @@
 package Fragment;
 
-import android.Manifest;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Rect;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.StrictMode;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSmoothScroller;
 import android.support.v7.widget.RecyclerView;
@@ -29,10 +19,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,47 +34,38 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
-import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.lang.reflect.Type;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-//import Adapter.Deal_OfDay_Adapter;
-import Adapter.Home_adapter;
 import Adapter.Home_Icon_Adapter;
-import Adapter.My_Past_Order_adapter;
+import Adapter.Home_adapter;
 import Adapter.Product_adapter;
 import Adapter.Top_Selling_Adapter;
 import Config.BaseURL;
-import Model.Category_model;
-
 import Model.Home_Icon_model;
-import Model.My_Past_order_model;
 import Model.Product_model;
 import Model.Top_Selling_model;
-import in.juspay.godel.PaymentActivity;
 import tecmanic.marketplace.AppController;
 import tecmanic.marketplace.CustomSlider;
 import tecmanic.marketplace.MainActivity;
 import tecmanic.marketplace.R;
+import tecmanic.marketplace.ScannedBarcodeActivity;
 import tecmanic.marketplace.payment_gateway;
 import util.ConnectivityReceiver;
 import util.CustomVolleyJsonRequest;
 import util.RecyclerTouchListener;
+
+//import Adapter.Deal_OfDay_Adapter;
 
 
 public class Home_fragment extends Fragment {
@@ -162,7 +141,15 @@ public class Home_fragment extends Fragment {
 
 
         }
-
+       //qr_scanner
+        Button b = (Button)view.findViewById(R.id.btnScanBarcode);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ScannedBarcodeActivity.class);
+                startActivity(intent);
+            }
+        });;
        //payment gateway
         Button numbers = (Button) view.findViewById(R.id.payment_gateway);
         numbers.setOnClickListener(new View.OnClickListener() {
