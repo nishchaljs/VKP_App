@@ -20,6 +20,7 @@ import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.razorpay.Payment;
 
 import org.json.JSONArray;
 
@@ -31,8 +32,10 @@ import java.util.Map;
 import java.util.ArrayList;
 
 import Adapter.My_Past_Order_adapter;
+import Adapter.paymentAdapter;
 import Config.BaseURL;
 import Model.My_Past_order_model;
+import Model.payment;
 import tecmanic.marketplace.AppController;
 import tecmanic.marketplace.MainActivity;
 import tecmanic.marketplace.MyOrderDetail;
@@ -50,7 +53,7 @@ public class This_year_order extends Fragment {
     private RecyclerView rv_myorder;
 
     //remove final for parsing
-     ArrayList<My_Past_order_model> my_order_modelList = new ArrayList<My_Past_order_model>();
+     ArrayList<Payment> my_paymentList = new ArrayList<Payment>();
 
     TabHost tHost;
 
@@ -68,16 +71,44 @@ public class This_year_order extends Fragment {
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_my_past_order, container, false);
 
         // ((My_Order_activity) getActivity()).setTitle(getResources().getString(R.string.my_order));
 // temp adjustment
         rv_myorder=(RecyclerView) view.findViewById(R.id.rv_myorder);
-        List<My_Past_order_model>item=new ArrayList<>();
-        item.add(new My_Past_order_model("uid","23-09-2000","6.30","Good","Yes","2500","paytm"));
-        My_Past_Order_adapter itemadapter=new My_Past_Order_adapter(getActivity(),item,getParentFragment());
+        List<Payment> item=new ArrayList<>();
+
+        //Payment Payment = new Payment("#orderid-0001",100,"upi",1400826750 );
+        //String order_id, float amount, String method, float created_at
+
+
+
+        paymentAdapter itemadapter=new paymentAdapter(item);
         rv_myorder.setAdapter(itemadapter);
+
+
+
+
+
+//        item.add(new Payment("#orderid-0001",100,"upi",1400826750 ));
+//        item.add(new Payment("#orderid-0002",100,"upi",1400826750 ));
+//        item.add(new Payment("#orderid-0003",100,"upi",1400826750 ));
+//        item.add(new Payment("#orderid-0004",100,"upi",1400826750 ));
+//        item.add(new Payment("#orderid-0005",100,"upi",1400826750 ));
+//        item.add(new Payment("#orderid-0006",100,"upi",1400826750 ));
+//        item.add(new Payment("#orderid-0007",100,"upi",1400826750 ));
+//        item.add(new Payment("#orderid-0008",100,"upi",1400826750 ));
+//        item.add(new Payment("#orderid-0009",100,"upi",1400826750 ));
+//        item.add(new Payment("#orderid-0010",100,"upi",1400826750 ));
+//        item.add(new Payment("#orderid-0011",100,"upi",1400826750 ));
+//        item.add(new Payment("#orderid-0012",100,"upi",1400826750 ));
+
+
+
+        itemadapter.notifyDataSetChanged();
+
         // handle the touch event if true
         view.setFocusableInTouchMode(true);
         view.requestFocus();
@@ -122,12 +153,12 @@ public class This_year_order extends Fragment {
         {
             @Override
             public void onItemClick(View view, int position) {
-//                String sale_id = my_order_modelList.get(position).getSale_id();
-//                String date = my_order_modelList.get(position).getOn_date();
-//                String time = my_order_modelList.get(position).getDelivery_time_from() + "-" + my_order_modelList.get(position).getDelivery_time_to();
-//                String total = my_order_modelList.get(position).getTotal_amount();
-//                String status = my_order_modelList.get(position).getStatus();
-//                String deli_charge = my_order_modelList.get(position).getDelivery_charge();
+//                String sale_id = my_paymentList.get(position).getSale_id();
+//                String date = my_paymentList.get(position).getOn_date();
+//                String time = my_paymentList.get(position).getDelivery_time_from() + "-" + my_paymentList.get(position).getDelivery_time_to();
+//                String total = my_paymentList.get(position).getTotal_amount();
+//                String status = my_paymentList.get(position).getStatus();
+//                String deli_charge = my_paymentList.get(position).getDelivery_charge();
 //                 Intent intent=new Intent(getContext(), MyOrderDetail.class);
 //                intent.putExtra("sale_id", sale_id);
 //                intent.putExtra("date", date);
@@ -149,44 +180,8 @@ public class This_year_order extends Fragment {
     }
 
 
-    /**
-     * Method to make json array request where json response starts wtih
-     */
-    private void makeGetOrderRequest(String userid) {
-        // Tag used to cancel the request
-        String tag_json_obj = "json_socity_req";
-        Map<String, String> params = new HashMap<String, String>();
-        params.put("user_id", userid);
+    public void retrieveData(){
 
-        CustomVolleyJsonArrayRequest jsonObjReq = new CustomVolleyJsonArrayRequest(Request.Method.POST,
-                BaseURL.GET_DELIVERD_ORDER_URL, params, new Response.Listener<JSONArray>() {
-
-            @Override
-            public void onResponse(JSONArray response) {
-                Gson gson = new Gson();
-                Type listType = new TypeToken<List<My_Past_order_model>>() {
-                }.getType();
-                my_order_modelList = gson.fromJson(response.toString(), listType);
-                My_Past_Order_adapter adapter = new My_Past_Order_adapter(getActivity(),my_order_modelList,getParentFragment());
-                rv_myorder.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
-                if (my_order_modelList.isEmpty()) {
-                    // Toast.makeText(getActivity(), getResources().getString(R.string.no_rcord_found), Toast.LENGTH_SHORT).show();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                if (error instanceof TimeoutError || error instanceof NoConnectionError) {
-                    Toast.makeText(getActivity(), getResources().getString(R.string.connection_time_out), Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
-
-
-     }
-
-
+    }
 }
 
