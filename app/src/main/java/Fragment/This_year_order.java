@@ -1,5 +1,7 @@
 package Fragment;
 
+import util.TransactionsCollector;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -78,7 +80,7 @@ public class This_year_order extends Fragment {
         // ((My_Order_activity) getActivity()).setTitle(getResources().getString(R.string.my_order));
 // temp adjustment
         rv_myorder=(RecyclerView) view.findViewById(R.id.rv_myorder);
-        List<Payment> item=new ArrayList<>();
+        List<payment> item=new ArrayList<>();
 
         //Payment Payment = new Payment("#orderid-0001",100,"upi",1400826750 );
         //String order_id, float amount, String method, float created_at
@@ -88,22 +90,24 @@ public class This_year_order extends Fragment {
         paymentAdapter itemadapter=new paymentAdapter(item);
         rv_myorder.setAdapter(itemadapter);
 
+        TransactionsCollector collector = new TransactionsCollector();
+
+         item = collector.getPaymentLists();
 
 
 
-
-//        item.add(new Payment("#orderid-0001",100,"upi",1400826750 ));
-//        item.add(new Payment("#orderid-0002",100,"upi",1400826750 ));
-//        item.add(new Payment("#orderid-0003",100,"upi",1400826750 ));
-//        item.add(new Payment("#orderid-0004",100,"upi",1400826750 ));
-//        item.add(new Payment("#orderid-0005",100,"upi",1400826750 ));
-//        item.add(new Payment("#orderid-0006",100,"upi",1400826750 ));
-//        item.add(new Payment("#orderid-0007",100,"upi",1400826750 ));
-//        item.add(new Payment("#orderid-0008",100,"upi",1400826750 ));
-//        item.add(new Payment("#orderid-0009",100,"upi",1400826750 ));
-//        item.add(new Payment("#orderid-0010",100,"upi",1400826750 ));
-//        item.add(new Payment("#orderid-0011",100,"upi",1400826750 ));
-//        item.add(new Payment("#orderid-0012",100,"upi",1400826750 ));
+        item.add(new payment("#orderid-0001",100,"upi",1400826750 ));
+        item.add(new payment("#orderid-0002",100,"upi",1400826750 ));
+        item.add(new payment("#orderid-0003",100,"upi",1400826750 ));
+        item.add(new payment("#orderid-0004",100,"upi",1400826750 ));
+        item.add(new payment("#orderid-0005",100,"upi",1400826750 ));
+        item.add(new payment("#orderid-0006",100,"upi",1400826750 ));
+        item.add(new payment("#orderid-0007",100,"upi",1400826750 ));
+        item.add(new payment("#orderid-0008",100,"upi",1400826750 ));
+        item.add(new payment("#orderid-0009",100,"upi",1400826750 ));
+        item.add(new payment("#orderid-0010",100,"upi",1400826750 ));
+        item.add(new payment("#orderid-0011",100,"upi",1400826750 ));
+        item.add(new payment("#orderid-0012",100,"upi",1400826750 ));
 
 
 
