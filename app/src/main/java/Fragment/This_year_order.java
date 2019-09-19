@@ -4,6 +4,7 @@ import util.TransactionsCollector;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -56,12 +57,37 @@ public class This_year_order extends Fragment {
     private RecyclerView rv_myorder;
 
     //remove final for parsing
-     ArrayList<Payment> my_paymentList = new ArrayList<Payment>();
+    List<payment> item=new ArrayList<>();
+    paymentAdapter itemadapter=new paymentAdapter(item);
 
     TabHost tHost;
 
     public This_year_order() {
         // Required empty public constructor
+    }
+
+
+    private class FetchData extends AsyncTask<Void, Void, Integer> {
+
+        @Override
+        protected Integer doInBackground(Void... params) {
+
+            TransactionsCollector collector = new TransactionsCollector(30);
+            item = collector.getPaymentLists();
+
+
+            return 0;
+
+        }
+
+        protected void onProgressUpdate(Void... update) {
+            itemadapter.notifyDataSetChanged();
+
+        }
+
+        protected void onPostExecute(Integer result) {
+            itemadapter.notifyDataSetChanged();
+        }
     }
 
     @Override
@@ -81,34 +107,33 @@ public class This_year_order extends Fragment {
         // ((My_Order_activity) getActivity()).setTitle(getResources().getString(R.string.my_order));
 // temp adjustment
         rv_myorder=(RecyclerView) view.findViewById(R.id.rv_myorder);
-        List<payment> item=new ArrayList<>();
+
 
         //Payment Payment = new Payment("#orderid-0001",100,"upi",1400826750 );
         //String order_id, float amount, String method, float created_at
 
 
 
-        paymentAdapter itemadapter=new paymentAdapter(item);
+
         rv_myorder.setAdapter(itemadapter);
 
-        TransactionsCollector collector = new TransactionsCollector(30);
+        new FetchData().execute();
 
-         item = collector.getPaymentLists();
         Log.d(this.toString(),"transaction recieved " + item.size());
 
 
         item.add(new payment("#orderid-0001",100,"upi",1400826750 ));
-        item.add(new payment("#orderid-0002",100,"upi",1400826750 ));
-        item.add(new payment("#orderid-0003",100,"upi",1400826750 ));
-        item.add(new payment("#orderid-0004",100,"upi",1400826750 ));
-        item.add(new payment("#orderid-0005",100,"upi",1400826750 ));
-        item.add(new payment("#orderid-0006",100,"upi",1400826750 ));
-        item.add(new payment("#orderid-0007",100,"upi",1400826750 ));
-        item.add(new payment("#orderid-0008",100,"upi",1400826750 ));
-        item.add(new payment("#orderid-0009",100,"upi",1400826750 ));
-        item.add(new payment("#orderid-0010",100,"upi",1400826750 ));
-        item.add(new payment("#orderid-0011",100,"upi",1400826750 ));
-        item.add(new payment("#orderid-0012",100,"upi",1400826750 ));
+//        item.add(new payment("#orderid-0002",100,"upi",1400826750 ));
+//        item.add(new payment("#orderid-0003",100,"upi",1400826750 ));
+//        item.add(new payment("#orderid-0004",100,"upi",1400826750 ));
+//        item.add(new payment("#orderid-0005",100,"upi",1400826750 ));
+//        item.add(new payment("#orderid-0006",100,"upi",1400826750 ));
+//        item.add(new payment("#orderid-0007",100,"upi",1400826750 ));
+//        item.add(new payment("#orderid-0008",100,"upi",1400826750 ));
+//        item.add(new payment("#orderid-0009",100,"upi",1400826750 ));
+//        item.add(new payment("#orderid-0010",100,"upi",1400826750 ));
+//        item.add(new payment("#orderid-0011",100,"upi",1400826750 ));
+//        item.add(new payment("#orderid-0012",100,"upi",1400826750 ));
 
 
 

@@ -10,7 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import Model.payment;
 import Model.paymentList;
-
+import android.os.AsyncTask;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,7 +26,8 @@ import java.util.List;
 public class TransactionsCollector {
     private List<payment> paymentLists = new ArrayList<>();
 
-
+    private String KEY_ID = "rzp_test_sNL7UTCVCOAZtW";
+    private String KEY_SECRET = "LYznqeSQXwy140aNYEdelK4D";
     long from;
     long to;
     int skip = 0;
@@ -35,6 +36,7 @@ public class TransactionsCollector {
 
 
 
+    // Constructors
 
     public TransactionsCollector() {
         this.from = currentTS();
@@ -46,15 +48,17 @@ public class TransactionsCollector {
     }
 
     public TransactionsCollector(int days) {
-        this.from = currentTS();
+        this.to = currentTS();
         this.days = days;
-        this.to = this.from + 24*60*60*days;
+        this.from = this.to - 24*60*60*days;
         this.skip = 0;
         this.count = 100;
-        getTransactions(this.from,this.to,this.count,this.skip);
-        getTransactions();
-    }
 
+
+
+        getTransactions(this.from,this.to,this.count,this.skip);
+      //  getTransactions();
+    }
 
     public TransactionsCollector(long from, long to, int skip, int count) {
         this.from = from;
@@ -79,10 +83,23 @@ public class TransactionsCollector {
         this.count = 100;
     }
 
-
     public List<payment> getPaymentLists() {
         return paymentLists;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     /**
@@ -111,13 +128,11 @@ public class TransactionsCollector {
 
 
 
+
     // transactions in given period of Time
     public void getTransactions(long from, long to, int count , int skip){
-         String KEY_ID = "rzp_test_sNL7UTCVCOAZtW";
-         String KEY_SECRET = "LYznqeSQXwy140aNYEdelK4D";
 
         try{
-
             RazorpayClient razorpay = new RazorpayClient(KEY_ID,KEY_SECRET);
             try {
                 JSONObject paymentRequest = new JSONObject();
@@ -130,15 +145,18 @@ public class TransactionsCollector {
 
                 List<Payment> payments = razorpay.Payments.fetchAll(paymentRequest);
 
+                Log.d(this.toString(),"----------------------------------");
                 Log.d(this.toString(),"Length of data recieved : "+ payments.size());
 
 
                 for (int i = 0; i < payments.size(); i++) {
                     //System.out.println(paymentList.get(i));
                     Payment Payment_index = payments.get(i);
-                    Log.d(this.toString(),"JSON DUMP "+ Payment_index.toJson().toString());
+                    Log.d(this.toString(),"----------------------------------");
+                    Log.d(this.toString(),"JSON DUMP -"+i+ Payment_index.toJson().toString());
 
                     payment payment_index = convertJson(Payment_index.toJson());
+                    Log.d(this.toString(),"----------------------------------");
                     Log.d(this.toString(),"Transaction ID :" + payment_index.getId());
                     paymentLists.add(payment_index);
 
@@ -151,9 +169,12 @@ public class TransactionsCollector {
             } catch (RazorpayException e) {
                 // Handle Exception
                 System.out.println(e.getMessage());
+                Log.e(this.toString(),"MESSAGE ERROR :"+e.getMessage());
             }
-        } catch (Exception e){
+        }
+        catch (Exception e){
             System.out.println(e.getMessage());
+            Log.e(this.toString(),"MESSAGE ERROR :"+e.getMessage());
         }
 
     }
@@ -167,12 +188,10 @@ public class TransactionsCollector {
             razorpay = new RazorpayClient(KEY_ID,KEY_SECRET);
         } catch (RazorpayException e) {
             e.printStackTrace();
+            Log.e(this.toString(),"MESSAGE ERROR :"+e.getMessage());
         }
         try {
             JSONObject paymentRequest = new JSONObject();
-
-
-
             try{
                 //supported option filters (from, to, count, skip)
                 paymentRequest.put("count", 2);
@@ -180,16 +199,18 @@ public class TransactionsCollector {
             }
             catch (Exception e){
                 System.out.println(e.getMessage());
+                Log.e(this.toString(),"MESSAGE ERROR :"+e.getMessage());
             }
 
             List<Payment> payments = razorpay.Payments.fetchAll(paymentRequest);
 
-            Log.d(this.toString(),"Length of data recieved : "+ payments.size());
+            Log.d(this.toString(),"Length of data received : "+ payments.size());
 
 
         } catch (RazorpayException e) {
             // Handle Exception
             System.out.println(e.getMessage());
+            Log.e(this.toString(),"MESSAGE ERROR :"+e.getMessage());
         }
 
 
@@ -198,30 +219,28 @@ public class TransactionsCollector {
 
 
 
-
-
-//    // Default parameters for getTransactions()
-//    public static void getTransactions(long from, long to){
-//        getTransactions(from, to, 100, 0); }
-//    // Default parameters for getTransactions()
-//    public static void getTransactions(long from){
-//        getTransactions(from, from + 24*60*60 , 100, 0);
-//    }
-
-
     // To get timestamp( in seconds) for a given date
     public static long getTS(int year, int month, int day){
-        LocalDateTime ldt = LocalDateTime.of(year, month, day, 0, 0, 0);
-        ZonedDateTime zdt = ldt.atZone(ZoneId.of("Asia/Kolkata"));
-        long epoch_sec = zdt.toInstant().toEpochMilli()/1000;
-        return epoch_sec;
+        String date = "2 8 2001";
+        long milli = 0;
+        SimpleDateFormat  sdf = new SimpleDateFormat("dd MM yyyy");
+        try {
+            Date mdate = sdf.parse(date);
+            milli = mdate.getTime();
+            System.out.println(milli);
 
+        } catch(Exception e) {
+            Log.d("MESSAGE","Failed to convert timestamp : "+ e.getMessage());
+        }
+        return milli;
     }
 
     // To get timestamp( in seconds) for a current Time
     public static long currentTS(){
-        Instant instant = Instant.now();
-        long timeStamp = instant.toEpochMilli()/1000;
+
+        //Instant instant = Instant.now();
+        //long timeStamp = instant.toEpochMilli()/1000;
+        long timeStamp = System.currentTimeMillis()/1000;
         return timeStamp;
     }
 
@@ -232,29 +251,29 @@ public class TransactionsCollector {
         try {
 
             P.setId((String) obj.get("id"));
-            P.setEntity((String) obj.get("entity"));
-            P.setAmount((float) obj.get("amount"));
-            P.setCurrency((String) obj.get("currency"));
-            P.setStatus((String) obj.get("status"));
-            P.setOrder_id((String) obj.get("order_id"));
-            P.setInvoice_id((String) obj.get("invoice_id"));
-            P.setMethod((String) obj.get("method"));
-            P.setAmount_refunded( (Float)  obj.get("amount_refunded"));
-            P.setRefund_status((String) obj.get("refund_status"));
+            //P.setEntity((String) obj.get("entity"));
+            P.setAmount((int) obj.get("amount"));
+//            P.setCurrency((String) obj.get("currency"));
+//            P.setStatus((String) obj.get("status"));
+//            P.setOrder_id((String) obj.get("order_id"));
+//            P.setInvoice_id((String) obj.get("invoice_id"));
+//            P.setMethod((String) obj.get("method"));
+//            P.setAmount_refunded( (Float)  obj.get("amount_refunded"));
+//            P.setRefund_status((String) obj.get("refund_status"));
             P.setCaptured(obj.getBoolean("captured"));
-            P.setDescription((String) obj.get("description"));
-            P.setCard_id((String) obj.get("card_id"));
-            P.setBank((String) obj.get("bank"));
-            P.setWallet((String) obj.get("wallet"));
-            P.setVpa((String) obj.get("vpa"));
-            P.setEmail((String) obj.get("email"));
-            P.setContact((String) obj.get("contact"));
-            P.setNotes(obj.getJSONObject("notes"));
-            P.setFee((String) obj.get("fee"));
-            P.setTax((String) obj.get("tax"));
-            P.setError_code((String) obj.get("error_code"));
-            P.setError_description((String) obj.get("error_description"));
-            P.setCreated_at( (Float) obj.get("created_at"));
+//            P.setDescription((String) obj.get("description"));
+//            P.setCard_id((String) obj.get("card_id"));
+//            P.setBank((String) obj.get("bank"));
+//            P.setWallet((String) obj.get("wallet"));
+//            P.setVpa((String) obj.get("vpa"));
+//            P.setEmail((String) obj.get("email"));
+//            P.setContact((String) obj.get("contact"));
+//            P.setNotes(obj.getJSONObject("notes"));
+//            P.setFee((String) obj.get("fee"));
+//            P.setTax((String) obj.get("tax"));
+//            P.setError_code((String) obj.get("error_code"));
+//            P.setError_description((String) obj.get("error_description"));
+            P.setCreated_at( (int) obj.get("created_at"));
 
 
 
@@ -269,5 +288,8 @@ public class TransactionsCollector {
 
 
 
+
+
 }
+
 
