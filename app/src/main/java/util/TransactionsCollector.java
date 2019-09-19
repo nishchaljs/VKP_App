@@ -1,5 +1,7 @@
 package util;
 
+import android.util.Log;
+
 import com.razorpay.Payment;
 import com.razorpay.RazorpayClient;
 import com.razorpay.RazorpayException;
@@ -24,6 +26,7 @@ import java.util.List;
 public class TransactionsCollector {
     private List<payment> paymentLists = new ArrayList<>();
 
+
     long from;
     long to;
     int skip = 0;
@@ -39,6 +42,7 @@ public class TransactionsCollector {
         this.skip = 0;
         this.count = 100;
 
+        getTransactions(this.from,this.to,this.count,this.skip);
     }
 
     public TransactionsCollector(int days) {
@@ -47,7 +51,8 @@ public class TransactionsCollector {
         this.to = this.from + 24*60*60*days;
         this.skip = 0;
         this.count = 100;
-
+        getTransactions(this.from,this.to,this.count,this.skip);
+        getTransactions();
     }
 
 
@@ -64,6 +69,7 @@ public class TransactionsCollector {
         this.to = to;
         this.skip = 0;
         this.count = 100;
+        getTransactions(this.from,this.to,this.count,this.skip);
     }
 
     public TransactionsCollector(long from) {
@@ -124,13 +130,18 @@ public class TransactionsCollector {
 
                 List<Payment> payments = razorpay.Payments.fetchAll(paymentRequest);
 
+                Log.d(this.toString(),"Length of data recieved : "+ payments.size());
 
 
                 for (int i = 0; i < payments.size(); i++) {
                     //System.out.println(paymentList.get(i));
                     Payment Payment_index = payments.get(i);
+                    Log.d(this.toString(),"JSON DUMP "+ Payment_index.toJson().toString());
+
                     payment payment_index = convertJson(Payment_index.toJson());
+                    Log.d(this.toString(),"Transaction ID :" + payment_index.getId());
                     paymentLists.add(payment_index);
+
 
                 }
 
@@ -146,6 +157,48 @@ public class TransactionsCollector {
         }
 
     }
+
+    public void getTransactions(){
+        String KEY_ID = "rzp_test_sNL7UTCVCOAZtW";
+        String KEY_SECRET = "LYznqeSQXwy140aNYEdelK4D";
+
+        RazorpayClient razorpay = null;
+        try {
+            razorpay = new RazorpayClient(KEY_ID,KEY_SECRET);
+        } catch (RazorpayException e) {
+            e.printStackTrace();
+        }
+        try {
+            JSONObject paymentRequest = new JSONObject();
+
+
+
+            try{
+                //supported option filters (from, to, count, skip)
+                paymentRequest.put("count", 2);
+                paymentRequest.put("skip", 1);
+            }
+            catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+
+            List<Payment> payments = razorpay.Payments.fetchAll(paymentRequest);
+
+            Log.d(this.toString(),"Length of data recieved : "+ payments.size());
+
+
+        } catch (RazorpayException e) {
+            // Handle Exception
+            System.out.println(e.getMessage());
+        }
+
+
+    }
+
+
+
+
+
 
 //    // Default parameters for getTransactions()
 //    public static void getTransactions(long from, long to){

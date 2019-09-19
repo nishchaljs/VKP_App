@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -90,10 +91,10 @@ public class This_year_order extends Fragment {
         paymentAdapter itemadapter=new paymentAdapter(item);
         rv_myorder.setAdapter(itemadapter);
 
-        TransactionsCollector collector = new TransactionsCollector();
+        TransactionsCollector collector = new TransactionsCollector(30);
 
          item = collector.getPaymentLists();
-
+        Log.d(this.toString(),"transaction recieved " + item.size());
 
 
         item.add(new payment("#orderid-0001",100,"upi",1400826750 ));
