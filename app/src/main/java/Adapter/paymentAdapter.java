@@ -49,7 +49,7 @@ public class paymentAdapter extends RecyclerView.Adapter<paymentAdapter.MyViewHo
         payment Payment = paymentList.get(position);
 
         //TODO : change following code according to getter/setter method od payment class
-        holder.orderId.setText(Payment.getOrder_id());
+        holder.orderId.setText(Payment.getId());
         holder.method.setText(Payment.getMethod());
         holder.time.setText(String.valueOf(Payment.getCreated_at()));
     }

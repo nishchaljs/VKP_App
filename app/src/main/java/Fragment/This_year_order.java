@@ -69,11 +69,16 @@ public class This_year_order extends Fragment {
 
     private class FetchData extends AsyncTask<Void, Void, Integer> {
 
+        protected void onPreExecute(){
+            // To be executed before doInBackground
+        }
+
         @Override
         protected Integer doInBackground(Void... params) {
 
             TransactionsCollector collector = new TransactionsCollector(30);
             item = collector.getPaymentLists();
+            Log.d(this.toString(),"length of data collected" + item.size() );
 
 
             return 0;
@@ -81,12 +86,17 @@ public class This_year_order extends Fragment {
         }
 
         protected void onProgressUpdate(Void... update) {
-            itemadapter.notifyDataSetChanged();
+
 
         }
 
         protected void onPostExecute(Integer result) {
+            Log.d(this.toString(),"total transaction recieved " + item.size());
+            Log.d(this.toString(),"Notifying data change to adapter");
+            paymentAdapter itemadapter=new paymentAdapter(item);
+            rv_myorder.setAdapter(itemadapter);
             itemadapter.notifyDataSetChanged();
+
         }
     }
 
@@ -119,7 +129,7 @@ public class This_year_order extends Fragment {
 
         new FetchData().execute();
 
-        Log.d(this.toString(),"transaction recieved " + item.size());
+
 
 
         item.add(new payment("#orderid-0001",100,"upi",1400826750 ));
@@ -135,7 +145,7 @@ public class This_year_order extends Fragment {
 //        item.add(new payment("#orderid-0011",100,"upi",1400826750 ));
 //        item.add(new payment("#orderid-0012",100,"upi",1400826750 ));
 
-
+        Log.d(this.toString(),"transaction with dummy data" + item.size());
 
         itemadapter.notifyDataSetChanged();
 
