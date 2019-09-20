@@ -17,10 +17,10 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment_method);
+        setContentView(R.layout.activity_paytm);
         Checkout.preload(getApplicationContext());
 
-        Button button = (Button) findViewById(R.id.pay_button);
+        Button button = (Button) findViewById(R.id.start_transaction);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

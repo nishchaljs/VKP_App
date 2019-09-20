@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@android:color/transparent"
+    android:background="@color/color_4"
     android:gravity="top"
     android:orientation="vertical"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -175,12 +175,13 @@
                     android:layout_weight=".4"
                     android:background="@color/color_2"
                     android:gravity="center"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:padding="8dp">
 
                     <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginLeft="12sp"
                         android:src="@drawable/order" />
 
 
@@ -188,79 +189,80 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="4dp"
-                        android:gravity="center"
-                        android:text="Orders"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="22sp"
+                        android:gravity="left"
+                        android:text="Transactions"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textColor="#eae3e3"
-                        android:textSize="@dimen/text_size_X_small" />
+                        android:textSize="@dimen/text_size_large" />
 
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/my_reward"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight=".4"
-                    android:background="@color/color_2"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="8dp">
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/my_reward"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_weight=".4"-->
+                    <!--android:background="@color/color_2"-->
+                    <!--android:gravity="center"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:padding="8dp">-->
 
-                    <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="28dp"
-                        android:id="@+id/iv_whatsapp"
-                        android:layout_height="28dp"
-                        android:src="@drawable/mywhatsapp" />
-
-
-                    <Fonts.LatoBLack
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center"
-                        android:text="Whatsapp"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textColor="#eae3e3"
-                        android:textSize="@dimen/text_size_X_small" />
+                    <!--<ImageView xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                        <!--android:layout_width="28dp"-->
+                        <!--android:id="@+id/iv_whatsapp"-->
+                        <!--android:layout_height="28dp"-->
+                        <!--android:src="@drawable/mywhatsapp" />-->
 
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/my_wallet"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/space_4"
-                    android:layout_weight=".4"
-                    android:background="@color/color_2"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:id="@+id/iv_call"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:src="@drawable/call_answer" />
-
-                    <Fonts.LatoBLack
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="4dp"
-                        android:gravity="center"
-                        android:text="Call"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textColor="#eae3e3"
-                        android:textSize="@dimen/text_size_X_small" />
+                    <!--<Fonts.LatoBLack-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="Whatsapp"-->
+                        <!--android:textAppearance="@style/TextAppearance.AppCompat.Body1"-->
+                        <!--android:textColor="#eae3e3"-->
+                        <!--android:textSize="@dimen/text_size_X_small" />-->
 
 
-                </LinearLayout>
+                <!--</LinearLayout>-->
+
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/my_wallet"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_marginLeft="@dimen/space_4"-->
+                    <!--android:layout_weight=".4"-->
+                    <!--android:background="@color/color_2"-->
+                    <!--android:gravity="center"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:padding="8dp">-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/iv_call"-->
+                        <!--android:layout_width="32dp"-->
+                        <!--android:layout_height="32dp"-->
+                        <!--android:src="@drawable/call_answer" />-->
+
+                    <!--<Fonts.LatoBLack-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_marginTop="4dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="Call"-->
+                        <!--android:textAppearance="@style/TextAppearance.AppCompat.Body1"-->
+                        <!--android:textColor="#eae3e3"-->
+                        <!--android:textSize="@dimen/text_size_X_small" />-->
+
+
+                <!--</LinearLayout>-->
             </LinearLayout>
 
 

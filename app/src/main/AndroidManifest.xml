@@ -75,7 +75,7 @@
 
         <activity android:name=".My_Order_activity" />
         <activity android:name=".MyOrderDetail" />
-
+        <activity android:name=".QR_scannerActivity" />
 
         <meta-data
             android:name="instamojo.orderauth.url"
