@@ -1,11 +1,9 @@
 package tecmanic.marketplace;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -13,30 +11,29 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.URLSpan;
 import android.util.Base64;
 import android.util.Log;
-import android.view.SubMenu;
-import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -46,16 +43,16 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import Config.BaseURL;
-import Config.SharedPref;
 import Fonts.CustomTypefaceSpan;
-import Fragment.Home_fragment;
-//import Fragment.Reward_fragment;
 import Fragment.Edit_profile_fragment;
+import Fragment.Home_fragment;
 import Fragment.Terms_and_Condition_fragment;
 import tecmanic.marketplace.NetworkConnectivity.NetworkError;
 import util.ConnectivityReceiver;
 import util.DatabaseHandler;
 import util.Session_management;
+
+//import Fragment.Reward_fragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ConnectivityReceiver.ConnectivityReceiverListener {
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -162,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         View headerView = navigationView.getHeaderView(0);
-        navigationView.getBackground().setColorFilter(0x80000000, PorterDuff.Mode.MULTIPLY);
+       // navigationView.getBackground().setColorFilter(0x80000000, PorterDuff.Mode.MULTIPLY);
         navigationView.setNavigationItemSelectedListener(this);
         nav_menu = navigationView.getMenu();
         View header = ((NavigationView) findViewById(R.id.nav_view)).getHeaderView(0);
@@ -171,8 +168,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         iv_profile = (ImageView) header.findViewById(R.id.iv_header_img);
         tv_name = (TextView) header.findViewById(R.id.tv_header_name);
         My_Order = (LinearLayout) header.findViewById(R.id.my_orders);
-        iv_Call = (ImageView) header.findViewById(R.id.iv_call);
-        iv_Whatspp = (ImageView) header.findViewById(R.id.iv_whatsapp);
+//        iv_Call = (ImageView) header.findViewById(R.id.iv_call);
+//        iv_Whatspp = (ImageView) header.findViewById(R.id.iv_whatsapp);
         //My_Reward = (LinearLayout) header.findViewById(R.id.my_reward);
         //My_Walllet = (LinearLayout) header.findViewById(R.id.my_wallet);
        // My_Cart = (LinearLayout) header.findViewById(R.id.my_cart);
@@ -188,18 +185,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        iv_Call.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:" + "917829723033"));
-                if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    return;
-                }
-                startActivity(callIntent);
-
-            }
-        });
+//        iv_Call.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent callIntent = new Intent(Intent.ACTION_CALL);
+//                callIntent.setData(Uri.parse("tel:" + "917829723033"));
+//                if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+//                    return;
+//                }
+//                startActivity(callIntent);
+//
+//            }
+//        });
         iv_profile.setOnClickListener(new View.OnClickListener()
 
         {
@@ -218,18 +215,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        iv_Whatspp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String smsNumber = "917829723033";
-                Uri uri = Uri.parse("smsto:" + smsNumber);
-                Intent i = new Intent(Intent.ACTION_SENDTO, uri);
-                i.putExtra("Test", "Nishchal J");
-                i.setPackage("com.whatsapp");
-                startActivity(i);
-
-            }
-        });
+//        iv_Whatspp.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String smsNumber = "917829723033";
+//                Uri uri = Uri.parse("smsto:" + smsNumber);
+//                Intent i = new Intent(Intent.ACTION_SENDTO, uri);
+//                i.putExtra("Test", "Nishchal J");
+//                i.setPackage("com.whatsapp");
+//                startActivity(i);
+//
+//            }
+//        });
 
         updateHeader();
 

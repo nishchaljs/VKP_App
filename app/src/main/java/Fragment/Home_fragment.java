@@ -8,6 +8,7 @@ import android.content.res.Resources;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSmoothScroller;
 import android.support.v7.widget.RecyclerView;
@@ -111,7 +112,7 @@ public class Home_fragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) { Button btnScanBarcode;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) { FloatingActionButton btnScanBarcode;
         final View view = inflater.inflate(R.layout.fragment_home, container, false);
         setHasOptionsMenu(true);
         ((MainActivity) getActivity()).setTitle(getResources().getString(R.string.app_name));
@@ -141,8 +142,11 @@ public class Home_fragment extends Fragment {
 
 
         }
+
+
        //qr_scanner
-        btnScanBarcode = (Button)view.findViewById(R.id.btnScanBarcode);
+        btnScanBarcode = (FloatingActionButton)view.findViewById(R.id.btnScanBarcode);
+        btnScanBarcode.setImageResource(R.drawable.ic_select_all_black_24dp);
         btnScanBarcode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -150,16 +154,17 @@ public class Home_fragment extends Fragment {
                 Intent intent = new Intent(getActivity(), ScannedBarcodeActivity.class);
                 startActivity(intent);}
             }
-        });;
+        });
+
        //payment gateway
-        Button numbers = (Button) view.findViewById(R.id.payment_gateway);
-        numbers.setOnClickListener(new View.OnClickListener() {
-                                       @Override
-                                       public void onClick(View v) {
-                                           Intent intent = new Intent(getActivity(), payment_gateway.class);
-                                           startActivity(intent);
-                                       }
-                                   });
+//        Button numbers = (Button) view.findViewById(R.id.payment_gateway);
+//        numbers.setOnClickListener(new View.OnClickListener() {
+//                                       @Override
+//                                       public void onClick(View v) {
+//                                           Intent intent = new Intent(getActivity(), payment_gateway.class);
+//                                           startActivity(intent);
+//                                       }
+//                                   });
         //Top Selling Poster
         Top_Selling_Poster = (ImageView) view.findViewById(R.id.top_selling_imageview);
 
@@ -171,17 +176,17 @@ public class Home_fragment extends Fragment {
         scrollView.setSmoothScrollingEnabled(true);
 
         //Search
-        Search_layout = (LinearLayout) view.findViewById(R.id.search_layout);
-        Search_layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fm = new Search_fragment();
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.contentPanel, fm)
-                        .addToBackStack(null).commit();
+//        Search_layout = (LinearLayout) view.findViewById(R.id.search_layout);
+//        Search_layout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Fragment fm = new Search_fragment();
+//                FragmentManager fragmentManager = getFragmentManager();
+//                fragmentManager.beginTransaction().replace(R.id.contentPanel, fm)
+//                        .addToBackStack(null).commit();
 
-            }
-        });
+//            }
+//        });
 
 
         //Top Selling Products
@@ -266,14 +271,17 @@ public class Home_fragment extends Fragment {
         rv_top_selling.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), rv_top_selling, new RecyclerTouchListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
+
+                Intent intent = new Intent(getActivity(), payment_gateway.class);
+                startActivity(intent);
               //  getid = top_selling_models.get(position).getProduct_id();
-                Bundle args = new Bundle();
-                Fragment fm = new Product_fragment();
-                args.putString("cat_top_selling", "2");
-                fm.setArguments(args);
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.contentPanel, fm)
-                        .addToBackStack(null).commit();
+//                Bundle args = new Bundle();
+//                Fragment fm = new Product_fragment();
+//                args.putString("cat_top_selling", "2");
+//                fm.setArguments(args);
+//                FragmentManager fragmentManager = getFragmentManager();
+//                fragmentManager.beginTransaction().replace(R.id.contentPanel, fm)
+//                        .addToBackStack(null).commit();
 
             }
 

@@ -43,8 +43,8 @@ public class My_Order_activity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
 
-        tabLayout.addTab(tabLayout.newTab().setText("This Week"));
-        tabLayout.addTab(tabLayout.newTab().setText("This Month"));
+        tabLayout.addTab(tabLayout.newTab().setText("Today"));
+        tabLayout.addTab(tabLayout.newTab().setText("Yesterday"));
         tabLayout.addTab(tabLayout.newTab().setText("This Year"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
@@ -124,4 +124,3 @@ public class My_Order_activity extends AppCompatActivity {
     }
 
 }
-
