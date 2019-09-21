@@ -8,19 +8,13 @@ import com.razorpay.RazorpayException;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import Model.payment;
-import Model.paymentList;
-import android.os.AsyncTask;
-import java.sql.Timestamp;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Calendar;
-import java.time.Instant;
-import java.text.*;
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime ;
-import java.time.ZoneId;
 import java.util.List;
+
+import Model.payment;
 
 
 public class TransactionsCollector {
@@ -57,7 +51,7 @@ public class TransactionsCollector {
 
 
         getTransactions(this.from,this.to,this.count,this.skip);
-      //  getTransactions();
+        //  getTransactions();
     }
 
     public TransactionsCollector(long from, long to, int skip, int count) {
@@ -103,27 +97,20 @@ public class TransactionsCollector {
 
 
     /**
- public static void main(String args[]){
- //Date date = new Date();
- //Timestamp ts=new Timestamp(date.getTime());
- //System.out.println(ts.date);
-
- Calendar c = Calendar.getInstance();
- int curr_year = c.get(Calendar.YEAR);
- int curr_month = c.get(Calendar.MONTH)+1; // month starts from 0 , so +1
-
-
- // Today's transactions
- getTransactions(currentTS());
-
- // Yesterday's transactions
- getTransactions(currentTS() - 24*60*60);
-
- // particular day's transactions
- getTransactions(getTS(curr_year, curr_month, 1));
-
-
- */
+     public static void main(String args[]){
+     //Date date = new Date();
+     //Timestamp ts=new Timestamp(date.getTime());
+     //System.out.println(ts.date);
+     Calendar c = Calendar.getInstance();
+     int curr_year = c.get(Calendar.YEAR);
+     int curr_month = c.get(Calendar.MONTH)+1; // month starts from 0 , so +1
+     // Today's transactions
+     getTransactions(currentTS());
+     // Yesterday's transactions
+     getTransactions(currentTS() - 24*60*60);
+     // particular day's transactions
+     getTransactions(getTS(curr_year, curr_month, 1));
+     */
 
 
 
@@ -291,5 +278,3 @@ public class TransactionsCollector {
 
 
 }
-
-

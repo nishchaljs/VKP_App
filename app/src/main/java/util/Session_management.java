@@ -29,9 +29,6 @@ import static Config.BaseURL.PREFS_NAME;
 import static Config.BaseURL.PREFS_NAME2;
 import static Config.BaseURL.TOTAL_AMOUNT;
 
-/**
- * Created by Rajesh Dabhi on 28/6/2017.
- */
 
 public class Session_management {
 

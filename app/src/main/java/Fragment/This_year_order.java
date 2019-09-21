@@ -1,9 +1,5 @@
 package Fragment;
 
-import util.TransactionsCollector;
-
-import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,39 +11,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TabHost;
-import android.widget.Toast;
 
-import com.android.volley.NoConnectionError;
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.TimeoutError;
-import com.android.volley.VolleyError;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.razorpay.Payment;
-
-import org.json.JSONArray;
-
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.ArrayList;
 
-import Adapter.My_Past_Order_adapter;
-import Adapter.paymentAdapter;
+import Adapter.payment_adapter;
 import Config.BaseURL;
-import Model.My_Past_order_model;
 import Model.payment;
-import tecmanic.marketplace.AppController;
 import tecmanic.marketplace.MainActivity;
-import tecmanic.marketplace.MyOrderDetail;
 import tecmanic.marketplace.R;
 import util.ConnectivityReceiver;
-import util.CustomVolleyJsonArrayRequest;
 import util.RecyclerTouchListener;
 import util.Session_management;
+import util.TransactionsCollector;
 
 
 public class This_year_order extends Fragment {
@@ -58,7 +34,7 @@ public class This_year_order extends Fragment {
 
     //remove final for parsing
     List<payment> item=new ArrayList<>();
-    paymentAdapter itemadapter=new paymentAdapter(item);
+    payment_adapter itemadapter=new payment_adapter(item);
 
     TabHost tHost;
 
@@ -93,7 +69,7 @@ public class This_year_order extends Fragment {
         protected void onPostExecute(Integer result) {
             Log.d(this.toString(),"total transaction recieved " + item.size());
             Log.d(this.toString(),"Notifying data change to adapter");
-            paymentAdapter itemadapter=new paymentAdapter(item);
+            payment_adapter itemadapter=new payment_adapter(item);
             rv_myorder.setAdapter(itemadapter);
             itemadapter.notifyDataSetChanged();
 
@@ -206,7 +182,7 @@ public class This_year_order extends Fragment {
 //                intent.putExtra("total", total);
 //                intent.putExtra("status", status);
 //                intent.putExtra("deli_charge", deli_charge);
- //                startActivity(intent);
+                //                startActivity(intent);
 
             }
 
@@ -224,4 +200,3 @@ public class This_year_order extends Fragment {
 
     }
 }
-

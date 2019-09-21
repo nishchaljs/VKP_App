@@ -8,12 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import Model.payment;
-import tecmanic.marketplace.R;
 
 import java.util.List;
 
-public class paymentAdapter extends RecyclerView.Adapter<paymentAdapter.MyViewHolder> {
+import Model.payment;
+import tecmanic.marketplace.R;
+
+public class payment_adapter extends RecyclerView.Adapter<payment_adapter.MyViewHolder> {
 
     private List<payment> paymentList;
 
@@ -32,7 +33,7 @@ public class paymentAdapter extends RecyclerView.Adapter<paymentAdapter.MyViewHo
     }
 
 
-    public paymentAdapter(List<payment> paymentList) {
+    public payment_adapter(List<payment> paymentList) {
         this.paymentList = paymentList;
     }
 

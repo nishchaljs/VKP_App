@@ -206,26 +206,26 @@
 
                 </LinearLayout>
 
-<!--                <RelativeLayout-->
-<!--                    android:id="@+id/relative_background"-->
-<!--                    android:layout_width="210dp"-->
-<!--                    android:layout_height="38dp"-->
-<!--                    android:layout_marginLeft="@dimen/space_10"-->
-<!--                    android:layout_marginRight="@dimen/space_10"-->
-<!--                    android:layout_marginTop="@dimen/space_14"-->
-<!--                    android:background="@drawable/bg_rounded_button">-->
+                <!--                <RelativeLayout-->
+                <!--                    android:id="@+id/relative_background"-->
+                <!--                    android:layout_width="210dp"-->
+                <!--                    android:layout_height="38dp"-->
+                <!--                    android:layout_marginLeft="@dimen/space_10"-->
+                <!--                    android:layout_marginRight="@dimen/space_10"-->
+                <!--                    android:layout_marginTop="@dimen/space_14"-->
+                <!--                    android:background="@drawable/bg_rounded_button">-->
 
-<!--                    <Fonts.LatoBLack-->
-<!--                        android:id="@+id/status"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:gravity="center"-->
-<!--                        android:text=" "-->
-<!--                        android:textColor="#fff"-->
-<!--                        android:textSize="@dimen/text_size_small" />-->
+                <!--                    <Fonts.LatoBLack-->
+                <!--                        android:id="@+id/status"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:gravity="center"-->
+                <!--                        android:text=" "-->
+                <!--                        android:textColor="#fff"-->
+                <!--                        android:textSize="@dimen/text_size_small" />-->
 
 
-<!--                </RelativeLayout>-->
+                <!--                </RelativeLayout>-->
 
 
             </LinearLayout>

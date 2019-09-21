@@ -1,4 +1,3 @@
-
 package Adapter;
 
 import android.content.Context;
@@ -144,7 +143,7 @@ public class My_Past_Order_adapter extends RecyclerView.Adapter<My_Past_Order_ad
 
         holder.tv_methid1.setText(mList.getPayment_method());
         holder.tv_date.setText(mList.getOn_date());
-       // holder.tv_tracking_date.setText(mList.getOn_date());
+        // holder.tv_tracking_date.setText(mList.getOn_date());
 //        holder.tv_time.setText(mList.getDelivery_time_from() + "-" + mList.getDelivery_time_to());
         holder.tv_price.setText(context.getResources().getString(R.string.currency) + mList.getTotal_amount());
 //        holder.tv_item.setText(context.getResources().getString(R.string.tv_cart_item) + mList.getTotal_items());
