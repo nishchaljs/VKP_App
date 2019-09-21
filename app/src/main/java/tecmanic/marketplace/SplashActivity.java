@@ -4,15 +4,17 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import tecmanic.marketplace.NetworkConnectivity.NetworkConnection;
+import tecmanic.marketplace.NetworkConnectivity.NetworkError;
 import util.Session_management;
 
 public class SplashActivity extends AppCompatActivity {
@@ -106,13 +108,13 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public void go_next() {
-        if(sessionManagement.isLoggedIn()) {
+        /*if(sessionManagement.isLoggedIn()) {*/
         Intent startmain = new Intent(SplashActivity.this, MainActivity.class);
         startActivity(startmain);
-        }else{
+        /*}else{
             Intent startmain = new Intent(SplashActivity.this, LoginActivity.class);
             startActivity(startmain);
-        }
+        }*/
         finish();
     }
 

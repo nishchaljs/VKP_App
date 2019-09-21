@@ -20,7 +20,7 @@
 
 
 
-   />
+       />
 
    <EditText
        android:id="@+id/email"

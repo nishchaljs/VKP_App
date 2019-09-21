@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Payment"
+                android:text="Paytm"
                 android:textColor="@color/color_2"
                 android:textSize="@dimen/text_size_XX_large"
                 android:textStyle="bold" />

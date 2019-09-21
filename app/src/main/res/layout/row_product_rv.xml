@@ -88,27 +88,27 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="30sp"
-                    android:text="Time Allowed:"
+                    android:text=" Order Time:"
                     android:textColor="#000"
-                    android:textSize="@dimen/text_size_normal"
+                    android:textSize="@dimen/text_size_small"
                     android:layout_weight="0.5"/>
                 <Fonts.LatoBLack
                     android:id="@+id/tv_order_time"
                     android:layout_width="wrap_content"
                     android:layout_height="30sp"
-                    android:text="1 hour "
+                    android:text=" "
                     android:textColor="#000"
                     android:layout_weight="1"
-                    android:textSize="@dimen/text_size_normal" />
+                    android:textSize="@dimen/text_size_small" />
 
-                <!--<Fonts.LatoBLack-->
+                <Fonts.LatoBLack
 
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="30sp"-->
-                    <!--android:layout_weight="0.5"-->
-                    <!--android:text=" Order Date: "-->
-                    <!--android:textColor="#000"-->
-                    <!--android:textSize="@dimen/text_size_small" />-->
+                    android:layout_width="wrap_content"
+                    android:layout_height="30sp"
+                    android:layout_weight="0.5"
+                    android:text=" Order Date: "
+                    android:textColor="#000"
+                    android:textSize="@dimen/text_size_small" />
                 <Fonts.LatoBLack
                     android:id="@+id/tv_order_date"
                     android:layout_width="wrap_content"
