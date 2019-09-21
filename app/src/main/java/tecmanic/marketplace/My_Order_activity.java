@@ -43,9 +43,9 @@ public class My_Order_activity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
 
-        tabLayout.addTab(tabLayout.newTab().setText("Today"));
+        tabLayout.addTab(tabLayout.newTab().setText("This month"));
         tabLayout.addTab(tabLayout.newTab().setText("Yesterday"));
-        tabLayout.addTab(tabLayout.newTab().setText("This Year"));
+        tabLayout.addTab(tabLayout.newTab().setText("Today"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
