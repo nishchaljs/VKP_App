@@ -1,0 +1,671 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:2:1-98:12
+INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:2:1-98:12
+INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:2:1-98:12
+INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:2:1-98:12
+MERGED from [ai.devsupport.instamojo:instamojolib:0.1.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\instamojolib-0.1.6.aar\81674c5db3682112ef821f856783315d\AndroidManifest.xml:2:1-18:12
+MERGED from [com.android.support:design:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0ef15bf07dd1272462d095d01237b37f\AndroidManifest.xml:17:1-31:12
+MERGED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:2:1-36:12
+MERGED from [com.rengwuxian.materialedittext:library:2.1.4] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\library-2.1.4.aar\50ea48904508b11a7b1a3ef7a63cdf1c\AndroidManifest.xml:2:1-10:12
+MERGED from [in.juspay:godel:0.6.18.1423] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\godel-0.6.18.1423.aar\d6de9af5e2f15102faae093a2e33b6bd\AndroidManifest.xml:2:1-15:12
+MERGED from [in.juspay:godel-osd:0.6.14] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\godel-osd-0.6.14.aar\c7e62ceb5f2b2ace3e286ee090f298c0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\f6a4d7c4107a137eb3166915f5bd5fe0\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta4] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta4.aar\90ebff055dd562c33d4f8132f43202f4\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\e1005ef1f03c8a237fe0602e605354b5\AndroidManifest.xml:2:1-11:12
+MERGED from [com.koushikdutta.ion:ion:2.2.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\ion-2.2.1.aar\101b96c3c9a714e2690523435ed53f16\AndroidManifest.xml:2:1-16:12
+MERGED from [com.daimajia.slider:library:1.1.5] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\48e6ed741276600f6629a302a2974949\AndroidManifest.xml:2:1-14:12
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\befce5bceb6fc93500a34e275904daa1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:firebase-messaging:17.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-messaging-17.0.0.aar\763ee1bedc2fb820a1c2208ecb89b253\AndroidManifest.xml:17:1-37:12
+MERGED from [com.daimajia.swipelayout:library:1.2.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\library-1.2.0.aar\5f5ded62319cedf9a2c4d340c8871dc0\AndroidManifest.xml:2:1-10:12
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\ee9760bcd18df3eeabd54751de15b939\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\83da165241f82393e49ece9675db5ad1\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:multidex:1.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\multidex-1.0.0.aar\f43db5b6d757e12215f8cd8afad86e69\AndroidManifest.xml:16:1-19:12
+MERGED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:2:1-32:12
+MERGED from [com.google.android.gms:play-services-vision:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-vision-15.0.1.aar\639145e64eb48520c8ae57b3858c798c\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:transition:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\fbe648e9d5097e45a337f3efe4e96287\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:17:1-65:12
+MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\5201b31e8c2a3e4d9b3214df786708f7\AndroidManifest.xml:2:1-16:12
+MERGED from [com.google.android.gms:play-services-vision-common:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-15.0.1.aar\52c97c36925a5048a138b944d532fd30\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.0.aar\4f89cc0d186bc90d089ceba244666a8a\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-clearcut:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-15.0.1.aar\3634b06fbb2110b4d617f461ec5e2eea\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-flags:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-flags-15.0.1.aar\5d8054a0cbc15482a7d311f6eba1380d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-phenotype:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-phenotype-15.0.1.aar\f1362ada0f82928a765a4030eb27fdb4\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1071b39c51721d86a93e6d9e617120d4\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\208452939a462b9a6a509cde1f57e617\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-16.0.0.aar\656402e8bbd9a860931273590b28ab80\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\7171dfdcd5c5cca84bf85c6bfeea7c23\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\3f3f197e9a1837bba8cb7c58b213043d\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\00306df612bed77b0e4cdf72320bed72\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\785d25fa9b0a16a98e7f74260edcaa07\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\8ef41fcab8986cc4257167d406173321\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\f89d47ca066f1289cae620942f0eabc0\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\63c15b21ea173a27a251bb84f857eb15\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\77e798b451bf4da2d981098727451294\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\11f431fa21602ca65b8182bcd71ff1a9\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\9f7a2f670d46f7ebea9706edc6c85107\AndroidManifest.xml:17:1-31:12
+MERGED from [com.koushikdutta.async:androidasync:2.2.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\androidasync-2.2.1.aar\7768c55bc6f6c3e3a8f3695472fbbbab\AndroidManifest.xml:2:1-16:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e37eff251bb7361f1d23deda0cb04594\AndroidManifest.xml:17:1-30:12
+INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:2:1-98:12
+INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:2:1-98:12
+INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:2:1-98:12
+	package
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:4:5-35
+		INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:2:1-98:12
+		INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:2:1-98:12
+		INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:6:5-67
+MERGED from [com.koushikdutta.ion:ion:2.2.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\ion-2.2.1.aar\101b96c3c9a714e2690523435ed53f16\AndroidManifest.xml:11:5-67
+MERGED from [com.koushikdutta.ion:ion:2.2.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\ion-2.2.1.aar\101b96c3c9a714e2690523435ed53f16\AndroidManifest.xml:11:5-67
+MERGED from [com.daimajia.slider:library:1.1.5] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\48e6ed741276600f6629a302a2974949\AndroidManifest.xml:11:5-67
+MERGED from [com.daimajia.slider:library:1.1.5] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\48e6ed741276600f6629a302a2974949\AndroidManifest.xml:11:5-67
+MERGED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:9:5-67
+MERGED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:9:5-67
+MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:23:5-67
+MERGED from [com.koushikdutta.async:androidasync:2.2.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\androidasync-2.2.1.aar\7768c55bc6f6c3e3a8f3695472fbbbab\AndroidManifest.xml:11:5-67
+MERGED from [com.koushikdutta.async:androidasync:2.2.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\androidasync-2.2.1.aar\7768c55bc6f6c3e3a8f3695472fbbbab\AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:7:5-65
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:7:22-62
+uses-feature#android.hardware.camera.autofocus
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:9:5-70
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:9:19-67
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:11:5-81
+MERGED from [com.daimajia.slider:library:1.1.5] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\48e6ed741276600f6629a302a2974949\AndroidManifest.xml:12:5-81
+MERGED from [com.daimajia.slider:library:1.1.5] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\48e6ed741276600f6629a302a2974949\AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:12:5-80
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:12:22-77
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:13:5-76
+MERGED from [in.juspay:godel:0.6.18.1423] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\godel-0.6.18.1423.aar\d6de9af5e2f15102faae093a2e33b6bd\AndroidManifest.xml:10:5-76
+MERGED from [in.juspay:godel:0.6.18.1423] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\godel-0.6.18.1423.aar\d6de9af5e2f15102faae093a2e33b6bd\AndroidManifest.xml:10:5-76
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:13:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:14:5-79
+MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:14:22-76
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:15:5-79
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:15:22-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:16:5-68
+MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:24:5-68
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:16:22-65
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:17:5-81
+MERGED from [in.juspay:godel:0.6.18.1423] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\godel-0.6.18.1423.aar\d6de9af5e2f15102faae093a2e33b6bd\AndroidManifest.xml:9:5-81
+MERGED from [in.juspay:godel:0.6.18.1423] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\godel-0.6.18.1423.aar\d6de9af5e2f15102faae093a2e33b6bd\AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:17:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:18:5-79
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:18:22-76
+uses-permission#android.permission.CALL_PHONE
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:19:5-69
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:19:22-66
+uses-permission-sdk-23#android.permission.RECEIVE_SMS
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:21:5-77
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:21:29-74
+uses-permission-sdk-23#android.permission.READ_SMS
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:22:5-74
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:22:29-71
+uses-permission-sdk-23#android.permission.READ_PHONE_STATE
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:23:5-82
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:23:29-79
+uses-permission#android.permission.RECEIVE_SMS
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:25:5-70
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:25:22-67
+uses-permission#android.permission.READ_SMS
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:26:5-67
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:26:22-64
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:27:5-75
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:27:22-72
+application
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:29:5-96:19
+MERGED from [ai.devsupport.instamojo:instamojolib:0.1.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\instamojolib-0.1.6.aar\81674c5db3682112ef821f856783315d\AndroidManifest.xml:11:5-16:19
+MERGED from [ai.devsupport.instamojo:instamojolib:0.1.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\instamojolib-0.1.6.aar\81674c5db3682112ef821f856783315d\AndroidManifest.xml:11:5-16:19
+MERGED from [com.android.support:design:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0ef15bf07dd1272462d095d01237b37f\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:design:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0ef15bf07dd1272462d095d01237b37f\AndroidManifest.xml:25:5-29:19
+MERGED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:11:5-34:19
+MERGED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:11:5-34:19
+MERGED from [in.juspay:godel:0.6.18.1423] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\godel-0.6.18.1423.aar\d6de9af5e2f15102faae093a2e33b6bd\AndroidManifest.xml:12:5-13:19
+MERGED from [in.juspay:godel:0.6.18.1423] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\godel-0.6.18.1423.aar\d6de9af5e2f15102faae093a2e33b6bd\AndroidManifest.xml:12:5-13:19
+MERGED from [in.juspay:godel-osd:0.6.14] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\godel-osd-0.6.14.aar\c7e62ceb5f2b2ace3e286ee090f298c0\AndroidManifest.xml:9:5-20
+MERGED from [in.juspay:godel-osd:0.6.14] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\godel-osd-0.6.14.aar\c7e62ceb5f2b2ace3e286ee090f298c0\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\f6a4d7c4107a137eb3166915f5bd5fe0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\f6a4d7c4107a137eb3166915f5bd5fe0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta4] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta4.aar\90ebff055dd562c33d4f8132f43202f4\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta4] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta4.aar\90ebff055dd562c33d4f8132f43202f4\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\e1005ef1f03c8a237fe0602e605354b5\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\e1005ef1f03c8a237fe0602e605354b5\AndroidManifest.xml:9:5-20
+MERGED from [com.koushikdutta.ion:ion:2.2.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\ion-2.2.1.aar\101b96c3c9a714e2690523435ed53f16\AndroidManifest.xml:13:5-14:19
+MERGED from [com.koushikdutta.ion:ion:2.2.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\ion-2.2.1.aar\101b96c3c9a714e2690523435ed53f16\AndroidManifest.xml:13:5-14:19
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\befce5bceb6fc93500a34e275904daa1\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\befce5bceb6fc93500a34e275904daa1\AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-messaging:17.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-messaging-17.0.0.aar\763ee1bedc2fb820a1c2208ecb89b253\AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-messaging:17.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-messaging-17.0.0.aar\763ee1bedc2fb820a1c2208ecb89b253\AndroidManifest.xml:22:5-35:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\ee9760bcd18df3eeabd54751de15b939\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\ee9760bcd18df3eeabd54751de15b939\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\83da165241f82393e49ece9675db5ad1\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\83da165241f82393e49ece9675db5ad1\AndroidManifest.xml:22:5-26:19
+MERGED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:11:5-30:19
+MERGED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:11:5-30:19
+MERGED from [com.google.android.gms:play-services-vision:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-vision-15.0.1.aar\639145e64eb48520c8ae57b3858c798c\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-vision-15.0.1.aar\639145e64eb48520c8ae57b3858c798c\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:transition:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\fbe648e9d5097e45a337f3efe4e96287\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\fbe648e9d5097e45a337f3efe4e96287\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:34:5-63:19
+MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:34:5-63:19
+MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\5201b31e8c2a3e4d9b3214df786708f7\AndroidManifest.xml:8:5-14:19
+MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\5201b31e8c2a3e4d9b3214df786708f7\AndroidManifest.xml:8:5-14:19
+MERGED from [com.google.android.gms:play-services-vision-common:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-15.0.1.aar\52c97c36925a5048a138b944d532fd30\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision-common:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-15.0.1.aar\52c97c36925a5048a138b944d532fd30\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.0.aar\4f89cc0d186bc90d089ceba244666a8a\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.0.aar\4f89cc0d186bc90d089ceba244666a8a\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-clearcut:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-15.0.1.aar\3634b06fbb2110b4d617f461ec5e2eea\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-clearcut:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-15.0.1.aar\3634b06fbb2110b4d617f461ec5e2eea\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-phenotype:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-phenotype-15.0.1.aar\f1362ada0f82928a765a4030eb27fdb4\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-phenotype:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-phenotype-15.0.1.aar\f1362ada0f82928a765a4030eb27fdb4\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1071b39c51721d86a93e6d9e617120d4\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1071b39c51721d86a93e6d9e617120d4\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\208452939a462b9a6a509cde1f57e617\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\208452939a462b9a6a509cde1f57e617\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-16.0.0.aar\656402e8bbd9a860931273590b28ab80\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-16.0.0.aar\656402e8bbd9a860931273590b28ab80\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\7171dfdcd5c5cca84bf85c6bfeea7c23\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\7171dfdcd5c5cca84bf85c6bfeea7c23\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\3f3f197e9a1837bba8cb7c58b213043d\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\3f3f197e9a1837bba8cb7c58b213043d\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\00306df612bed77b0e4cdf72320bed72\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\00306df612bed77b0e4cdf72320bed72\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\785d25fa9b0a16a98e7f74260edcaa07\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\785d25fa9b0a16a98e7f74260edcaa07\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\8ef41fcab8986cc4257167d406173321\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\8ef41fcab8986cc4257167d406173321\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\f89d47ca066f1289cae620942f0eabc0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\f89d47ca066f1289cae620942f0eabc0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\63c15b21ea173a27a251bb84f857eb15\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\63c15b21ea173a27a251bb84f857eb15\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\77e798b451bf4da2d981098727451294\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\77e798b451bf4da2d981098727451294\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\11f431fa21602ca65b8182bcd71ff1a9\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\11f431fa21602ca65b8182bcd71ff1a9\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\9f7a2f670d46f7ebea9706edc6c85107\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\9f7a2f670d46f7ebea9706edc6c85107\AndroidManifest.xml:25:5-29:19
+MERGED from [com.koushikdutta.async:androidasync:2.2.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\androidasync-2.2.1.aar\7768c55bc6f6c3e3a8f3695472fbbbab\AndroidManifest.xml:13:5-14:19
+MERGED from [com.koushikdutta.async:androidasync:2.2.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\androidasync-2.2.1.aar\7768c55bc6f6c3e3a8f3695472fbbbab\AndroidManifest.xml:13:5-14:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e37eff251bb7361f1d23deda0cb04594\AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e37eff251bb7361f1d23deda0cb04594\AndroidManifest.xml:24:5-28:19
+	android:supportsRtl
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:35:9-35
+	android:label
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:33:9-41
+	android:hardwareAccelerated
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:32:9-44
+	android:roundIcon
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:34:9-43
+	android:allowBackup
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:31:9-35
+	android:theme
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:36:9-40
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:30:9-38
+activity#tecmanic.marketplace.EnjoyGame
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:37:9-56
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:37:19-44
+activity#tecmanic.marketplace.SplashActivity
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:38:9-46:20
+	android:theme
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:40:13-56
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:39:13-43
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:41:13-45:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:42:17-69
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:42:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:44:17-77
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:44:27-74
+activity#tecmanic.marketplace.MainActivity
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:47:9-51:59
+	android:label
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:50:13-56
+	android:configChanges
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:49:13-59
+	android:theme
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:51:13-56
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:48:13-41
+activity#tecmanic.marketplace.NetworkConnectivity.NetworkError
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:52:9-70
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:52:19-67
+activity#tecmanic.marketplace.payment_gateway
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:53:9-53
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:53:19-50
+activity#tecmanic.marketplace.LoginActivity
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:54:9-56:59
+	android:theme
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:56:13-56
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:55:13-42
+activity#tecmanic.marketplace.RegisterActivity
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:57:9-59:59
+	android:theme
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:59:13-56
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:58:13-45
+service#fcm.MyFirebaseMessagingService
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:60:9-64:19
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:60:18-63
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:61:13-63:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:62:17-78
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:62:25-75
+service#fcm.MyFirebaseInstanceIDService
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:65:9-69:19
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:65:18-64
+intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:66:13-68:29
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:67:17-80
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:67:25-77
+activity#tecmanic.marketplace.ForgotActivity
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:70:9-72:59
+	android:theme
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:72:13-56
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:71:13-43
+activity#tecmanic.marketplace.My_Order_activity
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:73:9-55
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:73:19-52
+activity#tecmanic.marketplace.MyOrderDetail
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:74:9-51
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:74:19-48
+activity#tecmanic.marketplace.QR_scannerActivity
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:75:9-56
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:75:19-53
+meta-data#instamojo.orderauth.url
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:77:9-79:84
+	android:value
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:79:13-81
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:78:13-51
+activity#tecmanic.marketplace.ThanksOrder
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:81:9-49
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:81:19-46
+activity#tecmanic.marketplace.ScannedBarcodeActivity
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:82:9-60
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:82:19-57
+activity#com.paytm.pgsdk.PaytmPGActivity
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:83:9-87:57
+	android:screenOrientation
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:85:13-49
+	android:windowSoftInputMode
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:87:13-54
+	android:theme
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:86:13-44
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:84:13-59
+activity#tecmanic.marketplace.NetworkConnectivity.NoInternetConnection
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:88:9-78
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:88:19-75
+meta-data#com.google.android.gms.vision.DEPENDENCIES
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:90:9-92:39
+	android:value
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:92:13-36
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:91:13-70
+meta-data#com.razorpay.ApiKey
+ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:93:9-95:55
+	android:value
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:95:13-52
+	android:name
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml:94:13-47
+uses-sdk
+INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+MERGED from [ai.devsupport.instamojo:instamojolib:0.1.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\instamojolib-0.1.6.aar\81674c5db3682112ef821f856783315d\AndroidManifest.xml:7:5-9:41
+MERGED from [ai.devsupport.instamojo:instamojolib:0.1.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\instamojolib-0.1.6.aar\81674c5db3682112ef821f856783315d\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0ef15bf07dd1272462d095d01237b37f\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0ef15bf07dd1272462d095d01237b37f\AndroidManifest.xml:21:5-23:62
+MERGED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:7:5-9:41
+MERGED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:7:5-9:41
+MERGED from [com.rengwuxian.materialedittext:library:2.1.4] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\library-2.1.4.aar\50ea48904508b11a7b1a3ef7a63cdf1c\AndroidManifest.xml:6:5-8:41
+MERGED from [com.rengwuxian.materialedittext:library:2.1.4] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\library-2.1.4.aar\50ea48904508b11a7b1a3ef7a63cdf1c\AndroidManifest.xml:6:5-8:41
+MERGED from [in.juspay:godel:0.6.18.1423] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\godel-0.6.18.1423.aar\d6de9af5e2f15102faae093a2e33b6bd\AndroidManifest.xml:5:5-7:41
+MERGED from [in.juspay:godel:0.6.18.1423] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\godel-0.6.18.1423.aar\d6de9af5e2f15102faae093a2e33b6bd\AndroidManifest.xml:5:5-7:41
+MERGED from [in.juspay:godel-osd:0.6.14] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\godel-osd-0.6.14.aar\c7e62ceb5f2b2ace3e286ee090f298c0\AndroidManifest.xml:5:5-7:41
+MERGED from [in.juspay:godel-osd:0.6.14] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\godel-osd-0.6.14.aar\c7e62ceb5f2b2ace3e286ee090f298c0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\f6a4d7c4107a137eb3166915f5bd5fe0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\f6a4d7c4107a137eb3166915f5bd5fe0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta4] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta4.aar\90ebff055dd562c33d4f8132f43202f4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta4] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta4.aar\90ebff055dd562c33d4f8132f43202f4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\e1005ef1f03c8a237fe0602e605354b5\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\e1005ef1f03c8a237fe0602e605354b5\AndroidManifest.xml:7:5-43
+MERGED from [com.koushikdutta.ion:ion:2.2.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\ion-2.2.1.aar\101b96c3c9a714e2690523435ed53f16\AndroidManifest.xml:7:5-9:41
+MERGED from [com.koushikdutta.ion:ion:2.2.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\ion-2.2.1.aar\101b96c3c9a714e2690523435ed53f16\AndroidManifest.xml:7:5-9:41
+MERGED from [com.daimajia.slider:library:1.1.5] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\48e6ed741276600f6629a302a2974949\AndroidManifest.xml:7:5-9:41
+MERGED from [com.daimajia.slider:library:1.1.5] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\48e6ed741276600f6629a302a2974949\AndroidManifest.xml:7:5-9:41
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\befce5bceb6fc93500a34e275904daa1\AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\befce5bceb6fc93500a34e275904daa1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-messaging:17.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-messaging-17.0.0.aar\763ee1bedc2fb820a1c2208ecb89b253\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:17.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-messaging-17.0.0.aar\763ee1bedc2fb820a1c2208ecb89b253\AndroidManifest.xml:20:5-44
+MERGED from [com.daimajia.swipelayout:library:1.2.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\library-1.2.0.aar\5f5ded62319cedf9a2c4d340c8871dc0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.daimajia.swipelayout:library:1.2.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\library-1.2.0.aar\5f5ded62319cedf9a2c4d340c8871dc0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\ee9760bcd18df3eeabd54751de15b939\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\ee9760bcd18df3eeabd54751de15b939\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\83da165241f82393e49ece9675db5ad1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\83da165241f82393e49ece9675db5ad1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:multidex:1.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\multidex-1.0.0.aar\f43db5b6d757e12215f8cd8afad86e69\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:multidex:1.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\multidex-1.0.0.aar\f43db5b6d757e12215f8cd8afad86e69\AndroidManifest.xml:18:5-42
+MERGED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:5:5-7:41
+MERGED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-vision:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-vision-15.0.1.aar\639145e64eb48520c8ae57b3858c798c\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-vision-15.0.1.aar\639145e64eb48520c8ae57b3858c798c\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:transition:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\fbe648e9d5097e45a337f3efe4e96287\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\fbe648e9d5097e45a337f3efe4e96287\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\5201b31e8c2a3e4d9b3214df786708f7\AndroidManifest.xml:5:5-6:37
+MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\5201b31e8c2a3e4d9b3214df786708f7\AndroidManifest.xml:5:5-6:37
+MERGED from [com.google.android.gms:play-services-vision-common:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-15.0.1.aar\52c97c36925a5048a138b944d532fd30\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision-common:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-15.0.1.aar\52c97c36925a5048a138b944d532fd30\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.0.aar\4f89cc0d186bc90d089ceba244666a8a\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.0.aar\4f89cc0d186bc90d089ceba244666a8a\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-clearcut:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-15.0.1.aar\3634b06fbb2110b4d617f461ec5e2eea\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-clearcut:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-15.0.1.aar\3634b06fbb2110b4d617f461ec5e2eea\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-flags:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-flags-15.0.1.aar\5d8054a0cbc15482a7d311f6eba1380d\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-flags:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-flags-15.0.1.aar\5d8054a0cbc15482a7d311f6eba1380d\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-phenotype:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-phenotype-15.0.1.aar\f1362ada0f82928a765a4030eb27fdb4\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-phenotype:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-phenotype-15.0.1.aar\f1362ada0f82928a765a4030eb27fdb4\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1071b39c51721d86a93e6d9e617120d4\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1071b39c51721d86a93e6d9e617120d4\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\208452939a462b9a6a509cde1f57e617\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\208452939a462b9a6a509cde1f57e617\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-16.0.0.aar\656402e8bbd9a860931273590b28ab80\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-16.0.0.aar\656402e8bbd9a860931273590b28ab80\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\7171dfdcd5c5cca84bf85c6bfeea7c23\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\7171dfdcd5c5cca84bf85c6bfeea7c23\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\3f3f197e9a1837bba8cb7c58b213043d\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\3f3f197e9a1837bba8cb7c58b213043d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\00306df612bed77b0e4cdf72320bed72\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\00306df612bed77b0e4cdf72320bed72\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\785d25fa9b0a16a98e7f74260edcaa07\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\785d25fa9b0a16a98e7f74260edcaa07\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\8ef41fcab8986cc4257167d406173321\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\8ef41fcab8986cc4257167d406173321\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\f89d47ca066f1289cae620942f0eabc0\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\f89d47ca066f1289cae620942f0eabc0\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\63c15b21ea173a27a251bb84f857eb15\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\63c15b21ea173a27a251bb84f857eb15\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\77e798b451bf4da2d981098727451294\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\77e798b451bf4da2d981098727451294\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\11f431fa21602ca65b8182bcd71ff1a9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\11f431fa21602ca65b8182bcd71ff1a9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\9f7a2f670d46f7ebea9706edc6c85107\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\9f7a2f670d46f7ebea9706edc6c85107\AndroidManifest.xml:21:5-23:58
+MERGED from [com.koushikdutta.async:androidasync:2.2.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\androidasync-2.2.1.aar\7768c55bc6f6c3e3a8f3695472fbbbab\AndroidManifest.xml:7:5-9:41
+MERGED from [com.koushikdutta.async:androidasync:2.2.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\androidasync-2.2.1.aar\7768c55bc6f6c3e3a8f3695472fbbbab\AndroidManifest.xml:7:5-9:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e37eff251bb7361f1d23deda0cb04594\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e37eff251bb7361f1d23deda0cb04594\AndroidManifest.xml:20:5-22:41
+INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0ef15bf07dd1272462d095d01237b37f\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\nishc_omjn2ty\OneDrive\Desktop\conflict\VKP_App\VKP_App-cloud_iot\app\src\main\AndroidManifest.xml
+activity#instamojo.library.Instamojo
+ADDED from [ai.devsupport.instamojo:instamojolib:0.1.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\instamojolib-0.1.6.aar\81674c5db3682112ef821f856783315d\AndroidManifest.xml:14:9-15:20
+	android:name
+		ADDED from [ai.devsupport.instamojo:instamojolib:0.1.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\instamojolib-0.1.6.aar\81674c5db3682112ef821f856783315d\AndroidManifest.xml:14:19-61
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0ef15bf07dd1272462d095d01237b37f\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\f6a4d7c4107a137eb3166915f5bd5fe0\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\f6a4d7c4107a137eb3166915f5bd5fe0\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\ee9760bcd18df3eeabd54751de15b939\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\ee9760bcd18df3eeabd54751de15b939\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\83da165241f82393e49ece9675db5ad1\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\83da165241f82393e49ece9675db5ad1\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\fbe648e9d5097e45a337f3efe4e96287\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\fbe648e9d5097e45a337f3efe4e96287\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\00306df612bed77b0e4cdf72320bed72\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\00306df612bed77b0e4cdf72320bed72\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\785d25fa9b0a16a98e7f74260edcaa07\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\785d25fa9b0a16a98e7f74260edcaa07\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\8ef41fcab8986cc4257167d406173321\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\8ef41fcab8986cc4257167d406173321\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\f89d47ca066f1289cae620942f0eabc0\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\f89d47ca066f1289cae620942f0eabc0\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\63c15b21ea173a27a251bb84f857eb15\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\63c15b21ea173a27a251bb84f857eb15\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\77e798b451bf4da2d981098727451294\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\77e798b451bf4da2d981098727451294\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\11f431fa21602ca65b8182bcd71ff1a9\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\11f431fa21602ca65b8182bcd71ff1a9\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\9f7a2f670d46f7ebea9706edc6c85107\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\9f7a2f670d46f7ebea9706edc6c85107\AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:design:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0ef15bf07dd1272462d095d01237b37f\AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:design:26.1.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0ef15bf07dd1272462d095d01237b37f\AndroidManifest.xml:27:13-51
+activity#com.instamojo.android.activities.PaymentDetailsActivity
+ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:15:9-26:20
+	android:screenOrientation
+		ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:17:13-49
+	android:theme
+		ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:18:13-44
+	android:name
+		ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:16:13-83
+meta-data#android.app.searchable
+ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:19:13-21:54
+	android:resource
+		ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:21:17-51
+	android:name
+		ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:20:17-54
+intent-filter#action:name:android.intent.action.SEARCH
+ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:23:13-25:29
+action#android.intent.action.SEARCH
+ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:24:17-71
+	android:name
+		ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:24:25-68
+activity#com.instamojo.android.activities.PaymentActivity
+ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:27:9-33:58
+	android:screenOrientation
+		ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:31:13-49
+	android:label
+		ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:30:13-36
+	android:hardwareAccelerated
+		ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:29:13-47
+	android:windowSoftInputMode
+		ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:33:13-55
+	android:theme
+		ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:32:13-44
+	android:name
+		ADDED from [com.instamojo:android-sdk:1.2.6] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\android-sdk-1.2.6.aar\2cf38a71bdce9a251f90491ae2c347be\AndroidManifest.xml:28:13-76
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:17.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-messaging-17.0.0.aar\763ee1bedc2fb820a1c2208ecb89b253\AndroidManifest.xml:28:9-34:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:17.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-messaging-17.0.0.aar\763ee1bedc2fb820a1c2208ecb89b253\AndroidManifest.xml:30:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:17.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-messaging-17.0.0.aar\763ee1bedc2fb820a1c2208ecb89b253\AndroidManifest.xml:29:13-82
+receiver#com.razorpay.RzpTokenReceiver
+ADDED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:12:9-16:20
+	android:name
+		ADDED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:12:19-63
+intent-filter#action:name:rzp.device_token.share
+ADDED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:13:13-15:29
+action#rzp.device_token.share
+ADDED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:14:17-65
+	android:name
+		ADDED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:14:25-62
+activity#com.razorpay.CheckoutActivity
+ADDED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:18:9-29:20
+	android:configChanges
+		ADDED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:20:13-83
+	android:theme
+		ADDED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:21:13-49
+	android:name
+		ADDED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:19:13-57
+intent-filter#action:name:android.intent.action.MAIN+data:host:rzp.io+data:scheme:io.rzp
+ADDED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:22:13-28:29
+data
+ADDED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:25:17-27:47
+	android:host
+		ADDED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:26:21-42
+	android:scheme
+		ADDED from [com.razorpay:checkout:1.5.12] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\checkout-1.5.12.aar\e23a3921f0ea6e6e8a305618d5181eb5\AndroidManifest.xml:27:21-44
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:26:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:26:22-79
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:28:5-30:47
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:30:9-44
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:29:9-63
+permission#tecmanic.marketplace.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:28:5-30:47
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:30:9-44
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:29:9-63
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:32:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:32:22-76
+uses-permission#tecmanic.marketplace.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:32:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:32:22-76
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:35:9-39:19
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:35:18-89
+meta-data#com.google.firebase.components:com.google.firebase.iid.Registrar
+ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:36:13-38:85
+	android:value
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:38:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:37:17-96
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:41:9-50:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:43:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:44:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:42:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:${applicationId}
+ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:45:13-49:29
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:tecmanic.marketplace
+ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:45:13-49:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:46:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:46:25-78
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:48:17-61
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:48:27-58
+category#tecmanic.marketplace
+ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:48:17-61
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:48:27-58
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:56:9-62:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:58:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\9ae21213929ead7ea7eae493d2aee257\AndroidManifest.xml:57:13-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\5201b31e8c2a3e4d9b3214df786708f7\AndroidManifest.xml:9:9-13:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\5201b31e8c2a3e4d9b3214df786708f7\AndroidManifest.xml:11:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\5201b31e8c2a3e4d9b3214df786708f7\AndroidManifest.xml:12:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\5201b31e8c2a3e4d9b3214df786708f7\AndroidManifest.xml:13:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\5201b31e8c2a3e4d9b3214df786708f7\AndroidManifest.xml:10:13-77
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1071b39c51721d86a93e6d9e617120d4\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1071b39c51721d86a93e6d9e617120d4\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1071b39c51721d86a93e6d9e617120d4\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\1071b39c51721d86a93e6d9e617120d4\AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\3f3f197e9a1837bba8cb7c58b213043d\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\3f3f197e9a1837bba8cb7c58b213043d\AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\3f3f197e9a1837bba8cb7c58b213043d\AndroidManifest.xml:24:13-58
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e37eff251bb7361f1d23deda0cb04594\AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e37eff251bb7361f1d23deda0cb04594\AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\nishc_omjn2ty\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\e37eff251bb7361f1d23deda0cb04594\AndroidManifest.xml:26:13-58
