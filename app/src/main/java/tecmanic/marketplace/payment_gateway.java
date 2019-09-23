@@ -77,9 +77,11 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
     @Override
     public void onPaymentSuccess(String razorpayPaymentID) {
         try {
-            Toast.makeText(this, "yess!!, Payment Successful: " + razorpayPaymentID, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "yess!!, Payment Successful: " + razorpayPaymentID, Toast.LENGTH_LONG).show();
+            Log.d(TAG, "DEBUG : Payment Success "+ razorpayPaymentID  );
             Intent enjoyGame = new Intent(payment_gateway.this, EnjoyGame.class);
-            //startActivity(enjoyGame);
+            startActivity(enjoyGame);
+
         } catch (Exception e) {
             Log.e(TAG, "Exception in onPaymentSuccess", e);
         }
