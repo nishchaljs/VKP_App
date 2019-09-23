@@ -2,12 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="tecmanic.marketplace">
-     xmlns:android="http://schemas.android.com/apk/res/android"
-     package="com.example.android.multidex.myapplication"
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -16,10 +16,12 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <uses-permission-sdk-23 android:name="android.permission.RECEIVE_SMS" />
     <uses-permission-sdk-23 android:name="android.permission.READ_SMS" />
     <uses-permission-sdk-23 android:name="android.permission.READ_PHONE_STATE" />
+
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -32,6 +34,7 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".EnjoyGame"></activity>
         <activity
             android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -47,15 +50,13 @@
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".NetworkConnectivity.NetworkError" />
-        <activity android:name=".payment_gateway"/>
+        <activity android:name=".payment_gateway" />
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <!-- Firebase Notifications -->
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- Firebase Notifications -->
         <service android:name="fcm.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -65,14 +66,10 @@
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
-        </service>
-        <!-- ./Firebase Notifications -->
-
-
+        </service> <!-- ./Firebase Notifications -->
         <activity
             android:name=".ForgotActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity android:name=".My_Order_activity" />
         <activity android:name=".MyOrderDetail" />
         <activity android:name=".QR_scannerActivity" />
@@ -83,26 +80,19 @@
 
         <activity android:name=".ThanksOrder" />
         <activity android:name=".ScannedBarcodeActivity" />
-
         <activity
             android:name="com.paytm.pgsdk.PaytmPGActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden" />
-
-        <activity android:name=".NetworkConnectivity.NoInternetConnection"/>
+        <activity android:name=".NetworkConnectivity.NoInternetConnection" />
 
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="barcode" />
-
-
-
         <meta-data
             android:name="com.razorpay.ApiKey"
-            android:value="rzp_test_sNL7UTCVCOAZtW"
-            />
-        android:name="android.support.multidex.MultiDexApplication"
+            android:value="rzp_test_sNL7UTCVCOAZtW" />
     </application>
 
 </manifest>

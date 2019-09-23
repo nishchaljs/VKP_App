@@ -72,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Your Machine Id :"
+                android:text="Your Order Id :"
                 android:textColor="@color/dark_gray"
                 android:textSize="@dimen/text_size_normal" />
 
@@ -254,7 +254,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/bg_rounded_button"
                 android:gravity="center"
-                android:onClick="onStartTransaction"
+
                 android:text="Pay"
                 android:textColor="#fff"
                 android:textSize="@dimen/text_size_small" />

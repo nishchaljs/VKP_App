@@ -1,6 +1,7 @@
 package tecmanic.marketplace;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,7 +29,7 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
 
                 startPayment();
 
-            startPayment();
+
 
             }
         });
@@ -77,6 +78,8 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
     public void onPaymentSuccess(String razorpayPaymentID) {
         try {
             Toast.makeText(this, "yess!!, Payment Successful: " + razorpayPaymentID, Toast.LENGTH_SHORT).show();
+            Intent enjoyGame = new Intent(payment_gateway.this, EnjoyGame.class);
+            //startActivity(enjoyGame);
         } catch (Exception e) {
             Log.e(TAG, "Exception in onPaymentSuccess", e);
         }
