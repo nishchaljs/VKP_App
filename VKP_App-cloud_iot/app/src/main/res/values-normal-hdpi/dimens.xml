@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="contentInsetStart_size">144dp</dimen>
+    <dimen name="text_size_XX_small">8sp</dimen>
+    <dimen name="text_size_XXX_small">7sp</dimen>
+    <dimen name="text_size_X_small">11sp</dimen>
+    <dimen name="text_size_small">10sp</dimen>
+    <dimen name="text_size_normal">15sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_x_large">24sp</dimen>
+    <dimen name="text_size_XX_large">30sp</dimen>
+</resources>
