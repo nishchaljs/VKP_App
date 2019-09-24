@@ -21,26 +21,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imageView"
-            android:layout_width="fill_parent"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"
-            android:src="@drawable/icon"
-            android:textAlignment="center" />
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300sp"
+            android:background="@drawable/login">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageView"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="50sp"
+                android:layout_marginLeft="5sp"
+
+                android:gravity="center_horizontal"
+                android:src="@drawable/icon"
+                 />
+        </LinearLayout>
 
         <Fonts.LatoBLack
             android:id="@+id/tv_login_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="60sp"
             android:layout_marginTop="@dimen/space_10"
             android:text="@string/tv_login_email"
             android:textColor="#000"
@@ -49,9 +55,11 @@
         <EditText
             android:id="@+id/et_login_email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45sp"
+            android:layout_marginLeft="60sp"
             android:layout_marginTop="@dimen/space_4"
-            android:background="@drawable/xml_textbox_bg"
+            android:layout_marginRight="60sp"
+            android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:gravity="center_horizontal"
             android:inputType="textEmailAddress"
@@ -59,12 +67,13 @@
             android:textAlignment="center"
             android:textColor="#000"
             android:textColorHint="@color/dark_gray"
-            android:textSize="14sp" />
+            android:textSize="15sp" />
 
         <Fonts.LatoBLack
             android:id="@+id/tv_login_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="60sp"
             android:layout_marginTop="@dimen/space_10"
             android:text="@string/tv_login_password"
             android:textColor="#000"
@@ -73,26 +82,32 @@
         <EditText
             android:id="@+id/et_login_pass"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/space_10"
+            android:layout_height="45sp"
+            android:layout_marginLeft="60sp"
             android:layout_marginTop="@dimen/space_4"
-            android:background="@drawable/xml_textbox_bg"
+            android:layout_marginRight="60sp"
+            android:layout_marginBottom="@dimen/space_10"
+            android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:gravity="center_horizontal"
             android:inputType="textPassword"
             android:maxLength="10"
-            android:padding="@dimen/space_10"
+            android:padding="10dip"
             android:textAlignment="center"
             android:textColor="#000"
             android:textColorHint="@color/dark_gray"
-            android:textSize="14sp" />
+            android:textSize="15sp"
+            />
 
         <RelativeLayout
             android:id="@+id/btnContinue"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:layout_margin="12dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="30sp"
+            android:layout_marginRight="60sp"
             android:background="@drawable/bg_rounded_button"
+            android:gravity="center"
             android:padding="12dp">
 
             <Fonts.LatoBLack
@@ -111,7 +126,9 @@
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:layout_margin="12dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="15sp"
+            android:layout_marginRight="60dp"
             android:background="@drawable/bg_rounded_button"
             android:padding="12dp">
 
