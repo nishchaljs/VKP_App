@@ -146,26 +146,16 @@
                             android:layout_width="match_parent"
                             android:background="@drawable/del"
                             android:fitsSystemWindows="true">
-
-                            <ScrollView
-                                android:id="@+id/scroll_view"
-                                android:layout_width="match_parent"
-                                android:layout_height="620sp"
-                                android:background="@color/light_gray"
-                                android:fillViewport="true"
-                                android:scrollbars="vertical"
-                                app:layout_behavior="@string/appbar_scrolling_view_behavior">
-                    <android.support.v7.widget.RecyclerView
+                            <android.support.v7.widget.RecyclerView
                         android:id="@+id/top_selling_recycler"
                         android:layout_width="match_parent"
                         android:layout_height="620sp"
                         android:layout_marginBottom="1sp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
                         android:layout_marginTop="0dp"
                         android:background="@drawable/del"
+                        android:paddingBottom="100dp"
                         />
-                        </ScrollView>
+
                          <TextView
                              android:layout_width="match_parent"
                              android:layout_height="50dp"

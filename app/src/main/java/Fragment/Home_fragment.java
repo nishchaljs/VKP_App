@@ -172,8 +172,8 @@ public class Home_fragment extends Fragment {
 
 
         //Scroll View
-        scrollView = (ScrollView) view.findViewById(R.id.scroll_view);
-        scrollView.setSmoothScrollingEnabled(true);
+//        scrollView = (ScrollView) view.findViewById(R.id.scroll_view);
+  //      scrollView.setSmoothScrollingEnabled(true);
 
         //Search
 //        Search_layout = (LinearLayout) view.findViewById(R.id.search_layout);
@@ -199,7 +199,13 @@ public class Home_fragment extends Fragment {
 //        rv_top_selling.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(1), true));
        //temp
         List<Product_model>item=new ArrayList<>();
-        item.add(new Product_model("ABCDXYZ","23-09-2000","6.30"," ","2000"));
+        item.add(new Product_model("1234","23-09-2000","6.30"," ","2000"));
+        item.add(new Product_model("5678","23-09-2000","6.30"," ","1000"));
+        item.add(new Product_model("5678","23-09-2000","6.30"," ","1000"));
+        item.add(new Product_model("5678","23-09-2000","6.30"," ","1000"));
+        item.add(new Product_model("1234","23-09-2000","6.30"," ","2000"));
+        item.add(new Product_model("1234","23-09-2000","6.30"," ","2000"));
+        item.add(new Product_model("1234","23-09-2000","6.30"," ","2000"));
         Product_adapter itemadapter=new Product_adapter(item,getActivity());
         rv_top_selling.setAdapter(itemadapter);
 
