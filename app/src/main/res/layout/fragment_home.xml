@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/del"
+    android:background="@color/orange"
     android:orientation="vertical">
 
     <!--<ScrollView-->
@@ -17,11 +17,7 @@
         <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/del"
-            android:orientation="vertical">
+
 
 
                 <!--<LinearLayout-->
@@ -64,28 +60,6 @@
                     <!--</RelativeLayout>-->
                 <!--</LinearLayout>-->
 
-
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:background="@drawable/del">
-
-
-                <ImageView
-                    android:id="@+id/top_selling_imageview"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/del" />
-
-                <FrameLayout
-                    android:id="@+id/frame1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/del">
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -95,6 +69,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/color_4"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -114,7 +89,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_vertical"
                                 android:text="Machines List"
-                                android:textColor="@color/dark_black"
+                                android:textColor="@color/white"
                                 android:textSize="18dp"
                                 android:textStyle="bold" />
 
@@ -141,41 +116,45 @@
                         <!--android:layout_height="match_parent" />-->
 
 
-
                         <android.support.design.widget.CoordinatorLayout android:layout_height="match_parent"
                             android:layout_width="match_parent"
-                            android:background="@drawable/del"
-                            android:fitsSystemWindows="true">
+                            android:background="#1b1b1b"
+                            android:fitsSystemWindows="true"
+                            android:paddingBottom="0sp"
+
+                            >
+
                             <android.support.v7.widget.RecyclerView
                         android:id="@+id/top_selling_recycler"
                         android:layout_width="match_parent"
-                        android:layout_height="620sp"
-                        android:layout_marginBottom="1sp"
-                        android:layout_marginTop="0dp"
-                        android:background="@drawable/del"
-                        android:paddingBottom="100dp"
+                        android:layout_height="match_parent"
+                                app:fastScrollEnabled="true"
+                                app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
+                                app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"
+                                app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"
+                                app:fastScrollVerticalTrackDrawable="@drawable/line_drawable"/>
                         />
-
-                         <TextView
-                             android:layout_width="match_parent"
-                             android:layout_height="50dp"
-                             android:background="@color/color_2"
-                             android:layout_gravity="bottom"
-                             />
+                         <!--<TextView-->
+                             <!--android:layout_width="match_parent"-->
+                             <!--android:layout_height="50dp"-->
+                             <!--android:background="@color/orange"-->
+                             <!--android:layout_gravity="bottom"-->
+                             <!--/>-->
                             <android.support.design.widget.FloatingActionButton
                                 android:id="@+id/btnScanBarcode"
                                 android:layout_width="65in"
                                 android:layout_height="80sp"
                                 android:layout_marginBottom="10sp"
-                                app:backgroundTint="@color/color_2"
+                                app:backgroundTint="@color/orange"
                                 android:layout_gravity="bottom|center"
                                 android:src="@drawable/ic_select_all_black_24dp"
                                 app:fabSize="mini"
                                 android:overScrollMode="never"
                                 app:borderWidth="0dp"
-                                app:elevation="0dp"
+                                app:elevation="20dp"
                                 />
                         </android.support.design.widget.CoordinatorLayout>
+
 
 
 
@@ -193,10 +172,6 @@
 
 
                     </LinearLayout>
-                </FrameLayout>
-
-            </FrameLayout>
 
         </LinearLayout>
 
-</LinearLayout>

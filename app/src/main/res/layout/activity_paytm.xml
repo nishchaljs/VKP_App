@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Payment"
-                android:textColor="@color/color_2"
+                android:textColor="@color/dark_black"
                 android:textSize="@dimen/text_size_XX_large"
                 android:textStyle="bold" />
 
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Ram"
-                android:textColor="@color/color_2"
+                android:textColor="@color/dark_black"
                 android:textSize="@dimen/text_size_normal" />
         </LinearLayout>
 
@@ -256,7 +256,7 @@
                 android:gravity="center"
 
                 android:text="Pay"
-                android:textColor="#fff"
+                android:textColor="@color/white"
                 android:textSize="@dimen/text_size_small" />
 
 

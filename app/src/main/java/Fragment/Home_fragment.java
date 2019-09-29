@@ -9,6 +9,8 @@ import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSmoothScroller;
 import android.support.v7.widget.RecyclerView;
@@ -74,6 +76,7 @@ public class Home_fragment extends Fragment {
     private SliderLayout imgSlider, banner_slider, featuredslider;
     private RecyclerView rv_items, rv_top_selling,rv_headre_icons;
 
+
     private Home_adapter adapter;
     private boolean isSubcat = false;
     LinearLayout Search_layout;
@@ -112,7 +115,7 @@ public class Home_fragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) { FloatingActionButton btnScanBarcode;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) { final FloatingActionButton btnScanBarcode;
         final View view = inflater.inflate(R.layout.fragment_home, container, false);
         setHasOptionsMenu(true);
         ((MainActivity) getActivity()).setTitle(getResources().getString(R.string.app_name));
@@ -131,17 +134,17 @@ public class Home_fragment extends Fragment {
         });
 
         //Check Internet Connection
-        if (ConnectivityReceiver.isConnected()) {
-            makeGetSliderRequest();
-            makeGetBannerSliderRequest();
-
-            makeGetFeaturedSlider();
-            make_menu_items();
-//            make_deal_od_the_day();
-            make_top_selling();
-
-
-        }
+//        if (ConnectivityReceiver.isConnected()) {
+//            makeGetSliderRequest();
+//            makeGetBannerSliderRequest();
+//
+//            makeGetFeaturedSlider();
+//            make_menu_items();
+////            make_deal_od_the_day();
+//            make_top_selling();
+//
+//
+//        }
 
 
        //qr_scanner
@@ -166,14 +169,14 @@ public class Home_fragment extends Fragment {
 //                                       }
 //                                   });
         //Top Selling Poster
-        Top_Selling_Poster = (ImageView) view.findViewById(R.id.top_selling_imageview);
+        //Top_Selling_Poster = (ImageView) view.findViewById(R.id.top_selling_imageview);
 
 
 
 
         //Scroll View
 //        scrollView = (ScrollView) view.findViewById(R.id.scroll_view);
-  //      scrollView.setSmoothScrollingEnabled(true);
+//        scrollView.setSmoothScrollingEnabled(true);
 
         //Search
 //        Search_layout = (LinearLayout) view.findViewById(R.id.search_layout);
@@ -190,13 +193,29 @@ public class Home_fragment extends Fragment {
 
 
         //Top Selling Products
-        rv_top_selling = (RecyclerView) view.findViewById(R.id.top_selling_recycler);
-        rv_top_selling.setLayoutManager(new LinearLayoutManager(getActivity()));
-  //      GridLayoutManager gridLayoutManager2 = new GridLayoutManager(getActivity(), 2);
-//        rv_top_selling.setLayoutManager(gridLayoutManager2);
-//        rv_top_selling.setItemAnimator(new DefaultItemAnimator());
+         rv_top_selling = (RecyclerView) view.findViewById(R.id.top_selling_recycler);
+//        rv_top_selling.setLayoutManager(new LinearLayoutManager(getActivity()));
 //        rv_top_selling.setNestedScrollingEnabled(false);
-//        rv_top_selling.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(1), true));
+
+        GridLayoutManager gridLayoutManager2 = new GridLayoutManager(getActivity(), 1);
+        rv_top_selling.setLayoutManager(gridLayoutManager2);
+        rv_top_selling.setItemAnimator(new DefaultItemAnimator());
+        rv_top_selling.setNestedScrollingEnabled(false);
+        rv_top_selling.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(1), true));
+
+        //hide_button
+        rv_top_selling.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (dy > 0 && btnScanBarcode.getVisibility() == View.VISIBLE) {
+                    btnScanBarcode.hide();
+                } else if (dy < 0 && btnScanBarcode.getVisibility() != View.VISIBLE) {
+                    btnScanBarcode.show();
+                }
+            }
+        });
+
        //temp
         List<Product_model>item=new ArrayList<>();
         item.add(new Product_model("1234","23-09-2000","6.30"," ","2000"));
@@ -215,7 +234,7 @@ public class Home_fragment extends Fragment {
             @Override
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int position) {
                 LinearSmoothScroller smoothScroller = new LinearSmoothScroller(getActivity()) {
-                    private static final float SPEED = 2000f;// Change this value (default=25f)
+                    private static final float SPEED = 25f;// Change this value (default=25f)
 
                     @Override
                     protected float calculateSpeedPerPixel(DisplayMetrics displayMetrics) {

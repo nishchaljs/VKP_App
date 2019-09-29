@@ -172,5 +172,5 @@
     <string name="house_no">House No.:\u0020</string>
     <string name="socity">Society:\u0020</string>
 
-    <string name="status_stop">Powered By <font color='green'>RVCE_CC</font></string>
+    <string name="status_stop">Powered By <font color='#03A9F4'>RVCE_CC</font></string>
 </resources>

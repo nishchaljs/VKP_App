@@ -151,7 +151,7 @@
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="@string/forgot"
-            android:textColor="@color/color_2"
+            android:textColor="@color/yelow"
             android:textSize="13sp" />
     </LinearLayout>
 
