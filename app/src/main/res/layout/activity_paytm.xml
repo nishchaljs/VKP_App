@@ -81,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ram"
+                android:text="12322"
                 android:textColor="@color/dark_black"
                 android:textSize="@dimen/text_size_normal" />
         </LinearLayout>
@@ -114,9 +114,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/space_4"
                     android:background="@drawable/xml_textbox_bg"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:editable="false"
                     android:ems="10"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
@@ -158,9 +155,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/space_4"
                     android:background="@drawable/xml_textbox_bg"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:editable="false"
                     android:ems="10"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
@@ -202,9 +196,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/space_4"
                     android:background="@drawable/xml_textbox_bg"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:editable="false"
                     android:ems="10"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
@@ -213,6 +204,7 @@
                     android:padding="@dimen/space_10"
                     android:textAlignment="center"
                     android:textColor="#000"
+                    android:text="Rs 999"
                     android:textColorHint="@color/dark_gray"
                     android:textSize="@dimen/text_size_normal" />
             </LinearLayout>
@@ -235,7 +227,7 @@
                 android:id="@+id/order_res"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:editable="false" />
+                />
 
         </LinearLayout>
 

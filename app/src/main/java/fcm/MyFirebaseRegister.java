@@ -1,39 +1,26 @@
 package fcm;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
-import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.messaging.FirebaseMessaging;
-
-
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import Config.BaseURL;
-
-
 import tecmanic.marketplace.AppController;
 import util.ConnectivityReceiver;
 import util.CustomVolleyJsonRequest;
-import util.JSONParser;
-import util.NameValuePair;
+
+//import com.google.firebase.iid.FirebaseInstanceId;
+//import com.google.firebase.messaging.FirebaseMessaging;
 
 
 /**
@@ -52,15 +39,15 @@ public class MyFirebaseRegister {
         cd=new ConnectivityReceiver();
 
     }
-    public void RegisterUser(String user_id){
-        // [START subscribe_topics]
-        String token = FirebaseInstanceId.getInstance().getToken();
-        FirebaseMessaging.getInstance().subscribeToTopic("grocery");
-        // [END subscribe_topics]
-      //  mLogTask = new fcmRegisterTask();
-     //   mLogTask.execute(user_id,token);
-        checkLogin(user_id, token);
-    }
+//    public void RegisterUser(String user_id){
+//        // [START subscribe_topics]
+//        String token = FirebaseInstanceId.getInstance().getToken();
+//        FirebaseMessaging.getInstance().subscribeToTopic("grocery");
+//        // [END subscribe_topics]
+//      //  mLogTask = new fcmRegisterTask();
+//     //   mLogTask.execute(user_id,token);
+//        checkLogin(user_id, token);
+//    }
 
 
 

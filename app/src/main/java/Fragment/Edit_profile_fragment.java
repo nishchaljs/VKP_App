@@ -29,6 +29,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,10 +49,6 @@ import util.ConnectivityReceiver;
 import util.JSONParser;
 import util.NameValuePair;
 import util.Session_management;
-
-/**
- * Created by Rajesh Dabhi on 28/6/2017.
- */
 
 public class Edit_profile_fragment extends Fragment implements View.OnClickListener {
 
@@ -103,7 +101,12 @@ public class Edit_profile_fragment extends Fragment implements View.OnClickListe
         btn_update = (RelativeLayout) view.findViewById(R.id.btn_pro_edit);
         //btn_socity = (TextView) view.findViewById(R.id.btn_pro_socity);
 
-        String getemail = sessionManagement.getUserDetails().get(BaseURL.KEY_EMAIL);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+
+        String name = user.getDisplayName();
+        String email = user.getEmail();
+        //String getemail = sessionManagement.getUserDetails().get(BaseURL.KEY_EMAIL);
         String getimage = sessionManagement.getUserDetails().get(BaseURL.KEY_IMAGE);
         String getname = sessionManagement.getUserDetails().get(BaseURL.KEY_NAME);
         String getphone = sessionManagement.getUserDetails().get(BaseURL.KEY_MOBILE);
@@ -112,7 +115,7 @@ public class Edit_profile_fragment extends Fragment implements View.OnClickListe
         getsocity = sessionManagement.getUserDetails().get(BaseURL.KEY_SOCITY_ID);
         String getsocity_name = sessionManagement.getUserDetails().get(BaseURL.KEY_SOCITY_NAME);
 
-        et_name.setText(getname);
+        et_name.setText(name);
         et_phone.setText(getphone);
 
         /*if (!TextUtils.isEmpty(getsocity_name)) {
@@ -129,9 +132,9 @@ public class Edit_profile_fragment extends Fragment implements View.OnClickListe
                     .into(iv_profile);
         }
 
-        if (!TextUtils.isEmpty(getemail)) {
-            et_email.setText(getemail);
-        }
+
+            et_email.setText(email);
+
 
         /*if (!TextUtils.isEmpty(gethouse)){
             et_house.setText(gethouse);
@@ -147,10 +150,12 @@ public class Edit_profile_fragment extends Fragment implements View.OnClickListe
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        if (id == R.id.btn_pro_edit) {
-            attemptEditProfile();
-            storeImage(bitmap);
-        } else if (id == R.id.iv_pro_img) {
+        //attemptEditProfile();
+        //storeImage(bitmap);
+        if (id == R.id.btn_pro_edit)
+        { startActivity(new Intent(getActivity(), MainActivity.class));
+        }
+        else if (id == R.id.iv_pro_img) {
             Intent galleryIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             // Start the Intent
             startActivityForResult(galleryIntent, GALLERY_REQUEST_CODE1);

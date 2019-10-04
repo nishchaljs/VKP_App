@@ -2,180 +2,109 @@ package tecmanic.marketplace;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import util.ConnectivityReceiver;
-import util.Session_management;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+//import android.widget.Toolbar;
 
-    private static String TAG = LoginActivity.class.getSimpleName();
-
-    private RelativeLayout btn_continue, btn_register;
-    private EditText et_password, et_email;
-    private TextView tv_password, tv_email, btn_forgot;
-    private Session_management sessionManagement;
+public class LoginActivity extends AppCompatActivity {
+    private EditText inputEmail, inputPassword;
+    private FirebaseAuth auth;
+    private ProgressBar progressBar;
+    private TextView btnReset;
+    private RelativeLayout btnSignup, btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // remove title
+        auth = FirebaseAuth.getInstance();
+
+        if (auth.getCurrentUser() != null) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
+
         setContentView(R.layout.activity_login);
 
-        et_password = (EditText) findViewById(R.id.et_login_pass);
-        et_email = (EditText) findViewById(R.id.et_login_email);
-        tv_password = (TextView) findViewById(R.id.tv_login_password);
-        tv_email = (TextView) findViewById(R.id.tv_login_email);
-        btn_continue = (RelativeLayout) findViewById(R.id.btnContinue);
-        btn_register = (RelativeLayout) findViewById(R.id.btnRegister);
-        btn_forgot = (TextView) findViewById(R.id.btnForgot);
 
-        btn_continue.setOnClickListener(this);
-        btn_register.setOnClickListener(this);
-        btn_forgot.setOnClickListener(this);
+        inputEmail = (EditText) findViewById(R.id.et_login_email);
+        inputPassword = (EditText) findViewById(R.id.et_login_pass);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        btnSignup = (RelativeLayout) findViewById(R.id.btnRegister);
+        btnLogin = (RelativeLayout) findViewById(R.id.btnContinue);
+        btnReset = (TextView) findViewById(R.id.btnForgot);
 
-    }
+        //Get Firebase auth instance
+        auth = FirebaseAuth.getInstance();
 
-    @Override
-    public void onClick(View view) {
-        int id = view.getId();
-        if (id == R.id.btnContinue) {
-            attemptLogin();
-        } else if (id == R.id.btnRegister) {
-            Intent startRegister = new Intent(LoginActivity.this, RegisterActivity.class);
-            startActivity(startRegister);
-        } else if (id == R.id.btnForgot) {
-            Intent startRegister = new Intent(LoginActivity.this, ForgotActivity.class);
-            startActivity(startRegister);
-        }
-    }
-
-    private void attemptLogin() {
-
-        tv_email.setText(getResources().getString(R.string.tv_login_email));
-        tv_password.setText(getResources().getString(R.string.tv_login_password));
-        tv_password.setTextColor(getResources().getColor(R.color.black));
-        tv_email.setTextColor(getResources().getColor(R.color.black));
-        String getpassword = et_password.getText().toString();
-        String getemail = et_email.getText().toString();
-        boolean cancel = false;
-        View focusView = null;
-        if (TextUtils.isEmpty(getpassword)) {
-            tv_password.setTextColor(getResources().getColor(R.color.black));
-            focusView = et_password;
-            cancel = true;
-        } else if (!isPasswordValid(getpassword)) {
-            tv_password.setText(getResources().getString(R.string.password_too_short));
-            tv_password.setTextColor(getResources().getColor(R.color.black));
-            focusView = et_password;
-            cancel = true;
-        }
-
-        if (TextUtils.isEmpty(getemail)) {
-
-            tv_email.setTextColor(getResources().getColor(R.color.black));
-            focusView = et_email;
-            cancel = true;
-        } else if (!isEmailValid(getemail)) {
-            tv_email.setText(getResources().getString(R.string.invalide_email_address));
-            tv_email.setTextColor(getResources().getColor(R.color.black));
-            focusView = et_email;
-            cancel = true;
-        }
-
-        if (cancel) {
-            // There was an error; don't attempt login and focus the first
-            // form field with an error.
-            if (focusView != null)
-                focusView.requestFocus();
-        } else {
-            // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
-
-            if (ConnectivityReceiver.isConnected()) {
-                makeLoginRequest(getemail, getpassword);
+        btnSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, SignupActivity.class));
             }
-        }
+        });
 
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+            }
+        });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = inputEmail.getText().toString();
+                final String password = inputPassword.getText().toString();
+
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                progressBar.setVisibility(View.VISIBLE);
+
+                //authenticate user
+                auth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                // If sign in fails, display a message to the user. If sign in succeeds
+                                // the auth state listener will be notified and logic to handle the
+                                // signed in user can be handled in the listener.
+                                progressBar.setVisibility(View.GONE);
+                                if (!task.isSuccessful()) {
+                                    // there was an error
+                                    if (password.length() < 6) {
+                                        inputPassword.setError(getString(R.string.minimum_password));
+                                    } else {
+                                        Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
+                                    }
+                                } else {
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }
+                        });
+            }
+        });
     }
-
-    private boolean isEmailValid(String email) {
-        //TODO: Replace this with your own logic
-        return email.contains("@");
-    }
-
-    private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
-        return password.length() > 4;
-    }
-
-    /**
-     * Method to make json object request where json response starts wtih
-     */
-    private void makeLoginRequest(String email, final String password) {
-
-        Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                       startActivity(i);
-                       finish();
-
-//        // Tag used to cancel the request
-//        String tag_json_obj = "json_login_req";
-//        Map<String, String> params = new HashMap<String, String>();
-//        params.put("user_email", email);
-//        params.put("password", password);
-//
-//        CustomVolleyJsonRequest jsonObjReq = new CustomVolleyJsonRequest(Request.Method.POST,
-//                BaseURL.LOGIN_URL, params, new Response.Listener<JSONObject>() {
-//
-//            @Override
-//            public void onResponse(JSONObject response) {
-//                Log.d(TAG, response.toString());
-//
-//                try {
-//                    Boolean status = response.getBoolean("responce");
-//                    if (status) {
-//                        JSONObject obj = response.getJSONObject("data");
-//                        String user_id = obj.getString("user_id");
-//                        String user_fullname = obj.getString("user_fullname");
-//                        String user_email = obj.getString("user_email");
-//                        String user_phone = obj.getString("user_phone");
-//                        String user_image = obj.getString("user_image");
-//                        String wallet_ammount = obj.getString("wallet");
-//                        String reward_points = obj.getString("rewards");
-//                        Session_management sessionManagement = new Session_management(LoginActivity.this);
- //                        sessionManagement.createLoginSession(user_id, user_email, user_fullname, user_phone, user_image, wallet_ammount, reward_points, "", "", "", "", password);
-//                        Intent i = new Intent(LoginActivity.this, MainActivity.class);
-//                        startActivity(i);
-//                        finish();
-//
-//                    } else {
-//                        String error = response.getString("error");
-//                        Toast.makeText(LoginActivity.this, "" + error, Toast.LENGTH_SHORT).show();
-//                    }
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }, new Response.ErrorListener() {
-//
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                VolleyLog.d(TAG, "Error: " + error.getMessage());
-//                if (error instanceof TimeoutError || error instanceof NoConnectionError) {
-//                    Toast.makeText(LoginActivity.this, getResources().getString(R.string.connection_time_out), Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-//
-//        // Adding request to request queue
-//        AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
-    }
-
-
-
 }

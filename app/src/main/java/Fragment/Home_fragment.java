@@ -204,17 +204,17 @@ public class Home_fragment extends Fragment {
         rv_top_selling.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(1), true));
 
         //hide_button
-        rv_top_selling.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                if (dy > 0 && btnScanBarcode.getVisibility() == View.VISIBLE) {
-                    btnScanBarcode.hide();
-                } else if (dy < 0 && btnScanBarcode.getVisibility() != View.VISIBLE) {
-                    btnScanBarcode.show();
-                }
-            }
-        });
+//        rv_top_selling.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//            @Override
+//            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+//                super.onScrolled(recyclerView, dx, dy);
+//                if (dy > 0 && btnScanBarcode.getVisibility() == View.VISIBLE) {
+//                    btnScanBarcode.hide();
+//                } else if (dy < 0 && btnScanBarcode.getVisibility() != View.VISIBLE) {
+//                    btnScanBarcode.show();
+//                }
+//            }
+//        });
 
        //temp
         List<Product_model>item=new ArrayList<>();

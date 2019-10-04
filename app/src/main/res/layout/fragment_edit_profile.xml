@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
-                android:text="@string/tv_reg_name_hint"
+                android:text="Name"
                 android:textSize="14sp" />
 
             <EditText
@@ -52,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
-                android:text="@string/et_login_phone_hint"
+                android:text="Mobile No."
                 android:textSize="14sp" />
 
             <EditText
@@ -71,7 +71,7 @@
                 android:id="@+id/tv_pro_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tv_login_email"
+                android:text="E-mail"
                 android:textColor="#000"
                 android:textSize="14sp" />
 

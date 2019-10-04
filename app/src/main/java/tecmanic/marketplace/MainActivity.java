@@ -15,6 +15,7 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -39,8 +40,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import Config.BaseURL;
 import Fonts.CustomTypefaceSpan;
@@ -52,6 +53,9 @@ import util.ConnectivityReceiver;
 import util.DatabaseHandler;
 import util.Session_management;
 
+//import com.google.firebase.iid.FirebaseInstanceId;
+//import com.google.firebase.messaging.FirebaseMessaging;
+
 //import Fragment.Reward_fragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ConnectivityReceiver.ConnectivityReceiverListener {
@@ -62,6 +66,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DatabaseHandler dbcart;
     private Session_management sessionManagement;
     private Menu nav_menu;
+
+    private FirebaseAuth.AuthStateListener authListener;
+    private FirebaseAuth auth;
+
+
     ImageView imageView;
     TextView mTitle;
     Toolbar toolbar;
@@ -76,25 +85,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String token = FirebaseInstanceId.getInstance().getToken();
-        Log.d("MYTAG", "This is your Firebase token" + token);
+        //get firebase auth instance
+        auth = FirebaseAuth.getInstance();
 
-        if (getIntent().getExtras() != null) {
+        //get current user
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-            for (String key : getIntent().getExtras().keySet()) {
-                String value = getIntent().getExtras().getString(key);
-
-                if (key.equals("MainActivity") && value.equals("True")) {
-                    Intent intent = new Intent(this, LoginActivity.class);
-                    intent.putExtra("value", value);
-                    startActivity(intent);
+        authListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user == null) {
+                    // user auth state is changed - user is null
+                    // launch login activity
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
                     finish();
                 }
-
             }
-            subscribeToPushService();
-        }
-
+        };
 
 
 
@@ -184,6 +192,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
+
+
+        
+//        signOut.setOnClickListener({
+//                signOut()
+//            }
+//        );
+
+
+
+    //sign out method
+//    public void signOut() {
+//        auth.signOut();
+//    }
 
 //        iv_Call.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -416,6 +438,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        }
             else if (id == R.id.nav_logout) {
             sessionManagement.logoutSession();
+            auth.signOut();
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
             finish();
 
         } else if (id == R.id.nav_powerd) {
@@ -523,18 +547,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    private void subscribeToPushService() {
-        FirebaseMessaging.getInstance().subscribeToTopic("news");
-
-        Log.d("Tecmanic", "Subscribed");
-//        Toast.makeText(MainActivity.this, "Subscribed", Toast.LENGTH_SHORT).show();
-
-        String token = FirebaseInstanceId.getInstance().getToken();
-
-        // Log and toast
-        Log.d("Tecmanic", token);
-        //      Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
-    }
+//    private void subscribeToPushService() {
+//        FirebaseMessaging.getInstance().subscribeToTopic("news");
+//
+//        Log.d("Tecmanic", "Subscribed");
+////        Toast.makeText(MainActivity.this, "Subscribed", Toast.LENGTH_SHORT).show();
+//
+//        String token = FirebaseInstanceId.getInstance().getToken();
+//
+//        // Log and toast
+//        Log.d("Tecmanic", token);
+//        //      Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
+//    }
 
 
    @Override

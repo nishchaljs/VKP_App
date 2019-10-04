@@ -151,8 +151,16 @@
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="@string/forgot"
-            android:textColor="@color/yelow"
+            android:textColor="#000"
             android:textSize="13sp" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:visibility="gone"
+            android:id="@+id/progressBar"
+            android:layout_gravity="center"/>
     </LinearLayout>
 
 </RelativeLayout>

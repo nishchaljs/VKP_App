@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -30,16 +27,12 @@ import java.util.Map;
 
 import Config.BaseURL;
 import tecmanic.marketplace.AppController;
-import tecmanic.marketplace.LoginActivity;
 import tecmanic.marketplace.MainActivity;
 import tecmanic.marketplace.R;
 import util.ConnectivityReceiver;
 import util.CustomVolleyJsonRequest;
 import util.Session_management;
 
-/**
- * Created by Rajesh Dabhi on 13/7/2017.
- */
 
 public class Change_password_fragment extends Fragment {
 
@@ -67,7 +60,7 @@ public class Change_password_fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_change_password, container, false);
         setHasOptionsMenu(true);
 
-        ((MainActivity) getActivity()).setTitle(getResources().getString(R.string.change_password));
+        ((MainActivity) getActivity()).setTitle("Change Password");
 
         sessionManagement = new Session_management(getActivity());
 
