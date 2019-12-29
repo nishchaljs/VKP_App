@@ -4,17 +4,29 @@ package Model;
 
 public class Product_model {
 
-   // String product_id;
     String product_name;
-   // String category_id;
-  //  String product_description;
-  //  String deal_price;
-  //  String start_date;
-  //  String start_time;
+    long ID ;
+    String message ;
+    int pending ;
+    int status  ;
+
+
+
     String end_date;
     String end_time;
     String price;
     String product_image;
+
+    @Override
+    public String toString() {
+        return product_name ;
+    }
+// String product_id;
+    // String category_id;
+    //  String product_description;
+    //  String deal_price;
+    //  String start_date;
+    //  String start_time;
    // String status;
   //  String in_stock;
   //  String unit_value;
@@ -24,14 +36,8 @@ public class Product_model {
   //  String stock;
   //  String title;
 
+    public Product_model(){}
 
-//    public String  getProduct_id() {
-//        return product_id;
-//    }
-
-//    public void setProduct_id(String product_id) {
-//        this.product_id = product_id;
-//    }
     public Product_model(String product_name, String end_date, String end_time,String product_image, String price)
     {
         this.product_image=product_image;
@@ -47,38 +53,6 @@ public class Product_model {
     public void setProduct_name(String product_name) {
         this.product_name = product_name;
     }
-
-//    public String getProduct_description() {
-//        return product_description;
-//    }
-//
-//    public void setProduct_description(String product_description) {
-//        this.product_description = product_description;
-//    }
-//
-//    public String getDeal_price() {
-//        return deal_price;
-//    }
-//
-//    public void setDeal_price(String deal_price) {
-//        this.deal_price = deal_price;
-//    }
-//
-//    public String getStart_date() {
-//        return start_date;
-//    }
-//
-//    public void setStart_date(String start_date) {
-//        this.start_date = start_date;
-//    }
-//
-//    public String getStart_time() {
-//        return start_time;
-//    }
-//
-//    public void setStart_time(String start_time) {
-//        this.start_time = start_time;
-//    }
 
     public String getEnd_date() {
         return end_date;
@@ -112,75 +86,5 @@ public class Product_model {
         this.product_image = product_image;
     }
 
-//    public String getStatus() {
-//        return status;
-//    }
-//
-//    public void setStatus(String status) {
-//        this.status = status;
-//    }
-//
-//    public String getStock() {
-//        return stock;
-//    }
-//
-//    public void setStock(String stock) {
-//        this.stock = stock;
-//    }
-//
-//    public String getUnit_value() {
-//        return unit_value;
-//    }
-//
-//    public void setUnit_value(String unit_value) {
-//        this.unit_value = unit_value;
-//    }
-//
-//    public String getUnit() {
-//        return unit;
-//    }
-//
-//    public void setUnit(String unit) {
-//        this.unit = unit;
-//    }
-//
-//    public String getIncreament() {
-//        return increament;
-//    }
-//
-//    public void setIncreament(String increament) {
-//        this.increament = increament;
-//    }
-//
-//    public String getRewards() {
-//        return rewards;
-//    }
-//
-//    public void setRewards(String rewards) {
-//        this.rewards = rewards;
-//    }
-//
-//    public String getTitle() {
-//        return title;
-//    }
-//
-//    public void setTitle(String title) {
-//        this.title = title;
-//    }
-//
-//    public String getCategory_id() {
-//        return category_id;
-//    }
-//
-//    public void setCategory_id(String category_id) {
-//        this.category_id = category_id;
-//    }
-//    public String getIn_stock() {
-//        return in_stock;
-//    }
-//
-//    public void setIn_stock(String in_stock) {
-//        this.in_stock = in_stock;
-//    }
 
 }

@@ -3,11 +3,13 @@ package Fragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -37,6 +39,7 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.google.firebase.database.ChildEventListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -49,6 +52,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import Adapter.Home_Icon_Adapter;
 import Adapter.Home_adapter;
@@ -69,6 +73,12 @@ import util.CustomVolleyJsonRequest;
 import util.RecyclerTouchListener;
 
 //import Adapter.Deal_OfDay_Adapter;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class Home_fragment extends Fragment {
@@ -105,6 +115,11 @@ public class Home_fragment extends Fragment {
 
     View view;
 
+    DatabaseReference myRef;
+//    Map<String, Object> devices;
+    private ArrayList<Product_model> deviceList= new ArrayList<Product_model>();
+    Set<String> keys;
+
     public Home_fragment() {
 
     }
@@ -112,6 +127,12 @@ public class Home_fragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
+
+
     }
 
     @Override
@@ -159,39 +180,6 @@ public class Home_fragment extends Fragment {
             }
         });
 
-       //payment gateway
-//        Button numbers = (Button) view.findViewById(R.id.payment_gateway);
-//        numbers.setOnClickListener(new View.OnClickListener() {
-//                                       @Override
-//                                       public void onClick(View v) {
-//                                           Intent intent = new Intent(getActivity(), payment_gateway.class);
-//                                           startActivity(intent);
-//                                       }
-//                                   });
-        //Top Selling Poster
-        //Top_Selling_Poster = (ImageView) view.findViewById(R.id.top_selling_imageview);
-
-
-
-
-        //Scroll View
-//        scrollView = (ScrollView) view.findViewById(R.id.scroll_view);
-//        scrollView.setSmoothScrollingEnabled(true);
-
-        //Search
-//        Search_layout = (LinearLayout) view.findViewById(R.id.search_layout);
-//        Search_layout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Fragment fm = new Search_fragment();
-//                FragmentManager fragmentManager = getFragmentManager();
-//                fragmentManager.beginTransaction().replace(R.id.contentPanel, fm)
-//                        .addToBackStack(null).commit();
-
-//            }
-//        });
-
-
         //Top Selling Products
          rv_top_selling = (RecyclerView) view.findViewById(R.id.top_selling_recycler);
 //        rv_top_selling.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -203,30 +191,56 @@ public class Home_fragment extends Fragment {
         rv_top_selling.setNestedScrollingEnabled(false);
         rv_top_selling.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(1), true));
 
-        //hide_button
-//        rv_top_selling.addOnScrollListener(new RecyclerView.OnScrollListener() {
-//            @Override
-//            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-//                super.onScrolled(recyclerView, dx, dy);
-//                if (dy > 0 && btnScanBarcode.getVisibility() == View.VISIBLE) {
-//                    btnScanBarcode.hide();
-//                } else if (dy < 0 && btnScanBarcode.getVisibility() != View.VISIBLE) {
-//                    btnScanBarcode.show();
-//                }
-//            }
-//        });
 
        //temp
-        List<Product_model>item=new ArrayList<>();
-        item.add(new Product_model("1234","23-09-2000","6.30"," ","2000"));
-        item.add(new Product_model("5678","23-09-2000","6.30"," ","1000"));
-        item.add(new Product_model("5678","23-09-2000","6.30"," ","1000"));
-        item.add(new Product_model("5678","23-09-2000","6.30"," ","1000"));
-        item.add(new Product_model("1234","23-09-2000","6.30"," ","2000"));
-        item.add(new Product_model("1234","23-09-2000","6.30"," ","2000"));
-        item.add(new Product_model("1234","23-09-2000","6.30"," ","2000"));
-        Product_adapter itemadapter=new Product_adapter(item,getActivity());
+        //List<Product_model>item=new ArrayList<>();
+
+        deviceList.add(new Product_model("Dummy","23-09-2000","6.30"," ","2000"));
+//        deviceList.add(new Product_model("5678","23-09-2000","6.30"," ","1000"));
+
+
+        Product_adapter itemadapter=new Product_adapter(deviceList,getActivity());
         rv_top_selling.setAdapter(itemadapter);
+
+        myRef = FirebaseDatabase.getInstance().getReference("devices");
+        //getDataFromFirebase();
+        //Log.d(TAG, "CALLED DATA FROM FIREBASE" );
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for(DataSnapshot data : dataSnapshot.getChildren()){
+                    long ID = (long) data.child("ID").getValue();
+                    String game = (String) data.child("Game").getValue();
+                    String message = (String) data.child("message").getValue();
+                    long pending = (long) data.child("pending").getValue();
+                    long status = (long) data.child("status").getValue();
+
+                    deviceList.add(new Product_model(game,"01-01-0000","0.00"," ","$2000" ));
+                }
+
+                Map<String, Product_model> value = (Map<String, Product_model>) dataSnapshot.getValue();
+                keys = value.keySet();
+                for(String key: keys){
+                    if(key != null){
+                        Log.d("DeviceList item :", key +" : " + value.get(key));
+                        //deviceList.add(new Product_model(key,"01-01-0000","0.00"," ","$2000" ));
+                    }
+                }
+
+                Log.d("DeviceList", "Value is: " + deviceList.toString());
+
+                Product_adapter itemadapter=new Product_adapter(deviceList,getActivity());
+                rv_top_selling.setAdapter(itemadapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+            }
+        });
 
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity()) {
@@ -247,66 +261,13 @@ public class Home_fragment extends Fragment {
         };
 
 
-        //Call And Whatsapp
-//        iv_Call = (ImageView) view.findViewById(R.id.iv_call);
-//        iv_Whatspp = (ImageView) view.findViewById(R.id.iv_whatsapp);
-//        iv_reviews = (ImageView) view.findViewById(R.id.reviews);
-//        iv_share_via = (ImageView) view.findViewById(R.id.share_via);
 
-//        iv_Call.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent callIntent = new Intent(Intent.ACTION_CALL);
-//                callIntent.setData(Uri.parse("tel:" + "917829723033"));
-//                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-//                    return;
-//                }
-//                getActivity().startActivity(callIntent);
-//
-//            }
-//        });
-//        iv_Whatspp.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String smsNumber = "917829723033";
-//                Uri uri = Uri.parse("smsto:" + smsNumber);
-//                Intent i = new Intent(Intent.ACTION_SENDTO, uri);
-//                i.putExtra("Test", "Nishchal J");
-//                i.setPackage("com.whatsapp");
-//                startActivity(i);
-//
-//            }
-//        });
-//        iv_reviews.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                reviewOnApp();
-//            }
-//        });
-//        iv_share_via.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                shareApp();
-//
-//            }
-//        });
-//
-//
-        //REcyclerview Top Selling
         rv_top_selling.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), rv_top_selling, new RecyclerTouchListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
 
                 Intent intent = new Intent(getActivity(), payment_gateway.class);
                 startActivity(intent);
-              //  getid = top_selling_models.get(position).getProduct_id();
-//                Bundle args = new Bundle();
-//                Fragment fm = new Product_fragment();
-//                args.putString("cat_top_selling", "2");
-//                fm.setArguments(args);
-//                FragmentManager fragmentManager = getFragmentManager();
-//                fragmentManager.beginTransaction().replace(R.id.contentPanel, fm)
-//                        .addToBackStack(null).commit();
 
             }
 
@@ -665,4 +626,64 @@ public class Home_fragment extends Fragment {
         startActivity(sendIntent);
     }
 
+    public void getDataFromFirebase(){
+//        final Context mContext;
+//        DatabaseReference mDatabaseReference;
+//        ChildEventListener mChildEventListener;
+        Log.d(TAG, "GETTING DATA FROM FIREBASE" );
+        ChildEventListener childEventListener = new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
+                Log.d(TAG, "onChildAdded:" + dataSnapshot.getKey());
+
+                // A new comment has been added, add it to the displayed list
+                Product_model device = dataSnapshot.getValue(Product_model.class);
+                deviceList.add(device);
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String previousChildName) {
+                Log.d(TAG, "onChildChanged:" + dataSnapshot.getKey());
+
+                // A comment has changed, use the key to determine if we are displaying this
+                // comment and if so displayed the changed comment.
+                Product_model device = dataSnapshot.getValue(Product_model.class);
+                String commentKey = dataSnapshot.getKey();
+
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                Log.d(TAG, "onChildRemoved:" + dataSnapshot.getKey());
+
+                // A comment has changed, use the key to determine if we are displaying this
+                // comment and if so remove it.
+                String commentKey = dataSnapshot.getKey();
+
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String previousChildName) {
+                Log.d(TAG, "onChildMoved:" + dataSnapshot.getKey());
+
+                // A comment has changed position, use the key to determine if we are
+                // displaying this comment and if so move it.
+                Product_model device = dataSnapshot.getValue(Product_model.class);
+                String commentKey = dataSnapshot.getKey();
+
+                // ...
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.w(TAG, "postComments:onCancelled", databaseError.toException());
+//                Toast.makeText(mContext, "Failed to load comments.",
+//                        Toast.LENGTH_SHORT).show();
+            }
+        };
+        myRef.addChildEventListener(childEventListener);
+    }
 }
