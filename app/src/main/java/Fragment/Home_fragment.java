@@ -195,7 +195,7 @@ public class Home_fragment extends Fragment {
        //temp
         //List<Product_model>item=new ArrayList<>();
 
-        deviceList.add(new Product_model("Dummy","23-09-2000","6.30"," ","2000"));
+        deviceList.add(new Product_model("Dummy","23-09-2000","6.30"," ",0));
 //        deviceList.add(new Product_model("5678","23-09-2000","6.30"," ","1000"));
 
 
@@ -203,21 +203,22 @@ public class Home_fragment extends Fragment {
         rv_top_selling.setAdapter(itemadapter);
 
         myRef = FirebaseDatabase.getInstance().getReference("devices");
-        //getDataFromFirebase();
-        //Log.d(TAG, "CALLED DATA FROM FIREBASE" );
+
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 for(DataSnapshot data : dataSnapshot.getChildren()){
+                    String UID =  data.getKey();
                     long ID = (long) data.child("ID").getValue();
                     String game = (String) data.child("Game").getValue();
                     String message = (String) data.child("message").getValue();
                     long pending = (long) data.child("pending").getValue();
                     long status = (long) data.child("status").getValue();
 
-                    deviceList.add(new Product_model(game,"01-01-0000","0.00"," ","$2000" ));
+                    //deviceList.add(new Product_model(game,"01-01-0000","0.00"," ","$2000" ));
+                    deviceList.add(new Product_model(game,ID,UID,message, pending, status, 100 ));
                 }
 
                 Map<String, Product_model> value = (Map<String, Product_model>) dataSnapshot.getValue();
@@ -266,7 +267,18 @@ public class Home_fragment extends Fragment {
             @Override
             public void onItemClick(View view, int position) {
 
+                Product_model device = deviceList.get(position);
                 Intent intent = new Intent(getActivity(), payment_gateway.class);
+
+                intent.putExtra("deviceUID",device.getUID());
+                intent.putExtra("deviceID",device.getID());
+                intent.putExtra("devicePrice",device.getPrice());
+                intent.putExtra("deviceStatus",device.getStatus());
+                intent.putExtra("devicePending",device.getPending());
+                intent.putExtra("deviceGame",device.getProduct_name());
+
+
+
                 startActivity(intent);
 
             }

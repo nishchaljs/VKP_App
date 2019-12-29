@@ -6,19 +6,54 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
 import org.json.JSONObject;
 
 public class payment_gateway extends Activity implements  PaymentResultListener {
+
+    String deviceUID ;
+    long deviceID  ;
+    float devicePrice ;
+    long deviceStatus ;
+    long devicePending  ;
+    String deviceGame  ;
+
+
+
+    private DatabaseReference myRef;
+
     private static final String TAG = payment_gateway.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paytm);
+
+          deviceUID = getIntent().getStringExtra("deviceUID");
+          deviceID = getIntent().getLongExtra("deviceID",0);
+          devicePrice = getIntent().getFloatExtra("devicePrice",0);
+          deviceStatus = getIntent().getLongExtra("deviceStatus",0);
+          devicePending = getIntent().getLongExtra("devicePending",0);
+          deviceGame = getIntent().getStringExtra("deviceGame");
+
+        TextView name = (TextView) (TextView)findViewById(R.id.machine_id);
+        name.setText(deviceGame);
+
+        TextView textViewgamePrice = (TextView) (TextView)findViewById(R.id.unitGamePrice);
+        textViewgamePrice.setText(String.valueOf(devicePrice));
+
+        TextView textViewMachineID = (TextView) (TextView)findViewById(R.id.machine_unique_id);
+        textViewMachineID.setText(String.valueOf(deviceID));
+
+
+
+
         Checkout.preload(getApplicationContext());
 
         Button button = (Button) findViewById(R.id.start_transaction);
@@ -57,7 +92,7 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
              * Amount is always passed in currency subunits (Paisa)
              * Eg: "100" = INR 1.00
              */
-            options.put("amount", "100");
+            options.put("amount", String.valueOf(devicePrice*100) );
 
             JSONObject preFill = new JSONObject();
             preFill.put("email", "test@razorpay.com");
@@ -77,6 +112,14 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
     @Override
     public void onPaymentSuccess(String razorpayPaymentID) {
         try {
+            String deviceID = deviceUID;
+            myRef = FirebaseDatabase.getInstance().getReference("devices");
+            myRef.child(deviceID).child("pending").setValue(5);
+//            myRef.child(deviceID).child("pending").setValue(5);
+
+
+
+
             Toast.makeText(this, "yess!!, Payment Successful: " + razorpayPaymentID, Toast.LENGTH_SHORT).show();
             Intent enjoyGame = new Intent(payment_gateway.this, EnjoyGame.class);
             //startActivity(enjoyGame);

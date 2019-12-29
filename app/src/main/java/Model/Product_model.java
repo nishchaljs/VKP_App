@@ -6,15 +6,16 @@ public class Product_model {
 
     String product_name;
     long ID ;
+    String UID;
     String message ;
-    int pending ;
-    int status  ;
+    long pending ;
+    long status  ;
 
 
 
     String end_date;
     String end_time;
-    String price;
+    float price;
     String product_image;
 
     @Override
@@ -38,7 +39,20 @@ public class Product_model {
 
     public Product_model(){}
 
-    public Product_model(String product_name, String end_date, String end_time,String product_image, String price)
+    public Product_model(String product_name, long ID, String UID, String message, long pending, long status, float price) {
+        this.product_name = product_name;
+        this.ID = ID;
+        this.UID = UID;
+        this.message = message;
+        this.pending = pending;
+        this.status = status;
+        this.price = price;
+        this.end_date = "01/01/0000";
+        this.end_time = "00:00";
+
+    }
+
+    public Product_model(String product_name, String end_date, String end_time, String product_image, float price)
     {
         this.product_image=product_image;
         this.end_date=end_date;
@@ -46,6 +60,47 @@ public class Product_model {
         this.price=price;
         this.product_name=product_name;
     }
+
+    public long getID() {
+        return ID;
+    }
+
+    public void setID(long ID) {
+        this.ID = ID;
+    }
+
+    public String getUID() {
+        return UID;
+    }
+
+    public void setUID(String UID) {
+        this.UID = UID;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public long getPending() {
+        return pending;
+    }
+
+    public void setPending(long pending) {
+        this.pending = pending;
+    }
+
+    public long getStatus() {
+        return status;
+    }
+
+    public void setStatus(long status) {
+        this.status = status;
+    }
+
     public String getProduct_name() {
         return product_name;
     }
@@ -70,11 +125,14 @@ public class Product_model {
         this.end_time = end_time;
     }
 
-    public String getPrice() {
+    public float getPrice() {
         return price;
     }
+    public String getPriceStr() {
+        return String.valueOf(price);
+    }
 
-    public void setPrice(String price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 

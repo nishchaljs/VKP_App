@@ -92,7 +92,7 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
 //                map.put("start_time", modelList.get(position).getStart_time());
                 map.put("end_date", modelList.get(position).getEnd_date());
                 map.put("end_time", modelList.get(position).getEnd_time());
-                map.put("price", modelList.get(position).getPrice());
+                map.put("price", modelList.get(position).getPriceStr());
                 map.put("product_image", modelList.get(position).getProduct_image());
 //                map.put("status", modelList.get(position).getStatus());
 //                map.put("in_stock", modelList.get(position).getIn_stock());
@@ -159,7 +159,7 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
                 .into(holder.iv_logo);
         holder.tv_title.setText(mList.getProduct_name());
         //holder.tv_reward.setText(mList.getRewards());
-        holder.tv_price.setText(mList.getPrice());
+        holder.tv_price.setText(String.valueOf(mList.getPrice()));
 
 //        if (dbcart.isInCart(mList.getProduct_id())) {
 //            holder.tv_add.setText(context.getResources().getString(R.string.tv_pro_update));
@@ -257,7 +257,7 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
 //                map.put("start_time", modelList.get(position).getStart_time());
 //                map.put("end_date", modelList.get(position).getEnd_date());
                 map.put("end_time", modelList.get(position).getEnd_time());
-                map.put("price", modelList.get(position).getPrice());
+                map.put("price", modelList.get(position).getPriceStr());
                 map.put("product_image", modelList.get(position).getProduct_image());
 //                map.put("status", modelList.get(position).getStatus());
 //                map.put("in_stock", modelList.get(position).getIn_stock());

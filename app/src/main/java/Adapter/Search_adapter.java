@@ -101,7 +101,7 @@ public class Search_adapter extends RecyclerView.Adapter<Search_adapter.MyViewHo
 //                map.put("start_time", modelList.get(position).getStart_time());
                 map.put("end_date", modelList.get(position).getEnd_date());
                 map.put("end_time", modelList.get(position).getEnd_time());
-                map.put("price", modelList.get(position).getPrice());
+                map.put("price", modelList.get(position).getPriceStr());
                 map.put("product_image", modelList.get(position).getProduct_image());
 //                map.put("status", modelList.get(position).getStatus());
 //                map.put("in_stock", modelList.get(position).getIn_stock());
@@ -197,7 +197,7 @@ public class Search_adapter extends RecyclerView.Adapter<Search_adapter.MyViewHo
 //        }
 
 //        Double items = Double.parseDouble(dbcart.getInCartItemQty(mList.getProduct_id()));
-        Double price = Double.parseDouble(mList.getPrice());
+        Double price = Double.parseDouble(mList.getPriceStr());
 //        Double reward = Double.parseDouble(mList.getRewards());
 //        holder.tv_reward.setText("" + reward * items);
 
@@ -300,7 +300,7 @@ public class Search_adapter extends RecyclerView.Adapter<Search_adapter.MyViewHo
 //                map.put("start_time", modelList.get(position).getStart_time());
                 map.put("end_date", modelList.get(position).getEnd_date());
                 map.put("end_time", modelList.get(position).getEnd_time());
-                map.put("price", modelList.get(position).getPrice());
+                map.put("price", modelList.get(position).getPriceStr());
                 map.put("product_image", modelList.get(position).getProduct_image());
 //                map.put("status", modelList.get(position).getStatus());
 //                map.put("in_stock", modelList.get(position).getIn_stock());
