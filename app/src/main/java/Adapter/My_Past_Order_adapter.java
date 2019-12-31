@@ -34,7 +34,9 @@ public class My_Past_Order_adapter extends RecyclerView.Adapter<My_Past_Order_ad
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView tv_orderno, tv_status, tv_date, tv_time, tv_price, tv_item, relativetextstatus, tv_tracking_date;
+        public TextView tv_orderno, tv_status, tv_date, tv_time, tv_price, tv_item, relativetextstatus, tv_contact;
+
+        public TextView tv_payment_method, tv_payment_id, tv_payment_status, tv_payment_date, tv_payment_time, tv_payment_amount, tv_payment_email, tv_payment_contact ;
         public TextView tv_pending_date, tv_pending_time, tv_confirm_date, tv_confirm_time, tv_delevered_date, tv_delevered_time, tv_cancel_date, tv_cancel_time;
         public View view1, view2, view3, view4, view5, view6;
         public RelativeLayout relative_background;

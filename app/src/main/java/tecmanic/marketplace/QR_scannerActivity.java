@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +20,7 @@ import org.json.JSONObject;
 
 public class QR_scannerActivity extends AppCompatActivity implements PaymentResultListener {
     private static final String TAG = payment_gateway.class.getSimpleName();
-    EditText result;
+    TextView result;
 
 
     @Override
@@ -29,7 +28,7 @@ public class QR_scannerActivity extends AppCompatActivity implements PaymentResu
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paytm);
-        result = (EditText) findViewById(R.id.edt_amount);
+        result = (TextView) findViewById(R.id.edt_amount);
         TextView mid=(TextView)findViewById(R.id.machine_id);
         final Barcode barcode = getIntent().getParcelableExtra("barcode");
         try {
@@ -115,4 +114,3 @@ public class QR_scannerActivity extends AppCompatActivity implements PaymentResu
     }
 
 }
-

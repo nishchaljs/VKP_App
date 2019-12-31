@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/app_bar"
-        android:background="@color/color_4"
+        android:background="@color/color_2"
         app:tabGravity="center"
         app:tabMinWidth="40dp"
         app:tabPaddingEnd="0dp"

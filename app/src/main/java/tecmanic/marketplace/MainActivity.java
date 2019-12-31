@@ -42,6 +42,7 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.razorpay.Checkout;
 
 import Config.BaseURL;
 import Fonts.CustomTypefaceSpan;
@@ -85,6 +86,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Checkout.preload(getApplicationContext());
+
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
 
@@ -167,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         View headerView = navigationView.getHeaderView(0);
-       // navigationView.getBackground().setColorFilter(0x80000000, PorterDuff.Mode.MULTIPLY);
+        // navigationView.getBackground().setColorFilter(0x80000000, PorterDuff.Mode.MULTIPLY);
         navigationView.setNavigationItemSelectedListener(this);
         nav_menu = navigationView.getMenu();
         View header = ((NavigationView) findViewById(R.id.nav_view)).getHeaderView(0);
@@ -180,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        iv_Whatspp = (ImageView) header.findViewById(R.id.iv_whatsapp);
         //My_Reward = (LinearLayout) header.findViewById(R.id.my_reward);
         //My_Walllet = (LinearLayout) header.findViewById(R.id.my_wallet);
-       // My_Cart = (LinearLayout) header.findViewById(R.id.my_cart);
+        // My_Cart = (LinearLayout) header.findViewById(R.id.my_cart);
 
         My_Order.setOnClickListener(new View.OnClickListener()
 
@@ -194,7 +198,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
 
-        
+
 //        signOut.setOnClickListener({
 //                signOut()
 //            }
@@ -202,7 +206,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
 
-    //sign out method
+        //sign out method
 //    public void signOut() {
 //        auth.signOut();
 //    }
@@ -414,7 +418,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Bundle args = new Bundle();
 
 
-         if (id == R.id.nav_my_profile) {
+        if (id == R.id.nav_my_profile) {
             fm = new Edit_profile_fragment();}
 //          else if (id == R.id.nav_support) {
 //            String smsNumber = "919990155993";
@@ -425,7 +429,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //            startActivity(i);
 //        }
 
-         else if (id == R.id.nav_policy) {
+        else if (id == R.id.nav_policy) {
             fm = new Terms_and_Condition_fragment();
             args.putString("url", BaseURL.GET_TERMS_URL);
             args.putString("title", getResources().getString(R.string.nav_terms));
@@ -436,7 +440,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        }  else if (id == R.id.nav_share) {
 //            shareApp();
 //        }
-            else if (id == R.id.nav_logout) {
+        else if (id == R.id.nav_logout) {
             sessionManagement.logoutSession();
             auth.signOut();
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
@@ -561,7 +565,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //    }
 
 
-   @Override
+    @Override
     protected void onPause() {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mRegistrationBroadcastReceiver);
         super.onPause();

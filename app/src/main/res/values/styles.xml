@@ -34,9 +34,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
     <style name="RobotoBoldTextAppearance">
-        <item name="android:fontFamily">@font/bold</item>
+        <item name="android:fontFamily">@font/abel</item>
         <item name="android:textColor">#fff</item>
-        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="android:textSize">22dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
 </style>
     <style name="NavDrawerTextStyle" parent="Base.TextAppearance.AppCompat">
         <item name="android:textColor">#fff</item>

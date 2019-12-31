@@ -1,9 +1,9 @@
 package Fragment;
 
+import android.app.ActivityOptions;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -40,6 +40,11 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -68,17 +73,10 @@ import tecmanic.marketplace.MainActivity;
 import tecmanic.marketplace.R;
 import tecmanic.marketplace.ScannedBarcodeActivity;
 import tecmanic.marketplace.payment_gateway;
-import util.ConnectivityReceiver;
 import util.CustomVolleyJsonRequest;
 import util.RecyclerTouchListener;
 
 //import Adapter.Deal_OfDay_Adapter;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 
 public class Home_fragment extends Fragment {
@@ -116,7 +114,7 @@ public class Home_fragment extends Fragment {
     View view;
 
     DatabaseReference myRef;
-//    Map<String, Object> devices;
+    //    Map<String, Object> devices;
     private ArrayList<Product_model> deviceList= new ArrayList<Product_model>();
     Set<String> keys;
 
@@ -168,20 +166,23 @@ public class Home_fragment extends Fragment {
 //        }
 
 
-       //qr_scanner
+        //qr_scanner
         btnScanBarcode = (FloatingActionButton)view.findViewById(R.id.btnScanBarcode);
         btnScanBarcode.setImageResource(R.drawable.ic_select_all_black_24dp);
         btnScanBarcode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(v.getId()==R.id.btnScanBarcode){
-                Intent intent = new Intent(getActivity(), ScannedBarcodeActivity.class);
-                startActivity(intent);}
+                    Intent intent = new Intent(getActivity(), ScannedBarcodeActivity.class);
+                    Bundle bndlanimation =
+                            ActivityOptions.makeCustomAnimation(getActivity(), R.anim.animation,R.anim.animation2).toBundle();
+                    startActivity(intent, bndlanimation);
+                    }
             }
         });
 
         //Top Selling Products
-         rv_top_selling = (RecyclerView) view.findViewById(R.id.top_selling_recycler);
+        rv_top_selling = (RecyclerView) view.findViewById(R.id.top_selling_recycler);
 //        rv_top_selling.setLayoutManager(new LinearLayoutManager(getActivity()));
 //        rv_top_selling.setNestedScrollingEnabled(false);
 
@@ -191,11 +192,23 @@ public class Home_fragment extends Fragment {
         rv_top_selling.setNestedScrollingEnabled(false);
         rv_top_selling.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(1), true));
 
+        rv_top_selling.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (dy > 0 && btnScanBarcode.getVisibility() == View.VISIBLE) {
+                    btnScanBarcode.hide();
+                } else if (dy < 0 && btnScanBarcode.getVisibility() != View.VISIBLE) {
+                    btnScanBarcode.show();
+                }
+            }
+        });
 
-       //temp
+
+        //temp
         //List<Product_model>item=new ArrayList<>();
 
-        deviceList.add(new Product_model("Dummy","23-09-2000","6.30"," ",0));
+        deviceList.add(new Product_model("Dummy","type",1,"UID23092000","message",0,0,0));
 //        deviceList.add(new Product_model("5678","23-09-2000","6.30"," ","1000"));
 
 
@@ -208,7 +221,7 @@ public class Home_fragment extends Fragment {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
+                deviceList= new ArrayList<Product_model>();
                 for(DataSnapshot data : dataSnapshot.getChildren()){
                     String UID =  data.getKey();
                     long ID = (long) data.child("ID").getValue();
@@ -217,8 +230,10 @@ public class Home_fragment extends Fragment {
                     long pending = (long) data.child("pending").getValue();
                     long status = (long) data.child("status").getValue();
 
+                    String gameType = (String) data.child("type").getValue();
+
                     //deviceList.add(new Product_model(game,"01-01-0000","0.00"," ","$2000" ));
-                    deviceList.add(new Product_model(game,ID,UID,message, pending, status, 100 ));
+                    deviceList.add(new Product_model(game,gameType,ID,UID,message, pending, status, 100 ));
                 }
 
                 Map<String, Product_model> value = (Map<String, Product_model>) dataSnapshot.getValue();
@@ -277,6 +292,13 @@ public class Home_fragment extends Fragment {
                 intent.putExtra("devicePending",device.getPending());
                 intent.putExtra("deviceGame",device.getProduct_name());
 
+                intent.putExtra("deviceGameType",device.getGametype());
+
+                //TODO: Update quantity with user input
+                intent.putExtra("orderQuantity",5);
+
+
+
 
 
                 startActivity(intent);
@@ -293,6 +315,12 @@ public class Home_fragment extends Fragment {
 
         return view;
     }
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.activity_main, menu);
+//        return true;
+//    }
 
 
     private void makeGetSliderRequest() {
@@ -698,4 +726,12 @@ public class Home_fragment extends Fragment {
         };
         myRef.addChildEventListener(childEventListener);
     }
+
+
+
 }
+
+
+
+
+

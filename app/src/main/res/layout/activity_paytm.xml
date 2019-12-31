@@ -57,10 +57,25 @@
             android:layout_marginTop="@dimen/space_8"
             android:background="@color/dark_gray" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
+            >
+            <ImageView
+                android:id="@+id/gameImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/default_game_icon"
+                />
+
+
+        </RelativeLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="20dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/space_8"
             android:layout_marginRight="@dimen/space_8"
@@ -71,8 +86,8 @@
             <Fonts.LatoBLack
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Your Order Id :"
+                android:layout_weight="2"
+                android:text="Order Id :"
                 android:textColor="@color/dark_gray"
                 android:textSize="@dimen/text_size_normal" />
 
@@ -87,7 +102,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="20dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/space_8"
             android:layout_marginRight="@dimen/space_8"
@@ -98,8 +113,8 @@
             <Fonts.LatoBLack
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Price :"
+                android:layout_weight="2"
+                android:text="Price:"
                 android:textColor="@color/dark_gray"
                 android:textSize="@dimen/text_size_normal" />
 
@@ -114,7 +129,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="20dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/space_8"
             android:layout_marginRight="@dimen/space_8"
@@ -125,8 +140,8 @@
             <Fonts.LatoBLack
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Your Order Id :"
+                android:layout_weight="2"
+                android:text="Machine ID"
                 android:textColor="@color/dark_gray"
                 android:textSize="@dimen/text_size_normal" />
 
@@ -135,7 +150,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="12322"
+                android:text="UID"
+                android:textColor="@color/dark_black"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/space_8"
+            android:layout_marginRight="@dimen/space_8"
+            android:layout_marginTop="@dimen/space_8"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Fonts.LatoBLack
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Game :"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/GameName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dummy"
                 android:textColor="@color/dark_black"
                 android:textSize="@dimen/text_size_normal" />
         </LinearLayout>
@@ -165,7 +207,7 @@
                     android:textSize="@dimen/text_size_normal" />
 
 
-                <EditText
+                <TextView
                     android:id="@+id/edt_amount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -210,21 +252,21 @@
         <RelativeLayout
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_margin="12dp"
-            android:background="@drawable/bg_rounded_button"
-            android:padding="12dp">
+            android:layout_height="35dp"
+            >
 
             <Button
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
                 android:id="@+id/start_transaction"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/bg_rounded_button"
-                android:gravity="center"
+
 
                 android:text="Pay"
                 android:textColor="@color/white"
-                android:textSize="@dimen/text_size_small" />
+                android:textSize="15dp" />
 
 
         </RelativeLayout>

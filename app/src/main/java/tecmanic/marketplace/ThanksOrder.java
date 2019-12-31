@@ -1,10 +1,9 @@
 package tecmanic.marketplace;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -26,10 +25,10 @@ public class ThanksOrder extends AppCompatActivity {
         Track_Order = (RelativeLayout) findViewById(R.id.tack_order);
 
 
-        String data = getIntent().getStringExtra("data");
+        //String data = getIntent().getStringExtra("data");
 
         tv_info = (TextView) findViewById(R.id.tv_thank_info);
-        tv_info.setText(Html.fromHtml(data));
+        //tv_info.setText(Html.fromHtml(data));
         Go_Home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,14 +37,14 @@ public class ThanksOrder extends AppCompatActivity {
                 finish();
             }
         });
-        Track_Order.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ThanksOrder.this, My_Order_activity.class);
-                startActivity(intent);
-                finish();
-
-            }
-        });
+//        Track_Order.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(ThanksOrder.this, My_Order_activity.class);
+//                startActivity(intent);
+//                finish();
+//
+//            }
+//        });
     }
 }

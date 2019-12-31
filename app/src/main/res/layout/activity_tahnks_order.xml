@@ -96,7 +96,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="@string/tv_thanks_order"
+                    android:text="Some Text"
                     android:textColor="#fff"
                     android:textSize="@dimen/text_size_small" />
 

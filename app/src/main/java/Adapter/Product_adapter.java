@@ -2,7 +2,7 @@ package Adapter;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.support.v7.widget.CardView;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.HashMap;
 import java.util.List;
@@ -33,12 +32,13 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
     private DatabaseHandler dbcart;
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView tv_title, tv_price, tv_reward, tv_total, tv_contetiy, tv_add;
+        public TextView tv_title, tv_price, tv_reward, tv_total, tv_contetiy, tv_add, tv_gameTitle;
         public ImageView iv_logo, iv_plus, iv_minus, iv_remove;
         public Double reward;
 
         public MyViewHolder(View view) {
             super(view);
+            //tv_gameTitle = (TextView) view.findViewById(R.id.gameTitle);
             tv_title = (TextView) view.findViewById(R.id.tv_subcat_title);
             tv_price = (TextView) view.findViewById(R.id.tv_subcat_price);
             tv_reward = (TextView) view.findViewById(R.id.tv_reward_point);
@@ -51,12 +51,12 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
             iv_remove = (ImageView) view.findViewById(R.id.iv_subcat_remove);
             //iv_remove.setVisibility(View.GONE);
 //            iv_minus.setOnClickListener(this);
- //           iv_plus.setOnClickListener(this);
- //           tv_add.setOnClickListener(this);
-           // iv_logo.setOnClickListener(this);
+            //           iv_plus.setOnClickListener(this);
+            //           tv_add.setOnClickListener(this);
+            // iv_logo.setOnClickListener(this);
 
-           // CardView cardView = (CardView) view.findViewById(R.id.card_view);
-           // cardView.setOnClickListener(this);
+            // CardView cardView = (CardView) view.findViewById(R.id.card_view);
+            // cardView.setOnClickListener(this);
 
         }
 
@@ -149,15 +149,47 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
     @Override
     public void onBindViewHolder(Product_adapter.MyViewHolder holder, int position) {
         Product_model mList = modelList.get(position);
-        Glide.with(context)
-                .load(BaseURL.IMG_PRODUCT_URL + mList.getProduct_image())
-                .centerCrop()
-                .placeholder(R.drawable.icon)
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .dontAnimate()
-                .into(holder.iv_logo);
+//        Glide.with(context)
+//                .load(BaseURL.IMG_PRODUCT_URL + mList.getProduct_image())
+//                .centerCrop()
+//                .placeholder(R.drawable.icon)
+//                .crossFade()
+//                .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                .dontAnimate()
+//                .into(holder.iv_logo);
+        //holder.tv_title.setText(mList.getUID());
         holder.tv_title.setText(mList.getProduct_name());
+        //holder.tv_gameTitle.setText(mList.getProduct_name());
+
+        if(mList.getStatus()==1){
+            holder.tv_title.setTextColor(Color.GREEN);
+        }
+        else{
+            holder.tv_title.setTextColor(Color.RED);
+        }
+
+        if(mList.getGametype().equals("supermario")){
+            holder.iv_logo.setImageResource(R.drawable.super_mario);
+        }
+        else if(mList.getGametype().equals("contra")){
+            holder.iv_logo.setImageResource(R.drawable.contra);
+        }
+        else if(mList.getGametype().equals("tekken")){
+            holder.iv_logo.setImageResource(R.drawable.tekken);
+        }
+        else if(mList.getGametype().equals("duckhunt")){
+            holder.iv_logo.setImageResource(R.drawable.duckhunt);
+        }
+        else if(mList.getGametype().equals("chipndale")){
+            holder.iv_logo.setImageResource(R.drawable.chipndale);
+        }
+        else{
+            holder.iv_logo.setImageResource(R.drawable.default_game_icon);
+        }
+
+
+
+
         //holder.tv_reward.setText(mList.getRewards());
         holder.tv_price.setText(String.valueOf(mList.getPrice()));
 

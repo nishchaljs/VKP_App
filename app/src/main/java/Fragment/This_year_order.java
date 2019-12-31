@@ -52,7 +52,7 @@ public class This_year_order extends Fragment {
         @Override
         protected Integer doInBackground(Void... params) {
 
-            TransactionsCollector collector = new TransactionsCollector(30);
+            TransactionsCollector collector = new TransactionsCollector(1); // FOR TODAY PAYMENT
             item = collector.getPaymentLists();
             Log.d(this.toString(),"length of data collected" + item.size() );
 
@@ -106,20 +106,12 @@ public class This_year_order extends Fragment {
         new FetchData().execute();
 
 
+        payment dummy_pay = new payment("#orderid-0001",100,"upi",1400826750 );
+        dummy_pay.setStatus("created");
 
-
-        item.add(new payment("#orderid-0001",100,"upi",1400826750 ));
+        item.add(dummy_pay);
 //        item.add(new payment("#orderid-0002",100,"upi",1400826750 ));
-//        item.add(new payment("#orderid-0003",100,"upi",1400826750 ));
-//        item.add(new payment("#orderid-0004",100,"upi",1400826750 ));
-//        item.add(new payment("#orderid-0005",100,"upi",1400826750 ));
-//        item.add(new payment("#orderid-0006",100,"upi",1400826750 ));
-//        item.add(new payment("#orderid-0007",100,"upi",1400826750 ));
-//        item.add(new payment("#orderid-0008",100,"upi",1400826750 ));
-//        item.add(new payment("#orderid-0009",100,"upi",1400826750 ));
-//        item.add(new payment("#orderid-0010",100,"upi",1400826750 ));
-//        item.add(new payment("#orderid-0011",100,"upi",1400826750 ));
-//        item.add(new payment("#orderid-0012",100,"upi",1400826750 ));
+//
 
         Log.d(this.toString(),"transaction with dummy data" + item.size());
 

@@ -2,8 +2,8 @@
 <!--  res/drawable/rounded_edittext.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval" android:padding="10dp">
-    <solid android:color="#1b1b1b"/>
-    <stroke android:width="2dp" android:color="#1b1b1b" />
+    <solid android:color="@color/gray"/>
+    <stroke android:width="2dp" android:color="@color/gray" />
     <size
         android:width="70sp"
         android:height="60sp"/>
