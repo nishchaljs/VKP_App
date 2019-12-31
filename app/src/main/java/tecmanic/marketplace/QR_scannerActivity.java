@@ -18,10 +18,11 @@ import com.razorpay.PaymentResultListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 public class QR_scannerActivity extends AppCompatActivity implements PaymentResultListener {
     private static final String TAG = payment_gateway.class.getSimpleName();
-    EditText result;
+    TextView result;
 
 
     @Override
@@ -29,7 +30,7 @@ public class QR_scannerActivity extends AppCompatActivity implements PaymentResu
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paytm);
-        result = (EditText) findViewById(R.id.edt_amount);
+        result = (TextView) findViewById(R.id.edt_amount);
         TextView mid=(TextView)findViewById(R.id.machine_id);
         final Barcode barcode = getIntent().getParcelableExtra("barcode");
         try {

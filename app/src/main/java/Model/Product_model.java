@@ -10,12 +10,14 @@ public class Product_model {
     String message ;
     long pending ;
     long status  ;
+    float price; // TODO : Fetch this value from server
+    String Gametype;
 
 
 
     String end_date;
     String end_time;
-    float price;
+
     String product_image;
 
     @Override
@@ -39,10 +41,11 @@ public class Product_model {
 
     public Product_model(){}
 
-    public Product_model(String product_name, long ID, String UID, String message, long pending, long status, float price) {
+    public Product_model(String product_name,String Gametype ,long ID, String UID, String message, long pending, long status, float price) {
         this.product_name = product_name;
         this.ID = ID;
         this.UID = UID;
+        this.Gametype = Gametype;
         this.message = message;
         this.pending = pending;
         this.status = status;
@@ -59,6 +62,15 @@ public class Product_model {
         this.end_time=end_time;
         this.price=price;
         this.product_name=product_name;
+    }
+
+
+    public String getGametype() {
+        return Gametype;
+    }
+
+    public void setGametype(String gametype) {
+        Gametype = gametype;
     }
 
     public long getID() {

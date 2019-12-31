@@ -42,6 +42,7 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.razorpay.Checkout;
 
 import Config.BaseURL;
 import Fonts.CustomTypefaceSpan;
@@ -85,6 +86,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Checkout.preload(getApplicationContext());
+
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
 

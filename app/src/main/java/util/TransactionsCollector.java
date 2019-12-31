@@ -1,5 +1,6 @@
 package util;
 
+import android.support.v4.view.PagerAdapter;
 import android.util.Log;
 
 import com.razorpay.Payment;
@@ -142,7 +143,18 @@ public class TransactionsCollector {
                     Log.d(this.toString(),"----------------------------------");
                     Log.d(this.toString(),"JSON DUMP -"+i+ Payment_index.toJson().toString());
 
-                    payment payment_index = convertJson(Payment_index.toJson());
+
+                    payment payment_index = new payment();
+                    payment_index.setId( (String) Payment_index.get("id"));
+                    payment_index.setAmount( (Integer) Payment_index.get("amount") );
+                    payment_index.setStatus( (String) Payment_index.get("status") );
+                    payment_index.setOrder_id((String) Payment_index.get("order_id"));
+                    payment_index.setMethod((String) Payment_index.get("method"));
+                    payment_index.setCreated_at((int) Payment_index.toJson().get("created_at"));
+                    payment_index.setContact((String) Payment_index.get("contact"));
+                    payment_index.setEmail((String) Payment_index.get("email"));
+
+//                    payment payment_index = convertJson(Payment_index.toJson());
                     Log.d(this.toString(),"----------------------------------");
                     Log.d(this.toString(),"Transaction ID :" + payment_index.getId());
                     paymentLists.add(payment_index);

@@ -34,7 +34,11 @@ public class My_Past_Order_adapter extends RecyclerView.Adapter<My_Past_Order_ad
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView tv_orderno, tv_status, tv_date, tv_time, tv_price, tv_item, relativetextstatus, tv_tracking_date;
+        public TextView tv_orderno, tv_status, tv_date, tv_time, tv_price, tv_item, relativetextstatus, tv_contact;
+
+        public TextView tv_payment_method, tv_payment_id, tv_payment_status, tv_payment_date, tv_payment_time, tv_payment_amount, tv_payment_email, tv_payment_contact ;
+
+
         public TextView tv_pending_date, tv_pending_time, tv_confirm_date, tv_confirm_time, tv_delevered_date, tv_delevered_time, tv_cancel_date, tv_cancel_time;
         public View view1, view2, view3, view4, view5, view6;
         public RelativeLayout relative_background;
@@ -46,15 +50,17 @@ public class My_Past_Order_adapter extends RecyclerView.Adapter<My_Past_Order_ad
 
         public MyViewHolder(View view) {
             super(view);
-            tv_methid1=(TextView)view.findViewById(R.id.payment_type);
-            tv_orderno = (TextView) view.findViewById(R.id.tv_order_no);
-            tv_status = (TextView) view.findViewById(R.id.tv_order_status);
-            relativetextstatus = (TextView) view.findViewById(R.id.status);
+            tv_payment_method=(TextView)view.findViewById(R.id.payment_method);
+            tv_payment_id = (TextView) view.findViewById(R.id.tv_payment_id);
+            tv_payment_status = (TextView) view.findViewById(R.id.payment_status);
+//            relativetextstatus = (TextView) view.findViewById(R.id.status);
             //tv_tracking_date = (TextView) view.findViewById(R.id.tracking_date);
-            tv_date = (TextView) view.findViewById(R.id.tv_order_date);
-            tv_time = (TextView) view.findViewById(R.id.tv_order_time);
-            tv_price = (TextView) view.findViewById(R.id.tv_order_price);
-            tv_item = (TextView) view.findViewById(R.id.tv_order_item);
+            tv_payment_date = (TextView) view.findViewById(R.id.payment_date);
+            tv_payment_time= (TextView) view.findViewById(R.id.payment_time);
+            tv_payment_amount = (TextView) view.findViewById(R.id.tv_order_price);
+            tv_payment_email = (TextView) view.findViewById(R.id.payment_email);
+            tv_payment_contact = (TextView) view.findViewById(R.id.payment_contact);
+
             cardView = view.findViewById(R.id.card_view);
 //
 //
@@ -84,8 +90,6 @@ public class My_Past_Order_adapter extends RecyclerView.Adapter<My_Past_Order_ad
 
         }
     }
-
-
 
     @Override
     public My_Past_Order_adapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -141,11 +145,21 @@ public class My_Past_Order_adapter extends RecyclerView.Adapter<My_Past_Order_ad
 //            holder.tv_status.setTextColor(context.getResources().getColor(R.color.green));
 //        }
 
-        holder.tv_methid1.setText(mList.getPayment_method());
-        holder.tv_date.setText(mList.getOn_date());
+//        tv_payment_method, tv_payment_id, tv_payment_status, tv_payment_date, tv_payment_time, tv_payment_amount, tv_payment_email, tv_payment_contact
+
+        holder.tv_payment_id.setText("");
+        holder.tv_payment_method.setText(mList.getPayment_method());
+        holder.tv_payment_date.setText(mList.getOn_date());
+        holder.tv_payment_time.setText(mList.getOn_date());
+        holder.tv_payment_amount.setText(mList.getTotal_amount());
+
+        holder.tv_payment_status.setText("");
+        holder.tv_payment_email.setText("");
+        holder.tv_payment_contact.setText("");
+
         // holder.tv_tracking_date.setText(mList.getOn_date());
 //        holder.tv_time.setText(mList.getDelivery_time_from() + "-" + mList.getDelivery_time_to());
-        holder.tv_price.setText(context.getResources().getString(R.string.currency) + mList.getTotal_amount());
+
 //        holder.tv_item.setText(context.getResources().getString(R.string.tv_cart_item) + mList.getTotal_items());
 //        holder.tv_pending_time.setText(mList.getDelivery_time_from() + "-" + mList.getDelivery_time_to());
 //        holder.tv_pending_date.setText(mList.getOn_date());

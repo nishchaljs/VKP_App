@@ -79,6 +79,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.razorpay.Checkout;
 
 
 public class Home_fragment extends Fragment {
@@ -195,7 +196,7 @@ public class Home_fragment extends Fragment {
        //temp
         //List<Product_model>item=new ArrayList<>();
 
-        deviceList.add(new Product_model("Dummy","23-09-2000","6.30"," ",0));
+        deviceList.add(new Product_model("Dummy","type",1,"UID23092000","message",0,0,0));
 //        deviceList.add(new Product_model("5678","23-09-2000","6.30"," ","1000"));
 
 
@@ -208,7 +209,7 @@ public class Home_fragment extends Fragment {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
+                deviceList= new ArrayList<Product_model>();
                 for(DataSnapshot data : dataSnapshot.getChildren()){
                     String UID =  data.getKey();
                     long ID = (long) data.child("ID").getValue();
@@ -217,8 +218,10 @@ public class Home_fragment extends Fragment {
                     long pending = (long) data.child("pending").getValue();
                     long status = (long) data.child("status").getValue();
 
+                    String gameType = (String) data.child("type").getValue();
+
                     //deviceList.add(new Product_model(game,"01-01-0000","0.00"," ","$2000" ));
-                    deviceList.add(new Product_model(game,ID,UID,message, pending, status, 100 ));
+                    deviceList.add(new Product_model(game,gameType,ID,UID,message, pending, status, 100 ));
                 }
 
                 Map<String, Product_model> value = (Map<String, Product_model>) dataSnapshot.getValue();
@@ -276,6 +279,13 @@ public class Home_fragment extends Fragment {
                 intent.putExtra("deviceStatus",device.getStatus());
                 intent.putExtra("devicePending",device.getPending());
                 intent.putExtra("deviceGame",device.getProduct_name());
+
+                intent.putExtra("deviceGameType",device.getGametype());
+
+                //TODO: Update quantity with user input
+                intent.putExtra("orderQuantity",5);
+
+
 
 
 

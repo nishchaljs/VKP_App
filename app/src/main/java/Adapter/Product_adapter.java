@@ -2,6 +2,7 @@ package Adapter;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -33,12 +34,13 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
     private DatabaseHandler dbcart;
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView tv_title, tv_price, tv_reward, tv_total, tv_contetiy, tv_add;
+        public TextView tv_title, tv_price, tv_reward, tv_total, tv_contetiy, tv_add, tv_gameTitle;
         public ImageView iv_logo, iv_plus, iv_minus, iv_remove;
         public Double reward;
 
         public MyViewHolder(View view) {
             super(view);
+            tv_gameTitle = (TextView) view.findViewById(R.id.gameTitle);
             tv_title = (TextView) view.findViewById(R.id.tv_subcat_title);
             tv_price = (TextView) view.findViewById(R.id.tv_subcat_price);
             tv_reward = (TextView) view.findViewById(R.id.tv_reward_point);
@@ -149,15 +151,46 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
     @Override
     public void onBindViewHolder(Product_adapter.MyViewHolder holder, int position) {
         Product_model mList = modelList.get(position);
-        Glide.with(context)
-                .load(BaseURL.IMG_PRODUCT_URL + mList.getProduct_image())
-                .centerCrop()
-                .placeholder(R.drawable.icon)
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .dontAnimate()
-                .into(holder.iv_logo);
-        holder.tv_title.setText(mList.getProduct_name());
+//        Glide.with(context)
+//                .load(BaseURL.IMG_PRODUCT_URL + mList.getProduct_image())
+//                .centerCrop()
+//                .placeholder(R.drawable.icon)
+//                .crossFade()
+//                .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                .dontAnimate()
+//                .into(holder.iv_logo);
+        holder.tv_title.setText(mList.getUID());
+        holder.tv_gameTitle.setText(mList.getProduct_name());
+
+        if(mList.getStatus()==1){
+            holder.tv_title.setTextColor(Color.GREEN);
+        }
+        else{
+            holder.tv_title.setTextColor(Color.RED);
+        }
+
+        if(mList.getGametype().equals("supermario")){
+            holder.iv_logo.setImageResource(R.drawable.super_mario);
+        }
+        else if(mList.getGametype().equals("contra")){
+            holder.iv_logo.setImageResource(R.drawable.contra);
+        }
+        else if(mList.getGametype().equals("tekken")){
+            holder.iv_logo.setImageResource(R.drawable.tekken);
+        }
+        else if(mList.getGametype().equals("duckhunt")){
+            holder.iv_logo.setImageResource(R.drawable.duckhunt);
+        }
+        else if(mList.getGametype().equals("chipndale")){
+            holder.iv_logo.setImageResource(R.drawable.chipndale);
+        }
+        else{
+            holder.iv_logo.setImageResource(R.drawable.default_game_icon);
+        }
+
+
+
+
         //holder.tv_reward.setText(mList.getRewards());
         holder.tv_price.setText(String.valueOf(mList.getPrice()));
 
