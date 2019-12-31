@@ -40,6 +40,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.razorpay.Checkout;
@@ -70,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
+    private GoogleSignInClient mGoogleSignInClient;
 
 
     ImageView imageView;
@@ -91,6 +95,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        mGoogleSignInClient= GoogleSignIn.getClient(this,gso);
 
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -442,6 +451,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        }
         else if (id == R.id.nav_logout) {
             sessionManagement.logoutSession();
+            mGoogleSignInClient.signOut();
             auth.signOut();
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
             finish();
