@@ -106,9 +106,10 @@ public class This_year_order extends Fragment {
         new FetchData().execute();
 
 
+        payment dummy_pay = new payment("#orderid-0001",100,"upi",1400826750 );
+        dummy_pay.setStatus("created");
 
-
-        item.add(new payment("#orderid-0001",100,"upi",1400826750 ));
+        item.add(dummy_pay);
 //        item.add(new payment("#orderid-0002",100,"upi",1400826750 ));
 //
 

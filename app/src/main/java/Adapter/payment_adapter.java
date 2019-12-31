@@ -5,6 +5,7 @@
 package Adapter;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +42,7 @@ public class payment_adapter extends RecyclerView.Adapter<payment_adapter.MyView
             tv_payment_amount = (TextView) view.findViewById(R.id.tv_order_price);
             tv_payment_email = (TextView) view.findViewById(R.id.payment_email);
             tv_payment_contact = (TextView) view.findViewById(R.id.payment_contact);
-            payment_status_theme = view.findViewById(R.id.payment_status_theme);
+            payment_status_theme = (LinearLayout) view.findViewById(R.id.payment_status_theme);
 //
         }
     }
@@ -90,22 +91,24 @@ public class payment_adapter extends RecyclerView.Adapter<payment_adapter.MyView
 
 
 //        TODO
-        if (holder.tv_payment_status.equals("created")){
-            holder.payment_status_theme.setBackgroundColor(Color.parseColor("#fff570"));
-        }
-        else if (holder.tv_payment_status.equals("captured")){
-            holder.payment_status_theme.setBackgroundColor(Color.parseColor("#75fa69"));
-        }
-        else if (holder.tv_payment_status.equals("authorized")){
 
-            holder.payment_status_theme.setBackgroundColor(Color.parseColor("#6ffcf3"));
+        Log.d("PAYMENT STATUS THEME",Payment.getStatus());
+        if (Payment.getStatus().equals("created")){
+            holder.payment_status_theme.setBackgroundColor(Color.parseColor("#fcf8bd"));
         }
-        else if (holder.tv_payment_status.equals("failed")){
-            holder.payment_status_theme.setBackgroundColor(Color.parseColor("#fa4848"));
+        else if (Payment.getStatus().equals("captured")){
+            holder.payment_status_theme.setBackgroundColor(Color.parseColor("#b7fcb0")); //#75FA69
+        }
+        else if (Payment.getStatus().equals("authorized")){
+
+            holder.payment_status_theme.setBackgroundColor(Color.parseColor("#aef9f4"));
+        }
+        else if (Payment.getStatus().equals("failed")){
+            holder.payment_status_theme.setBackgroundColor(Color.parseColor("#fcb5b5"));
 
         }
-        else if (holder.tv_payment_status.equals("refunded")){
-            holder.payment_status_theme.setBackgroundColor(Color.parseColor("#faac64"));
+        else if (Payment.getStatus().equals("refunded")){
+            holder.payment_status_theme.setBackgroundColor(Color.parseColor("#fcd4ae"));
         }
 
 
