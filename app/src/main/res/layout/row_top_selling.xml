@@ -1,57 +1,219 @@
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/tools"
-    android:id="@+id/card_view_top"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:background="@color/gray"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    card_view:cardCornerRadius="12dp"
-    card_view:cardPreventCornerOverlap="false"
-    android:elevation="@dimen/space_4"
-    card_view:cardUseCompatPadding="true">
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
+ <android.support.v7.widget.CardView
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="7sp"
+    android:id="@+id/card_view"
+    android:layout_marginLeft="5sp"
+    android:layout_marginRight="5sp"
+    android:layout_marginTop="50sp"
+    android:layout_marginBottom="2sp"
+    app:contentPaddingLeft="7sp"
+    app:contentPaddingRight="0sp"
+    app:cardElevation="15sp"
+    app:cardMaxElevation="15sp"
+    app:cardBackgroundColor="@color/off_white">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_margin="@dimen/space_5"
-        android:layout_height="190dp">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+
+        <LinearLayout
+            android:layout_width="125sp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingRight="2sp"
+            >
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_subcat_img"-->
+            <!--android:layout_width="80dp"-->
+            <!--android:layout_height="80dp"-->
+            <!--app:srcCompat="@drawable/icon" />-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:id="@+id/iv_subcat_img"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_game_icon"/>
+
+
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="top"
-            android:gravity="top|center"
-            android:orientation="vertical">
+            android:background="@drawable/rounded_cardview"
+            android:orientation="vertical"
 
-
-            <ImageView
-                android:id="@+id/iv_icon"
-                android:layout_width="80dp"
-                android:layout_height="100dp"
-                android:src="@mipmap/ic_launcher" />
-
-            <Fonts.LatoBLack
-                android:id="@+id/product_name"
-                android:layout_width="wrap_content"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Product Name"
-                android:layout_marginTop="@dimen/space_12"
-                android:textColor="#837e7e"
-                android:textSize="@dimen/text_size_normal" />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/product_prize"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="@dimen/space_4"
-                android:text="Product Price"
-                android:textColor="@color/color_1"
-                android:textSize="@dimen/text_size_large" />
 
+                <EditText
+                    android:id="@+id/tv_subcat_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7sp"
+                    android:layout_marginLeft="5sp"
+                    android:layout_weight="1.25"
+                    android:fontFamily="@font/abel"
+                    android:text="12344444"
+                    android:textColor="@color/color_2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="300sp"
+                android:layout_height="30sp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40sp"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginTop="5sp"
+                    android:layout_weight="0.15"
+                    android:fontFamily="@font/abel"
+                    android:gravity="left"
+                    android:text="By"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40sp"
+                    android:layout_marginTop="5sp"
+                    android:layout_weight="1.5"
+                    android:fontFamily="@font/abel"
+                    android:text="XYZABCDEFG"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <view class="in.juspay.godel.ui.OnScreenDisplay$View"
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="@color/gray"
+                android:layout_marginTop="5sp">
+
+            </view>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="75sp"
+                android:padding="5sp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50sp"
+                        android:layout_marginLeft="19sp"
+                        android:layout_marginTop="10sp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/abel"
+                        android:text="Price"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_subcat_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="19sp"
+                        android:layout_marginTop="7sp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/abel"
+                        android:textStyle="bold"
+                        android:text="20000"
+                        android:textColor="@color/color_2"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <view class="in.juspay.godel.ui.OnScreenDisplay$View"
+                    android:layout_width="1sp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray"
+                    android:layout_marginTop="5sp">
+                </view>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.0"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50sp"
+                        android:layout_marginLeft="20sp"
+                        android:layout_marginTop="10sp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/abel"
+                        android:gravity="center_horizontal"
+                        android:text="Duration"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_order_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20sp"
+                        android:layout_marginTop="7sp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/abel"
+                        android:text="60 min"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_2"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="0sp"
+                        android:id="@+id/payment_type"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
+
+
     </LinearLayout>
 
 
+
 </android.support.v7.widget.CardView>
-
-
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_marginTop="5sp"
+        android:fontFamily="@font/abel"
+        android:text="Machine ID"
+        android:textSize="18sp" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Machine Details"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_rounded_button"
+        android:textColor="@color/white"/>
+</LinearLayout>

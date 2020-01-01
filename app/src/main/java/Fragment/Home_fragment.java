@@ -4,6 +4,7 @@ import android.app.ActivityOptions;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -19,6 +20,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +28,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -62,7 +65,7 @@ import java.util.Set;
 import Adapter.Home_Icon_Adapter;
 import Adapter.Home_adapter;
 import Adapter.Product_adapter;
-import Adapter.Top_Selling_Adapter;
+//import Adapter.Top_Selling_Adapter;
 import Config.BaseURL;
 import Model.Home_Icon_model;
 import Model.Product_model;
@@ -101,7 +104,7 @@ public class Home_fragment extends Fragment {
 
 
     //Top Selling Products
-    private Top_Selling_Adapter top_selling_adapter;
+   // private Top_Selling_Adapter top_selling_adapter;
     private List<Top_Selling_model> top_selling_models = new ArrayList<>();
 
 
@@ -165,6 +168,21 @@ public class Home_fragment extends Fragment {
 //
 //        }
 
+
+        //add button for admin
+        Button btn = (Button)view.findViewById(R.id.add_machine);
+        btn.setVisibility(View.VISIBLE);
+        btn.setBackgroundResource(R.drawable.add_machine);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v.getId()==R.id.add_machine){
+                    LayoutInflater inflater =(LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    PopupWindow pw =new PopupWindow(inflater.inflate(R.layout.row_top_selling,null,false),1000,1050,true);
+                    pw.showAtLocation(view, Gravity.CENTER,0,0);
+                }
+            }
+        });
 
         //qr_scanner
         btnScanBarcode = (FloatingActionButton)view.findViewById(R.id.btnScanBarcode);
@@ -526,10 +544,10 @@ public class Home_fragment extends Fragment {
                             Gson gson = new Gson();
                             Type listType = new TypeToken<List<Top_Selling_model>>() {
                             }.getType();
-                            top_selling_models = gson.fromJson(response.getString("top_selling_product"), listType);
-                            top_selling_adapter = new Top_Selling_Adapter(top_selling_models);
-                            rv_top_selling.setAdapter(top_selling_adapter);
-                            top_selling_adapter.notifyDataSetChanged();
+//                            top_selling_models = gson.fromJson(response.getString("top_selling_product"), listType);
+//                            top_selling_adapter = new Top_Selling_Adapter(top_selling_models);
+//                            rv_top_selling.setAdapter(top_selling_adapter);
+//                            top_selling_adapter.notifyDataSetChanged();
                         }
                     }
                 } catch (JSONException e) {
