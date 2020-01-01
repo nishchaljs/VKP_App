@@ -239,9 +239,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="EDIT DEVICE"
+
                 android:layout_marginLeft="80dp"
                 android:background="@drawable/bg_rounded_button"
                 android:textColor="@color/white"
+                android:id="@+id/edit_machine"
                 android:textSize="15dp"
 
                 />
@@ -250,6 +252,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="DELETE DEVICE"
+                android:id="@+id/delete_machine"
                 android:textColor="@color/white"
                 android:textSize="15dp"
                 android:layout_marginLeft="50dp"
