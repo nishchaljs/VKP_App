@@ -4,13 +4,13 @@ import android.app.ActivityOptions;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -20,15 +20,14 @@ import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +41,10 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GetTokenResult;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -65,7 +68,7 @@ import java.util.Set;
 import Adapter.Home_Icon_Adapter;
 import Adapter.Home_adapter;
 import Adapter.Product_adapter;
-//import Adapter.Top_Selling_Adapter;
+
 import Config.BaseURL;
 import Model.Home_Icon_model;
 import Model.Product_model;
@@ -104,7 +107,7 @@ public class Home_fragment extends Fragment {
 
 
     //Top Selling Products
-   // private Top_Selling_Adapter top_selling_adapter;
+    //  private Top_Selling_Adapter top_selling_adapter;
     private List<Top_Selling_model> top_selling_models = new ArrayList<>();
 
 
@@ -134,16 +137,59 @@ public class Home_fragment extends Fragment {
 
 
 
+
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        user.getIdToken(false).addOnSuccessListener(new OnSuccessListener<GetTokenResult>() {
+            @Override
+            public void onSuccess(GetTokenResult result) {
+                boolean isAdmin;
+                try {
+                    isAdmin =(boolean) result.getClaims().get("admin");
+                }
+                catch (Exception e){
+                    isAdmin = false;
+                }
+
+                if (isAdmin) {
+                    // Show admin UI.
+
+                    try{
+
+                        Button add_machine = (Button) getView().findViewById(R.id.add_machine);
+                        add_machine.setVisibility(View.VISIBLE);
+
+                    }
+                    catch (Exception e){
+                        Log.d(TAG, "FAILED TO CHANGE VISIBILITY : "+e.getMessage());
+                    }
+
+
+                } else {
+                    // Show regular user UI.
+//
+                }
+            }
+        });
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) { final FloatingActionButton btnScanBarcode;
         final View view = inflater.inflate(R.layout.fragment_home, container, false);
+
         setHasOptionsMenu(true);
         ((MainActivity) getActivity()).setTitle(getResources().getString(R.string.app_name));
         ((MainActivity) getActivity()).updateHeader();
         view.setFocusableInTouchMode(true);
         view.requestFocus();
+
+
+
         view.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -168,21 +214,6 @@ public class Home_fragment extends Fragment {
 //
 //        }
 
-
-        //add button for admin
-        Button btn = (Button)view.findViewById(R.id.add_machine);
-        btn.setVisibility(View.VISIBLE);
-        btn.setBackgroundResource(R.drawable.add_machine);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(v.getId()==R.id.add_machine){
-                    LayoutInflater inflater =(LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                    PopupWindow pw =new PopupWindow(inflater.inflate(R.layout.row_top_selling,null,false),1000,1050,true);
-                    pw.showAtLocation(view, Gravity.CENTER,0,0);
-                }
-            }
-        });
 
         //qr_scanner
         btnScanBarcode = (FloatingActionButton)view.findViewById(R.id.btnScanBarcode);
@@ -226,7 +257,7 @@ public class Home_fragment extends Fragment {
         //temp
         //List<Product_model>item=new ArrayList<>();
 
-        deviceList.add(new Product_model("Dummy","type",1,"UID23092000","message",0,0,0));
+        deviceList.add(new Product_model("Dummy","type","#1","UID23092000","message",0,0,0));
 //        deviceList.add(new Product_model("5678","23-09-2000","6.30"," ","1000"));
 
 
@@ -242,7 +273,7 @@ public class Home_fragment extends Fragment {
                 deviceList= new ArrayList<Product_model>();
                 for(DataSnapshot data : dataSnapshot.getChildren()){
                     String UID =  data.getKey();
-                    long ID = (long) data.child("ID").getValue();
+                    String ID = (String) data.child("ID").getValue();
                     String game = (String) data.child("Game").getValue();
                     String message = (String) data.child("message").getValue();
                     long pending = (long) data.child("pending").getValue();
@@ -313,7 +344,7 @@ public class Home_fragment extends Fragment {
                 intent.putExtra("deviceGameType",device.getGametype());
 
                 //TODO: Update quantity with user input
-                intent.putExtra("orderQuantity",5);
+                intent.putExtra("orderQuantity",1);
 
 
 
@@ -339,6 +370,8 @@ public class Home_fragment extends Fragment {
 //        getMenuInflater().inflate(R.menu.activity_main, menu);
 //        return true;
 //    }
+
+
 
 
     private void makeGetSliderRequest() {
@@ -544,10 +577,10 @@ public class Home_fragment extends Fragment {
                             Gson gson = new Gson();
                             Type listType = new TypeToken<List<Top_Selling_model>>() {
                             }.getType();
-//                            top_selling_models = gson.fromJson(response.getString("top_selling_product"), listType);
-//                            top_selling_adapter = new Top_Selling_Adapter(top_selling_models);
-//                            rv_top_selling.setAdapter(top_selling_adapter);
-//                            top_selling_adapter.notifyDataSetChanged();
+                            top_selling_models = gson.fromJson(response.getString("top_selling_product"), listType);
+                          //  top_selling_adapter = new Top_Selling_Adapter(top_selling_models);
+                          //  rv_top_selling.setAdapter(top_selling_adapter);
+                          //  top_selling_adapter.notifyDataSetChanged();
                         }
                     }
                 } catch (JSONException e) {

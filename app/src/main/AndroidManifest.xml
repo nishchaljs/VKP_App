@@ -34,10 +34,10 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".EnjoyGame"></activity>
-        <activity android:name=".SignupActivity"></activity>
-        <activity android:name=".ResetPasswordActivity"></activity>
+        <activity android:name=".edit_device"></activity>
+        <activity android:name=".EnjoyGame" />
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".ResetPasswordActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -53,7 +53,6 @@
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".NetworkConnectivity.NetworkError" />
-
         <activity android:name=".payment_gateway" />
         <activity
             android:name=".LoginActivity"

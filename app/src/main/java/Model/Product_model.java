@@ -5,7 +5,7 @@ package Model;
 public class Product_model {
 
     String product_name;
-    long ID ;
+    String ID ;
     String UID;
     String message ;
     long pending ;
@@ -41,7 +41,7 @@ public class Product_model {
 
     public Product_model(){}
 
-    public Product_model(String product_name,String Gametype ,long ID, String UID, String message, long pending, long status, float price) {
+    public Product_model(String product_name,String Gametype ,String ID, String UID, String message, long pending, long status, float price) {
         this.product_name = product_name;
         this.ID = ID;
         this.UID = UID;
@@ -73,11 +73,11 @@ public class Product_model {
         Gametype = gametype;
     }
 
-    public long getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(long ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 

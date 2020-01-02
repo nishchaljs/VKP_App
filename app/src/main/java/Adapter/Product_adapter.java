@@ -32,7 +32,7 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
     private DatabaseHandler dbcart;
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView tv_title, tv_price, tv_reward, tv_total, tv_contetiy, tv_add, tv_gameTitle;
+        public TextView tv_title, tv_price, tv_reward, tv_total, tv_contetiy, tv_add, machine_id;
         public ImageView iv_logo, iv_plus, iv_minus, iv_remove;
         public Double reward;
 
@@ -40,6 +40,9 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
             super(view);
             //tv_gameTitle = (TextView) view.findViewById(R.id.gameTitle);
             tv_title = (TextView) view.findViewById(R.id.tv_subcat_title);
+
+            machine_id = (TextView) view.findViewById(R.id.machine_id);
+
             tv_price = (TextView) view.findViewById(R.id.tv_subcat_price);
             tv_reward = (TextView) view.findViewById(R.id.tv_reward_point);
             tv_total = (TextView) view.findViewById(R.id.tv_subcat_total);
@@ -159,6 +162,7 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
 //                .into(holder.iv_logo);
         //holder.tv_title.setText(mList.getUID());
         holder.tv_title.setText(mList.getProduct_name());
+        holder.machine_id.setText(mList.getID());
         //holder.tv_gameTitle.setText(mList.getProduct_name());
 
         if(mList.getStatus()==1){

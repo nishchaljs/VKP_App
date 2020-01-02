@@ -36,6 +36,7 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -43,8 +44,10 @@ import android.widget.TextView;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GetTokenResult;
 import com.razorpay.Checkout;
 
 import Config.BaseURL;
@@ -103,6 +106,41 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        user.getIdToken(false).addOnSuccessListener(new OnSuccessListener<GetTokenResult>() {
+            @Override
+            public void onSuccess(GetTokenResult result) {
+                boolean isAdmin;
+                try {
+                    isAdmin =(boolean) result.getClaims().get("admin");
+                }
+                catch (Exception e){
+                    isAdmin = false;
+                }
+
+                if (isAdmin) {
+                    // Show admin UI.
+
+                    try{
+                        //LinearLayout transactionLayout = (LinearLayout) findViewById(R.id.transactions);
+                        //transactionLayout.setVisibility(View.VISIBLE);
+
+                        NavigationView v = (NavigationView) findViewById(R.id.nav_view);
+                        v.getHeaderView(0).findViewById(R.id.transactions).setVisibility(View.VISIBLE);
+
+                      
+
+                    }
+                    catch (Exception e){
+                        Log.d(TAG, "FAILED TO CHANGE VISIBILITY : "+e.getMessage());
+                    }
+
+
+                } else {
+                    // Show regular user UI.
+//
+                }
+            }
+        });
 
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -188,7 +226,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         iv_profile = (ImageView) header.findViewById(R.id.iv_header_img);
         tv_name = (TextView) header.findViewById(R.id.tv_header_name);
-        My_Order = (LinearLayout) header.findViewById(R.id.my_orders);
+        My_Order = (LinearLayout) header.findViewById(R.id.transactions);
 //        iv_Call = (ImageView) header.findViewById(R.id.iv_call);
 //        iv_Whatspp = (ImageView) header.findViewById(R.id.iv_whatsapp);
         //My_Reward = (LinearLayout) header.findViewById(R.id.my_reward);

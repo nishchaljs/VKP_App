@@ -1,16 +1,23 @@
 package tecmanic.marketplace;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GetTokenResult;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.razorpay.Checkout;
@@ -23,7 +30,7 @@ import org.json.JSONObject;
 public class payment_gateway extends Activity implements  PaymentResultListener {
 
     String deviceUID ;
-    long deviceID  ;
+    String deviceID  ;
     float devicePrice ;
     long deviceStatus ;
     long devicePending  ;
@@ -31,6 +38,7 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
     int orderQuantity;
     Order order;
     RazorpayClient razorpayClient;
+    ProgressDialog progressDialog;
 //    private TextView textView;
 
     private DatabaseReference myRef;
@@ -40,7 +48,106 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        myRef = FirebaseDatabase.getInstance().getReference("devices");
         setContentView(R.layout.activity_paytm);
+
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        user.getIdToken(false).addOnSuccessListener(new OnSuccessListener<GetTokenResult>() {
+            @Override
+            public void onSuccess(GetTokenResult result) {
+                boolean isAdmin ;
+
+                try{
+                    isAdmin =(boolean) result.getClaims().get("admin");
+                }
+                catch (Exception e){
+                    isAdmin = false;
+                }
+
+                if (isAdmin) {
+                    // Show admin UI.
+
+                    Button delete_machine = (Button) findViewById(R.id.delete_machine);
+                    Button edit_machine = (Button) findViewById(R.id.edit_machine);
+                    Button add_machine = (Button) findViewById(R.id.add_machine);
+                    delete_machine.setVisibility(View.VISIBLE);
+                    add_machine.setVisibility(View.VISIBLE);
+                    edit_machine.setVisibility(View.VISIBLE);
+
+
+
+
+                } else {
+                    // Show regular user UI.
+                    Button delete_machine = (Button) findViewById(R.id.delete_machine);
+                    Button edit_machine = (Button) findViewById(R.id.edit_machine);
+                    Button add_machine = (Button) findViewById(R.id.add_machine);
+                    delete_machine.setVisibility(View.GONE);
+                    add_machine.setVisibility(View.GONE);
+                    edit_machine.setVisibility(View.GONE);
+
+                }
+            }
+        });
+
+        Button delete_machine = (Button) findViewById(R.id.delete_machine);
+        Button edit_machine = (Button) findViewById(R.id.edit_machine);
+        Button add_machine = (Button) findViewById(R.id.add_machine);
+
+
+
+        delete_machine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(payment_gateway.this, MainActivity.class);
+//                i.putExtra("action",'delete');
+                myRef.child(deviceUID).removeValue();
+                startActivity(i);
+
+            }
+        });
+
+        edit_machine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(payment_gateway.this, edit_device.class);
+                i.putExtra("action","update_device");
+
+                i.putExtra("uid", deviceUID);
+
+                i.putExtra("device_id_string", String.valueOf(deviceID));
+                i.putExtra("game_name_string", deviceGame);
+                i.putExtra("game_type_string",GameType);
+                i.putExtra("game_price_string",String.valueOf(devicePrice));
+                i.putExtra("game_duration_string","60"); //TODO : update with Duration
+                i.putExtra("game_status_string",String.valueOf(deviceStatus));
+                i.putExtra("game_message_string", "Dummy message here"); //TODO : update with message
+
+
+
+
+                startActivity(i);
+
+            }
+        });
+
+        add_machine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(payment_gateway.this, edit_device.class);
+                i.putExtra("action","new_device");
+
+                startActivity(i);
+
+            }
+        });
+
+
+
+
 
         try {
             razorpayClient = new RazorpayClient("rzp_test_sNL7UTCVCOAZtW", "LYznqeSQXwy140aNYEdelK4D");
@@ -50,11 +157,13 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
             System.out.println(e.getMessage());
         }
         deviceUID = getIntent().getStringExtra("deviceUID");
-        deviceID = getIntent().getLongExtra("deviceID",0);
+        deviceID = getIntent().getStringExtra("deviceID");
         devicePrice = getIntent().getFloatExtra("devicePrice",0);
         deviceStatus = getIntent().getLongExtra("deviceStatus",0);
         devicePending = getIntent().getLongExtra("devicePending",0);
         deviceGame = getIntent().getStringExtra("deviceGame");
+
+        //TODO Update order Quantity here
         orderQuantity = getIntent().getIntExtra("orderQuantity",1);
         GameType = getIntent().getStringExtra("deviceGameType");
 
@@ -99,57 +208,61 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
         TextView textViewgamePrice = (TextView) (TextView)findViewById(R.id.unitGamePrice);
         textViewgamePrice.setText(String.valueOf(devicePrice));
 
-        TextView textViewMachineID = (TextView) (TextView)findViewById(R.id.machine_unique_id);
-        textViewMachineID.setText(String.valueOf(deviceUID));
+        TextView textViewMachineID = (TextView) (TextView)findViewById(R.id.machine_id);
+        textViewMachineID.setText(deviceID);
 
         TextView textViewamount = (TextView) (TextView)findViewById(R.id.edt_amount);
         textViewamount.setText(String.valueOf(orderQuantity*devicePrice));
 
+        TextView display_item_count = (TextView) (TextView)findViewById(R.id.display_item_count);
 
-        Thread thread = new Thread(new Runnable() {
 
+
+
+        Button increaseQuantity = (Button) findViewById(R.id.increase_item_count);
+        Button decreaseQuantity = (Button) findViewById(R.id.decrease_item_count);
+
+        increaseQuantity.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                try {
-                    JSONObject orderRequest = new JSONObject();
-                    orderRequest.put("amount", orderQuantity*devicePrice*100); // amount in the smallest currency unit
-                    orderRequest.put("currency", "INR");
-                    orderRequest.put("receipt", "order_rcptid_11");
-                    orderRequest.put("payment_capture", 1);
+            public void onClick(View view) {
+                if(orderQuantity < 10){
+                    orderQuantity += 1;
+                    TextView textViewamount = (TextView) (TextView)findViewById(R.id.edt_amount);
+                    textViewamount.setText(String.valueOf(orderQuantity*devicePrice));
 
-                    JSONObject notes = new JSONObject();
-                    notes.put("deviceUID",deviceUID );
-                    notes.put("deviceID",deviceID);
-                    notes.put("game",deviceGame);
-                    notes.put("quantity",orderQuantity);
-                    orderRequest.put("notes", notes );
-
-                    order = razorpayClient.Orders.create(orderRequest);
-
-                    TextView name = (TextView) (TextView)findViewById(R.id.machine_id);
-                    name.setText((String)order.get("id"));
-
-//
-                }
-                catch (Exception e) {
-                    // Handle Exception
-                    System.out.println(e.getMessage());
+                    TextView display_item_count = (TextView) (TextView)findViewById(R.id.display_item_count);
+                    display_item_count.setText(String.valueOf(orderQuantity));
                 }
             }
         });
 
-        thread.start();
+        decreaseQuantity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(orderQuantity > 1){
+                    orderQuantity -= 1;
+                    TextView textViewamount = (TextView) (TextView)findViewById(R.id.edt_amount);
+                    textViewamount.setText(String.valueOf(orderQuantity*devicePrice));
+
+                    TextView display_item_count = (TextView) (TextView)findViewById(R.id.display_item_count);
+                    display_item_count.setText(String.valueOf(orderQuantity));
+                }
+            }
+        });
+
 
 
         Checkout.preload(getApplicationContext());
 
         Button button = (Button) findViewById(R.id.start_transaction);
 
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                CreateOrderTask myAsyncTasks = new CreateOrderTask();
+                myAsyncTasks.execute();
 
-                startPayment();
 
 
 
@@ -159,6 +272,61 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
 
 
     }
+    public class CreateOrderTask extends AsyncTask<String, String, String> {
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            // display a progress dialog for good user experiance
+            progressDialog = new ProgressDialog(payment_gateway.this);
+            progressDialog.setMessage("Please Wait");
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            try {
+                JSONObject orderRequest = new JSONObject();
+                orderRequest.put("amount", orderQuantity*devicePrice*100); // amount in the smallest currency unit
+                orderRequest.put("currency", "INR");
+                orderRequest.put("receipt", "order_rcpt_id_11");
+                orderRequest.put("payment_capture", 1);
+
+                JSONObject notes = new JSONObject();
+                notes.put("deviceUID",deviceUID );
+                notes.put("deviceID",deviceID);
+                notes.put("game",deviceGame);
+                notes.put("quantity",orderQuantity);
+                orderRequest.put("notes", notes );
+
+                order = razorpayClient.Orders.create(orderRequest);
+
+            }
+            catch (Exception e) {
+                // Handle Exception
+                Log.d(TAG, "PAYMENT GATEWAY: Error Creating Order : "+e.getMessage());
+            }
+
+            return "";
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+
+            progressDialog.dismiss();
+            Toast.makeText(getApplicationContext(),"Order ID : "+order.get("id") ,Toast.LENGTH_SHORT ).show();
+            startPayment();
+
+
+        }
+
+    }
+
+
+
 
     public void startPayment() {
         /*
@@ -166,7 +334,12 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
          */
         final Activity activity = this;
 
+
+
         final Checkout checkout = new Checkout();
+
+
+
 
         try {
             JSONObject options = new JSONObject();
@@ -177,6 +350,8 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
             options.put("currency", "INR");
             options.put("order_id", order.get("id"));
 
+            TextView name = (TextView) (TextView)findViewById(R.id.order_id);
+            name.setText((String)order.get("id"));
             /**
              * Amount is always passed in currency subunits (Paisa)
              * Eg: "100" = INR 1.00
@@ -212,7 +387,7 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
         try {
             String deviceID = deviceUID;
             myRef = FirebaseDatabase.getInstance().getReference("devices");
-            myRef.child(deviceID).child("pending").setValue(5);
+            myRef.child(deviceID).child("pending").setValue(orderQuantity);
 //            myRef.child(deviceID).child("pending").setValue(5);
 
 

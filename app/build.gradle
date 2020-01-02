@@ -71,10 +71,10 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.8.1'
     implementation 'com.squareup.retrofit2:retrofit:2.2.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
-    
+
     implementation "com.google.firebase:firebase-auth:17+"
     implementation 'com.google.firebase:firebase-database:17+'
- //   implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    //   implementation 'com.google.android.gms:play-services-auth:17.0.0'
 //    testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
@@ -119,12 +119,10 @@ dependencies {
     implementation 'com.google.android.gms:play-services-basement:15.0.1'
     implementation 'com.google.android.gms:play-services-auth:15.0.1'
 }
-configurations.all{
+configurations.all {
     resolutionStrategy.force 'com.android.support:support-v4:26+'
 }
 
 
 // ADD THIS AT THE BOTTOM
 apply plugin: 'com.google.gms.google-services'
-
-
