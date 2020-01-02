@@ -96,14 +96,15 @@
 
                 <Button
                     android:id="@+id/add_machine"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_weight="0.17"
+                    android:visibility="gone"
                     android:background="@drawable/add_machine"
                     android:gravity="center_vertical"
 
                     />
+
             </LinearLayout>
 
 
