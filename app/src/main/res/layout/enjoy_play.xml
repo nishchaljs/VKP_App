@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<TextView android:layout_width="200sp"
-    android:layout_height="20sp"
-    android:layout_margin="150sp"
+<TextView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:text="ENJOY PLAYING"
-    android:textColor="@color/dark_black"
+    android:gravity="center"
+    android:textColor="@color/white"
+    android:fontFamily="@font/abel"
+    android:layout_gravity="center"
+    android:background="@color/color_2"
+    android:textSize="70sp"
     android:textStyle="bold"
     xmlns:android="http://schemas.android.com/apk/res/android" />
 

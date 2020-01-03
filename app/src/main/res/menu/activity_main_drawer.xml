@@ -10,15 +10,18 @@
         <item
             android:id="@+id/nav_my_profile"
             android:icon="@drawable/ic_nav_profile"
+            android:fontFamily="@font/abel"
             android:title="@string/nav_profile" />
-        /
+
         <item
             android:id="@+id/nav_aboutus"
             android:icon="@drawable/ic_nav_about"
+            android:fontFamily="@font/abel"
             android:title="@string/nav_about" />
         <item
             android:id="@+id/nav_policy"
             android:icon="@drawable/ic_nav_policy"
+            android:fontFamily="@font/abel"
             android:title="@string/nav_terms" />
         <!--<item-->
             <!--android:id="@+id/nav_contact"-->
@@ -37,6 +40,7 @@
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_exit"
             android:title="@string/nav_logout"
+            android:fontFamily="@font/abel"
             />
         <item
             android:title=""
@@ -59,6 +63,7 @@
         <item
             android:id="@+id/nav_powerd"
             android:icon="@drawable/copy"
+            android:fontFamily="@font/abel"
             android:title="@string/status_stop" />
 
     </group>

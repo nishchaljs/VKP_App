@@ -13,14 +13,14 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="130dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icon" />
 
-    <Fonts.LatoBLack
+    <TextView
         android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -29,9 +29,10 @@
         android:shadowDy="1"
         android:text="@string/app_name"
         android:textAlignment="center"
-        android:textColor="@color/yelow"
-        android:textSize="@dimen/text_size_large"
+        android:textColor="@color/color_2"
+        android:fontFamily="@font/abel"
         android:textStyle="bold"
+        android:textSize="@dimen/text_size_large"
         tools:layout_editor_absoluteX="10dp"
         tools:layout_editor_absoluteY="326dp" />
 
