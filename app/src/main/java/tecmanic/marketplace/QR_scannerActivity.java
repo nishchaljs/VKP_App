@@ -1,14 +1,11 @@
 package tecmanic.marketplace;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,18 +15,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.razorpay.Checkout;
-import com.razorpay.PaymentResultListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Map;
-
-import Adapter.Product_adapter;
-import Model.Product_model;
 
 public class QR_scannerActivity extends AppCompatActivity{
     private static final String TAG = payment_gateway.class.getSimpleName();
@@ -114,6 +102,7 @@ public class QR_scannerActivity extends AppCompatActivity{
 
                 Intent intent = new Intent(QR_scannerActivity.this, MainActivity.class);
                 Toast.makeText(getApplicationContext(),"Invalid parametered QR Code",Toast.LENGTH_SHORT ).show();
+                finish();
                 startActivity(intent);
             }
 //            if(obj.has("amount")){result.setText(obj.getString("amount")); }
@@ -122,7 +111,10 @@ public class QR_scannerActivity extends AppCompatActivity{
 
             Intent intent = new Intent(QR_scannerActivity.this, MainActivity.class);
             Toast.makeText(getApplicationContext(),"Invalid QR Code",Toast.LENGTH_SHORT ).show();
+            finish();
             startActivity(intent);
+
+            }
         }
 
 
@@ -130,7 +122,22 @@ public class QR_scannerActivity extends AppCompatActivity{
 //        final Barcode barcode = getIntent().getParcelableExtra("barcode");
 //        result.setText(barcode.displayValue);
 
-    }
-
+//
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//        new AlertDialog.Builder(this)
+//                .setTitle("Really Exit?")
+//                .setMessage("Are you sure you want to exit?")
+//                .setNegativeButton(android.R.string.no,null)
+//                .setNegativeButton(android.R.string.yes,new DialogInterface.OnClickListener(){
+//
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        finishAndRemoveTask();
+//                    }
+//                }).create().show();
+//
+//    }
 
 }
