@@ -35,9 +35,10 @@
         android:orientation="vertical"
         android:padding="@dimen/activity_horizontal_margin">
 
-        <Fonts.LatoBLack
+        <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/abel"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="20dp"
             android:gravity="center_horizontal"
@@ -73,10 +74,12 @@
                 android:background="@drawable/bg_rounded_button"
                 android:padding="12dp">
 
-                <Fonts.LatoBLack
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:fontFamily="@font/abel"
+                    android:textStyle="bold"
                     android:text="@string/tv_thanks_home"
                     android:textColor="#fff"
                     android:textSize="@dimen/text_size_small" />
@@ -92,9 +95,11 @@
                 android:background="@drawable/bg_rounded_button"
                 android:padding="12dp">
 
-                <Fonts.LatoBLack
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/abel"
+                    android:textStyle="bold"
                     android:gravity="center"
                     android:text="Some Text"
                     android:textColor="#fff"

@@ -28,7 +28,9 @@
                 android:layout_marginTop="@dimen/space_10"
                />
 
-            <Fonts.LatoBLack
+            <TextView
+                android:fontFamily="@font/abel"
+                android:textStyle="bold"
                 android:id="@+id/tv_pro_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,8 +49,10 @@
                 android:ems="10"
                 android:inputType="text" />
 
-            <Fonts.LatoBLack
+            <TextView
                 android:id="@+id/tv_pro_phone"
+                android:fontFamily="@font/abel"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
@@ -67,8 +71,10 @@
                 android:inputType="number"
                 android:maxLength="15" />
 
-            <Fonts.LatoBLack
+            <TextView
                 android:id="@+id/tv_pro_email"
+                android:fontFamily="@font/abel"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="E-mail"
@@ -127,10 +133,12 @@
                 android:background="@drawable/bg_rounded_button"
                 android:padding="12dp">
 
-                <Fonts.LatoBLack
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:fontFamily="@font/abel"
+                    android:textStyle="bold"
                     android:text="Continue"
                     android:textColor="#fff"
                     android:textSize="@dimen/text_size_small"/>

@@ -31,9 +31,9 @@ card_view:cardCornerRadius="4dp">
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight=".4"
+                android:fontFamily="@font/abel"
+                android:layout_weight=".47"
                 android:text="Order ID"
-                android:textColor="@color/dark_gray"
                 android:textSize="@dimen/text_size_small"
                 android:textStyle="bold" />
 
@@ -42,6 +42,7 @@ card_view:cardCornerRadius="4dp">
                 android:id="@+id/tv_payment_id"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/abel"
                 android:layout_weight="1"
                 android:text="pay_29QQoUBi66xm2f"
                 android:textColor="#000"
@@ -63,12 +64,13 @@ card_view:cardCornerRadius="4dp">
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Fonts.LatoBLack
+            <TextView
                 android:layout_width="0dp"
+                android:fontFamily="@font/abel"
+                android:textStyle="bold"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:text="payment date:"
-                android:textColor="@color/dark_gray"
                 android:textSize="@dimen/text_size_small" />
 
             <Fonts.LatoBLack
@@ -76,23 +78,29 @@ card_view:cardCornerRadius="4dp">
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".8"
+                android:fontFamily="@font/abel"
+                android:textStyle="bold"
                 android:text="01/01/2019"
                 android:textColor="#000"
                 android:textSize="@dimen/text_size_small" />
 
-            <Fonts.LatoBLack
+            <TextView
                 android:layout_width="0dp"
+                android:fontFamily="@font/abel"
+                android:textStyle="bold"
                 android:layout_height="wrap_content"
                 android:layout_weight=".3"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="Time"
-                android:textColor="@color/dark_gray"
+
                 android:textSize="@dimen/text_size_small" />
 
-            <Fonts.LatoBLack
+            <TextView
                 android:id="@+id/payment_time"
                 android:layout_width="0dp"
+                android:fontFamily="@font/abel"
+                android:textStyle="bold"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/space_4"
                 android:layout_weight="1"
@@ -121,14 +129,16 @@ card_view:cardCornerRadius="4dp">
                 android:text=""
                 android:textColor="#000" />
 
-            <Fonts.LatoBLack
+            <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/space_9"
+                android:fontFamily="@font/abel"
+                android:textStyle="bold"
                 android:layout_weight=".6"
                 android:gravity="right"
                 android:text="payment method"
-                android:textColor="@color/dark_gray"
+
                 android:textSize="@dimen/text_size_small" />
 
             <TextView
@@ -138,6 +148,8 @@ card_view:cardCornerRadius="4dp">
                 android:layout_weight="1"
                 android:text="UPI/card..."
                 android:textSize="@dimen/text_size_small"
+                android:fontFamily="@font/abel"
+                android:textStyle="bold"
                 android:textColor="#000" />
         </LinearLayout>
     </LinearLayout>
@@ -176,8 +188,10 @@ card_view:cardCornerRadius="4dp">
                 android:orientation="horizontal">
 
 
-                <Fonts.LatoBLack
+                <TextView
                     android:layout_width="wrap_content"
+                    android:fontFamily="@font/abel"
+                    android:textStyle="bold"
                     android:layout_height="wrap_content"
                     android:text="Amount : INR "
                     android:textColor="#000"
@@ -186,6 +200,8 @@ card_view:cardCornerRadius="4dp">
                     android:id="@+id/tv_order_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/abel"
+                    android:textStyle="bold"
                     android:text="_____"
                     android:textColor="#000"
                     android:textSize="@dimen/text_size_small" />
@@ -202,15 +218,19 @@ card_view:cardCornerRadius="4dp">
 
 
 
-                <Fonts.LatoBLack
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/abel"
+                    android:textStyle="bold"
                     android:layout_marginLeft="@dimen/space_8"
                     android:text="payment Status : "
                     android:textColor="#000"
                     android:textSize="@dimen/text_size_small" />
                 <TextView
                     android:id="@+id/payment_status"
+                    android:fontFamily="@font/abel"
+                    android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/space_8"
@@ -267,7 +287,8 @@ card_view:cardCornerRadius="4dp">
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:gravity="center"
-
+                    android:fontFamily="@font/abel"
+                    android:textStyle="bold"
                     android:text="Phone Number"
                     android:textColor="@color/dark_black"
                     android:textSize="12sp" />
@@ -277,7 +298,8 @@ card_view:cardCornerRadius="4dp">
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:gravity="center"
-
+                    android:fontFamily="@font/abel"
+                    android:textStyle="bold"
                     android:text="Email "
                     android:textColor="@color/black"
                     android:textSize="12sp" />

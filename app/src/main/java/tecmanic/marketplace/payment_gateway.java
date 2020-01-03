@@ -9,10 +9,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -93,6 +93,17 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
         Button delete_machine = (Button) findViewById(R.id.delete_machine);
         Button edit_machine = (Button) findViewById(R.id.edit_machine);
         Button add_machine = (Button) findViewById(R.id.add_machine);
+        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
+
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
+
 
 
 
@@ -174,12 +185,6 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
             r.setVisibility(View.GONE);
 
         }
-
-
-
-
-
-
 
         if(GameType.equals("supermario")){
             image.setImageResource(R.drawable.super_mario);

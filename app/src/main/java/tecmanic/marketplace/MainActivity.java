@@ -36,7 +36,6 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -410,14 +409,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         } else {
             //tv_number.setVisibility(View.GONE);
-            tv_name.setText(getResources().getString(R.string.btn_login));
-            tv_name.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent i = new Intent(MainActivity.this, LoginActivity.class);
-                    startActivity(i);
-                }
-            });
+           // tv_name.setText(getResources().getString(R.string.btn_login));
+//            tv_name.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Intent i = new Intent(MainActivity.this, LoginActivity.class);
+//                    startActivity(i);
+//                }
+//            });
 
         }
     }

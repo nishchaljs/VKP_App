@@ -94,16 +94,7 @@
                     android:textSize="22dp"
                     android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/add_machine"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_gravity="center_vertical"
-                    android:visibility="gone"
-                    android:background="@drawable/add_machine"
-                    android:gravity="center_vertical"
 
-                    />
 
             </LinearLayout>
 
