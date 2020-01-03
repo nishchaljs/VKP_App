@@ -22,16 +22,20 @@ public class PagerOrderAdapter extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                My_Pending_Order tab1 = new My_Pending_Order();
+                This_year_order tab1 = new This_year_order();
+                tab1.set_No_of_days(1);
                 return tab1;
 
             case 1:
-                My_Past_Order tab2 = new My_Past_Order();
+                This_year_order tab2 = new This_year_order();
+                tab2.set_No_of_days(7);
                 return tab2;
 
             case 2:
                 This_year_order tab3 = new This_year_order();
+                tab3.set_No_of_days(30);
                 return tab3;
+
             default:
                 return null;
         }

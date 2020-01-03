@@ -29,6 +29,7 @@ import util.TransactionsCollector;
 public class This_year_order extends Fragment {
 
     //  private static String TAG = My_Past_Order.class.getSimpleName();
+    private int no_of_days;
 
     private RecyclerView rv_myorder;
 
@@ -43,6 +44,10 @@ public class This_year_order extends Fragment {
     }
 
 
+    public void set_No_of_days(int no_of_days) {
+        this.no_of_days = no_of_days;
+    }
+
     private class FetchData extends AsyncTask<Void, Void, Integer> {
 
         protected void onPreExecute(){
@@ -52,7 +57,7 @@ public class This_year_order extends Fragment {
         @Override
         protected Integer doInBackground(Void... params) {
 
-            TransactionsCollector collector = new TransactionsCollector(1); // FOR TODAY PAYMENT
+            TransactionsCollector collector = new TransactionsCollector(no_of_days);
             item = collector.getPaymentLists();
             Log.d(this.toString(),"length of data collected" + item.size() );
 
@@ -67,7 +72,7 @@ public class This_year_order extends Fragment {
         }
 
         protected void onPostExecute(Integer result) {
-            Log.d(this.toString(),"total transaction recieved " + item.size());
+            Log.d(this.toString(),"total transaction received " + item.size());
             Log.d(this.toString(),"Notifying data change to adapter");
             payment_adapter itemadapter=new payment_adapter(item);
             rv_myorder.setAdapter(itemadapter);
@@ -105,14 +110,10 @@ public class This_year_order extends Fragment {
 
         new FetchData().execute();
 
-
+        // TODO : Dummy data here
         payment dummy_pay = new payment("#orderid-0001",100,"upi",1400826750 );
         dummy_pay.setStatus("created");
-
         item.add(dummy_pay);
-//        item.add(new payment("#orderid-0002",100,"upi",1400826750 ));
-//
-
         Log.d(this.toString(),"transaction with dummy data" + item.size());
 
         itemadapter.notifyDataSetChanged();

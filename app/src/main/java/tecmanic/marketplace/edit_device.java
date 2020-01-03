@@ -34,16 +34,20 @@ public class edit_device extends AppCompatActivity {
 
         final DatabaseReference myRef;
         myRef = FirebaseDatabase.getInstance().getReference("devices");
-
+        String uid = "";
 
         final String action =  getIntent().getStringExtra("action");
 
         if (action.equals("new_device")){
 
+            uid = "-";
+            TextView E0;
+            E0 = (TextView) findViewById(R.id.device_uid_view);
+            E0.setText(uid);
 
         }
         else {
-            String uid = getIntent().getStringExtra("uid");
+            uid = getIntent().getStringExtra("uid");
 
             // Update Device
             String device_id_string =  getIntent().getStringExtra("device_id_string");
@@ -54,9 +58,11 @@ public class edit_device extends AppCompatActivity {
             String game_status_string =  getIntent().getStringExtra("game_status_string");
             String game_message_string =  getIntent().getStringExtra("game_message_string");
 
-            EditText E1, E2, E3, E4, E5, E7;
+            EditText  E1, E2, E3, E4, E5, E7;
+            TextView E0;
             Switch E6;
 
+            E0 = (TextView) findViewById(R.id.device_uid_view);
             E1 = (EditText) findViewById(R.id.device_id_view);
             E2 = (EditText) findViewById(R.id.device_name_view);
             E3 = (EditText) findViewById(R.id.device_type_view);
@@ -64,6 +70,8 @@ public class edit_device extends AppCompatActivity {
             E5 = (EditText) findViewById(R.id.device_duration_view);
             E6 = (Switch) findViewById(R.id.device_status_view);
             E7 = (EditText) findViewById(R.id.device_message_view);
+
+            E0.setText(uid);
 
             E1.setText(device_id_string);
             E2.setText(game_name_string);

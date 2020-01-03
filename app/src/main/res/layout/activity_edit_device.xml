@@ -40,15 +40,38 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.7"
+            android:text="UID"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:id="@+id/device_uid_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:textSize="15sp"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
             android:text="ID"
-            android:textSize="15dp"
+            android:textSize="15sp"
             />
         <EditText
             android:id="@+id/device_id_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Value"
-            android:textSize="18dp"
+            android:hint=""
+            android:textSize="18sp"
             android:layout_weight="1"
             />
     </LinearLayout>
@@ -62,15 +85,15 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Game name"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:layout_weight="0.7"
             />
         <EditText
             android:id="@+id/device_name_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Value"
-            android:textSize="18dp"
+            android:hint=""
+            android:textSize="18sp"
             android:layout_weight="1"
             />
     </LinearLayout>
@@ -83,7 +106,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Game Type"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:layout_weight="0.7"
 
             />
@@ -91,8 +114,8 @@
             android:id="@+id/device_type_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Value"
-            android:textSize="18dp"
+            android:hint=""
+            android:textSize="18sp"
             android:layout_weight="1"
             />
     </LinearLayout>
@@ -105,15 +128,15 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Price"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:layout_weight="0.7"
             />
         <EditText
             android:id="@+id/device_price_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Value"
-            android:textSize="18dp"
+            android:hint=""
+            android:textSize="18sp"
             android:layout_weight="1"
             />
     </LinearLayout>
@@ -126,15 +149,15 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Duration"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:layout_weight="0.7"
             />
         <EditText
             android:id="@+id/device_duration_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Value"
-            android:textSize="18dp"
+            android:hint=""
+            android:textSize="15sp"
             android:layout_weight="1"
             />
     </LinearLayout>
@@ -144,7 +167,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10sp"
-        android:layout_marginRight="192sp"
         >
 
         <TextView
@@ -158,6 +180,7 @@
         <Switch
             android:id="@+id/device_status_view"
             android:layout_width="0dp"
+            android:paddingHorizontal="15dp"
             android:gravity="center"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
@@ -182,7 +205,7 @@
             android:id="@+id/device_message_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Message"
+            android:hint=""
             android:textSize="18dp"
             android:layout_weight="1"
             />
