@@ -11,7 +11,8 @@
             android:id="@+id/nav_my_profile"
             android:icon="@drawable/ic_nav_profile"
             android:fontFamily="@font/abel"
-            android:title="@string/nav_profile" />
+            android:title="@string/nav_profile"
+            android:visible="false"/>
 
         <item
             android:id="@+id/nav_aboutus"
@@ -41,6 +42,13 @@
             android:icon="@drawable/ic_exit"
             android:title="@string/nav_logout"
             android:fontFamily="@font/abel"
+            />
+        <item
+            android:title=""
+            />
+
+        <item
+            android:title=""
             />
         <item
             android:title=""
