@@ -3,6 +3,7 @@ package tecmanic.marketplace;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -12,105 +13,124 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.vision.barcode.Barcode;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class QR_scannerActivity extends AppCompatActivity implements PaymentResultListener {
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Map;
+
+import Adapter.Product_adapter;
+import Model.Product_model;
+
+public class QR_scannerActivity extends AppCompatActivity{
     private static final String TAG = payment_gateway.class.getSimpleName();
     TextView result;
 
+    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("devices");
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_paytm);
-        result = (TextView) findViewById(R.id.edt_amount);
-        TextView mid=(TextView)findViewById(R.id.machine_id);
+
         final Barcode barcode = getIntent().getParcelableExtra("barcode");
         try {
             JSONObject obj = new JSONObject(String.valueOf(barcode.displayValue));
-            if(obj.has("machine_id")){mid.setText(obj.getString("machine_id")); }
-            if(obj.has("amount")){result.setText(obj.getString("amount")); }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+            if(obj.has("uid")){
+                final String uid = obj.getString("uid");
 
-        Button button = (Button) findViewById(R.id.start_transaction);
+                myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                startPayment();
+                            try{
+
+                                DataSnapshot data = dataSnapshot.child(uid);
+//                                String UID =  data.getKey();
+                                String ID = (String) data.child("ID").getValue();
+                                String game = (String) data.child("Game").getValue();
+                                String message = (String) data.child("message").getValue();
+                                long pending = (long) data.child("pending").getValue();
+                                long priceLong = (long) data.child("price").getValue();
+
+                                Float price = Float.valueOf(priceLong);
+
+
+                                String duration = (String) data.child("duration").getValue();
+
+                                long status = (long) data.child("status").getValue();
+
+                                String gameType = (String) data.child("type").getValue();
+
+
+                                Intent intent = new Intent(QR_scannerActivity.this, payment_gateway.class);
+
+                                intent.putExtra("deviceUID",uid);
+                                intent.putExtra("deviceID",ID);
+                                intent.putExtra("devicePrice",price);
+                                intent.putExtra("deviceStatus",status);
+                                intent.putExtra("devicePending",pending);
+                                intent.putExtra("deviceGame",game);
+                                intent.putExtra("deviceGameType",gameType);
+                                intent.putExtra("deviceMessage",message);
+                                intent.putExtra("gameDuration",duration);
+                                intent.putExtra("orderQuantity",1);
+
+
+                                startActivity(intent);
+
+                            }
+                            catch (Exception e){
+                                Intent intent = new Intent(QR_scannerActivity.this, MainActivity.class);
+                                Toast.makeText(getApplicationContext(),"Can't load machine : " +uid ,Toast.LENGTH_SHORT ).show();
+                                startActivity(intent);
+                            }
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                    }
+                });
+
 
 
 
             }
-        });
+            else{
+
+                Intent intent = new Intent(QR_scannerActivity.this, MainActivity.class);
+                Toast.makeText(getApplicationContext(),"Invalid parametered QR Code",Toast.LENGTH_SHORT ).show();
+                startActivity(intent);
+            }
+//            if(obj.has("amount")){result.setText(obj.getString("amount")); }
+        } catch (JSONException e) {
+            e.printStackTrace();
+
+            Intent intent = new Intent(QR_scannerActivity.this, MainActivity.class);
+            Toast.makeText(getApplicationContext(),"Invalid QR Code",Toast.LENGTH_SHORT ).show();
+            startActivity(intent);
+        }
+
+
 //        YourResult = (TextView) findViewById(R.id.TextView_YourResult);
 //        final Barcode barcode = getIntent().getParcelableExtra("barcode");
 //        result.setText(barcode.displayValue);
 
     }
 
-    public void startPayment() {
-        /*
-          You need to pass current activity in order to let Razorpay create CheckoutActivity
-         */
-        final Activity activity = this;
-
-        final Checkout checkout = new Checkout();
-
-        try {
-            JSONObject options = new JSONObject();
-            options.put("name", "Razorpay Corp");
-            options.put("description", "Testing payment");
-            //You can omit the image option to fetch the image from dashboard
-            options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
-            options.put("currency", "INR");
-            /**
-             * Amount is always passed in currency subunits (Paisa)
-             * Eg: "100" = INR 1.00
-             */
-            options.put("amount", "100");
-
-            JSONObject preFill = new JSONObject();
-            preFill.put("email", "test@razorpay.com");
-            preFill.put("contact", "9876543210");
-
-            options.put("prefill", preFill);
-
-            checkout.open(activity, options);
-        } catch (Exception e) {
-            Toast.makeText(activity, "Error in payment: " + e.getMessage(), Toast.LENGTH_SHORT)
-                    .show();
-            e.printStackTrace();
-        }
-    }
-
-
-    @Override
-    public void onPaymentSuccess(String razorpayPaymentID) {
-        try {
-            Toast.makeText(this, "yess!!, Payment Successful: " + razorpayPaymentID, Toast.LENGTH_SHORT).show();
-            Intent enjoyGame = new Intent(QR_scannerActivity.this, EnjoyGame.class);
-            //startActivity(enjoyGame);
-        } catch (Exception e) {
-            Log.e(TAG, "Exception in onPaymentSuccess", e);
-        }
-    }
-
-    @Override
-    public void onPaymentError(int code, String response) {
-        try {
-            Toast.makeText(this, "Ohh !! Payment failed: " + code + " " + response, Toast.LENGTH_SHORT).show();
-        } catch (Exception e) {
-            Log.e(TAG, "Exception in onPaymentError", e);
-        }
-    }
 
 }
