@@ -25,8 +25,7 @@ public class payment_adapter extends RecyclerView.Adapter<payment_adapter.MyView
     private List<payment> paymentList;
 
 
-    //TODO : get data from razorpay about transaction and store in paymentList
-    // paymentList = TransactionCollector.getTransactions();
+
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         //public TextView orderId, time, method;
@@ -55,7 +54,7 @@ public class payment_adapter extends RecyclerView.Adapter<payment_adapter.MyView
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.payment_list_row, parent, false); //TODO: insert row for payment
+                .inflate(R.layout.payment_list_row, parent, false);
 
         return new MyViewHolder(itemView);
     }
@@ -64,7 +63,7 @@ public class payment_adapter extends RecyclerView.Adapter<payment_adapter.MyView
     public void onBindViewHolder(MyViewHolder holder, int position) {
         payment Payment = paymentList.get(position);
 
-        //TODO : change following code according to getter/setter method od payment class
+
 
         long timestamp = (long) Payment.getCreated_at();
 
@@ -90,7 +89,7 @@ public class payment_adapter extends RecyclerView.Adapter<payment_adapter.MyView
 
 
 
-//        TODO
+
 
         Log.d("PAYMENT STATUS THEME",Payment.getStatus());
         if (Payment.getStatus().equals("created")){

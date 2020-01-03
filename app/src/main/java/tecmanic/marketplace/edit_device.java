@@ -104,8 +104,7 @@ public class edit_device extends AppCompatActivity {
 
                 game_message_string = E7.getText().toString();
 
-                // TODO : Input data validation here
-                // ...
+
                 try{
                     gamePrice = Float.parseFloat(game_price_string);
 

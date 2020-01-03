@@ -272,17 +272,27 @@ public class Home_fragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 deviceList= new ArrayList<Product_model>();
                 for(DataSnapshot data : dataSnapshot.getChildren()){
-                    String UID =  data.getKey();
-                    String ID = (String) data.child("ID").getValue();
-                    String game = (String) data.child("Game").getValue();
-                    String message = (String) data.child("message").getValue();
-                    long pending = (long) data.child("pending").getValue();
-                    long status = (long) data.child("status").getValue();
+                    try{
+                        String UID =  data.getKey();
+                        String ID = (String) data.child("ID").getValue();
+                        String game = (String) data.child("Game").getValue();
+                        String message = (String) data.child("message").getValue();
+                        long pending = (long) data.child("pending").getValue();
+                        long price = (long) data.child("price").getValue();
+                        String duration = (String) data.child("duration").getValue();
 
-                    String gameType = (String) data.child("type").getValue();
+                        long status = (long) data.child("status").getValue();
 
-                    //deviceList.add(new Product_model(game,"01-01-0000","0.00"," ","$2000" ));
-                    deviceList.add(new Product_model(game,gameType,ID,UID,message, pending, status, 100 ));
+                        String gameType = (String) data.child("type").getValue();
+
+                        //deviceList.add(new Product_model(game,"01-01-0000","0.00"," ","$2000" ));
+                        Product_model device =new Product_model(game,gameType,ID,UID,message, pending, status, price );
+                        device.setDuration(duration);
+                        deviceList.add(device);
+                    }
+                    catch (Exception e){
+                        Log.d(TAG, "onDataChange: "+e.getMessage());
+                    }
                 }
 
                 Map<String, Product_model> value = (Map<String, Product_model>) dataSnapshot.getValue();
@@ -343,11 +353,12 @@ public class Home_fragment extends Fragment {
 
                 intent.putExtra("deviceGameType",device.getGametype());
 
-                //TODO: Update quantity with user input
+                intent.putExtra("deviceMessage",device.getMessage());
+
+                intent.putExtra("gameDuration",device.getDuration());
+
+
                 intent.putExtra("orderQuantity",1);
-
-
-
 
 
                 startActivity(intent);

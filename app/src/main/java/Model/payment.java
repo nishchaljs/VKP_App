@@ -41,7 +41,7 @@ public class payment {
 // Getter Methods
 
     public payment() {
-        // TODO Auto-generated constructor stub
+
     }
 
     public String getId() {

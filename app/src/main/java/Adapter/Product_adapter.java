@@ -32,7 +32,7 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
     private DatabaseHandler dbcart;
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView tv_title, tv_price, tv_reward, tv_total, tv_contetiy, tv_add, machine_id;
+        public TextView tv_title, tv_price, tv_reward, tv_total, tv_contetiy, tv_add, machine_id, tv_duration;
         public ImageView iv_logo, iv_plus, iv_minus, iv_remove;
         public Double reward;
 
@@ -42,7 +42,7 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
             tv_title = (TextView) view.findViewById(R.id.tv_subcat_title);
 
             machine_id = (TextView) view.findViewById(R.id.machine_id);
-
+            tv_duration = (TextView) view.findViewById(R.id.duration);
             tv_price = (TextView) view.findViewById(R.id.tv_subcat_price);
             tv_reward = (TextView) view.findViewById(R.id.tv_reward_point);
             tv_total = (TextView) view.findViewById(R.id.tv_subcat_total);
@@ -152,15 +152,7 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
     @Override
     public void onBindViewHolder(Product_adapter.MyViewHolder holder, int position) {
         Product_model mList = modelList.get(position);
-//        Glide.with(context)
-//                .load(BaseURL.IMG_PRODUCT_URL + mList.getProduct_image())
-//                .centerCrop()
-//                .placeholder(R.drawable.icon)
-//                .crossFade()
-//                .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                .dontAnimate()
-//                .into(holder.iv_logo);
-        //holder.tv_title.setText(mList.getUID());
+//
         holder.tv_title.setText(mList.getProduct_name());
         holder.machine_id.setText(mList.getID());
         //holder.tv_gameTitle.setText(mList.getProduct_name());
@@ -171,6 +163,8 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
         else{
             holder.tv_title.setTextColor(Color.RED);
         }
+
+        // TODO: Game type images
 
         if(mList.getGametype().equals("supermario")){
             holder.iv_logo.setImageResource(R.drawable.super_mario);
@@ -196,6 +190,7 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
 
         //holder.tv_reward.setText(mList.getRewards());
         holder.tv_price.setText(String.valueOf(mList.getPrice()));
+        holder.tv_duration.setText(String.valueOf(mList.getDuration())+ "m");
 
 //        if (dbcart.isInCart(mList.getProduct_id())) {
 //            holder.tv_add.setText(context.getResources().getString(R.string.tv_pro_update));

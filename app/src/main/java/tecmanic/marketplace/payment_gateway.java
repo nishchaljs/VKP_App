@@ -34,8 +34,9 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
     float devicePrice ;
     long deviceStatus ;
     long devicePending  ;
-    String deviceGame  , GameType;
+    String deviceGame  , GameType, gameDuration, deviceMessage;
     int orderQuantity;
+
     Order order;
     RazorpayClient razorpayClient;
     ProgressDialog progressDialog;
@@ -121,9 +122,9 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
                 i.putExtra("game_name_string", deviceGame);
                 i.putExtra("game_type_string",GameType);
                 i.putExtra("game_price_string",String.valueOf(devicePrice));
-                i.putExtra("game_duration_string","60"); //TODO : update with Duration
+                i.putExtra("game_duration_string", gameDuration);
                 i.putExtra("game_status_string",String.valueOf(deviceStatus));
-                i.putExtra("game_message_string", "Dummy message here"); //TODO : update with message
+                i.putExtra("game_message_string", deviceMessage);
 
 
 
@@ -159,11 +160,13 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
         deviceUID = getIntent().getStringExtra("deviceUID");
         deviceID = getIntent().getStringExtra("deviceID");
         devicePrice = getIntent().getFloatExtra("devicePrice",0);
+        deviceMessage = getIntent().getStringExtra("deviceMessage");
+        gameDuration = getIntent().getStringExtra("gameDuration");
+
         deviceStatus = getIntent().getLongExtra("deviceStatus",0);
         devicePending = getIntent().getLongExtra("devicePending",0);
         deviceGame = getIntent().getStringExtra("deviceGame");
 
-        //TODO Update order Quantity here
         orderQuantity = getIntent().getIntExtra("orderQuantity",1);
         GameType = getIntent().getStringExtra("deviceGameType");
 

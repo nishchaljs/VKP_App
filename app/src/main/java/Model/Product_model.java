@@ -10,8 +10,9 @@ public class Product_model {
     String message ;
     long pending ;
     long status  ;
-    float price; // TODO : Fetch this value from server
+    float price;
     String Gametype;
+    String duration;
 
 
 
@@ -103,6 +104,14 @@ public class Product_model {
 
     public void setPending(long pending) {
         this.pending = pending;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
 
     public long getStatus() {
