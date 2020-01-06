@@ -74,6 +74,8 @@ public class QR_scannerActivity extends AppCompatActivity{
                                 intent.putExtra("gameDuration",duration);
                                 intent.putExtra("orderQuantity",1);
 
+                                finish();
+
 
                                 startActivity(intent);
 
@@ -81,6 +83,7 @@ public class QR_scannerActivity extends AppCompatActivity{
                             catch (Exception e){
                                 Intent intent = new Intent(QR_scannerActivity.this, MainActivity.class);
                                 Toast.makeText(getApplicationContext(),"Can't load machine : " +uid ,Toast.LENGTH_SHORT ).show();
+                                finish();
                                 startActivity(intent);
                             }
 

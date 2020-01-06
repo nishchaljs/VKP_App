@@ -2,9 +2,11 @@ package tecmanic.marketplace;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -107,15 +109,33 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
 
 
 
-
+        final AlertDialog.Builder builder=new AlertDialog.Builder(this);
         delete_machine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(payment_gateway.this, MainActivity.class);
+                builder.setMessage("Do you want to Delete?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent i = new Intent(payment_gateway.this, MainActivity.class);
 //                i.putExtra("action",'delete');
-                myRef.child(deviceUID).removeValue();
-                startActivity(i);
+                                finish();
+                                myRef.child(deviceUID).removeValue();
+                                startActivity(i);
+
+
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert =builder.create();
+                alert.show();
 
             }
         });
@@ -268,8 +288,29 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CreateOrderTask myAsyncTasks = new CreateOrderTask();
-                myAsyncTasks.execute();
+
+                builder.setMessage("Do you want to Proceed to Pay?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                CreateOrderTask myAsyncTasks = new CreateOrderTask();
+                                myAsyncTasks.execute();
+                                finish();
+
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert =builder.create();
+                alert.show();
+
+
 
 
 

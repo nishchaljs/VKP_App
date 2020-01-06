@@ -508,11 +508,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //            shareApp();
 //        }
         else if (id == R.id.nav_logout) {
-            sessionManagement.logoutSession();
-            mGoogleSignInClient.signOut();
-            auth.signOut();
-            startActivity(new Intent(MainActivity.this, LoginActivity.class));
-            finish();
+
+            final AlertDialog.Builder builder=new AlertDialog.Builder(this);
+
+            builder.setMessage("Do you want to SignOut?")
+                    .setCancelable(false)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            sessionManagement.logoutSession();
+                            mGoogleSignInClient.signOut();
+                            auth.signOut();
+                            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                            finish();
+
+                        }
+                    })
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+            AlertDialog alert =builder.create();
+            alert.show();
+
 
         } else if (id == R.id.nav_powerd) {
             // stripUnderlines(textView);
