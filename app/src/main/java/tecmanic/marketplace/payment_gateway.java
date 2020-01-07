@@ -288,28 +288,8 @@ public class payment_gateway extends Activity implements  PaymentResultListener 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                builder.setMessage("Do you want to Proceed to Pay?")
-                        .setCancelable(false)
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                                CreateOrderTask myAsyncTasks = new CreateOrderTask();
-                                myAsyncTasks.execute();
-                                finish();
-
-                            }
-                        })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        });
-                AlertDialog alert =builder.create();
-                alert.show();
-
+                CreateOrderTask myAsyncTasks = new CreateOrderTask();
+                myAsyncTasks.execute();
 
 
 
