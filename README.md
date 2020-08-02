@@ -14,4 +14,9 @@ Built an Android mobile application which could trigger a gaming machine arcade 
 * Check the build-->generated-->outputs-->apk folder to get the apk
 
 ## Screenshots of the application:
-
+<img src="https://github.com/nishchaljs/VKP_App/blob/master/VKP_Screenshots/Screenshot_20200803-001114.jpg" alt="drawing" width="400"/>
+<img src="https://github.com/nishchaljs/VKP_App/blob/master/VKP_Screenshots/Screenshot_20200803-000944.jpg" alt="drawing" width="400"/>
+<img src="https://github.com/nishchaljs/VKP_App/blob/master/VKP_Screenshots/Screenshot_20200803-001027.jpg" alt="drawing" width="400"/>
+<img src="https://github.com/nishchaljs/VKP_App/blob/master/VKP_Screenshots/Screenshot_20200803-001021.jpg" alt="drawing" width="400"/>
+<img src="https://github.com/nishchaljs/VKP_App/blob/master/VKP_Screenshots/Screenshot_20200803-001039.jpg" alt="drawing" width="400"/>
+<img src="https://github.com/nishchaljs/VKP_App/blob/master/VKP_Screenshots/Screenshot_20200803-001045.jpg" alt="drawing" width="400"/>
